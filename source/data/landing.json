@@ -29,7 +29,7 @@
       "preview": "assets/img/landing/preview-yt1.jpg",
       "color": "primary",
       "desc": "This version was created having in mind everything you may need if you are a Youtuber or Vlogger. From featured videos and video spotlights (like the one in the footer and the header videos slider), to a subscribers live count and a super complete shop to sell merchandise.",
-      "link": "/_yt1-index.html"
+      "link": "/_yt1-index"
     },
     {
       "title": "Youtuber & Vloggers",
@@ -37,7 +37,7 @@
       "preview": "assets/img/landing/preview-yt2.jpg",
       "color": "tertiary",
       "desc": "This version was created for Youtubers or Vloggers that wanna have a simpler website to showcase their videos and/or sell their merchandise. With a bigger slider on the homepage, an affiliates page to monetize the site’s traffic and many more features!",
-      "link": "/_yt2-index.html"
+      "link": "/_yt2-index"
     },
     {
       "title": "Gamer & Streamer",
@@ -45,7 +45,7 @@
       "preview": "assets/img/landing/preview-str1.jpg",
       "color": "secondary",
       "desc": "This version was created having in mind everything you may need if you are a Gamer or Streamer. From upcoming stream countdowns, top games spotlight and livestream boxes, to a stream clips feed and a super complete shop.",
-      "link": "/_str1-index.html"
+      "link": "/_str1-index"
     },
     {
       "title": "Gamer & Streamer",
@@ -53,7 +53,7 @@
       "preview": "assets/img/landing/preview-str2.jpg",
       "color": "quaternary",
       "desc": "This version was created for Gamers or Streamers that wanna have a simpler website to showcase their stream and/or sell their merchandise. With a subscribe button on top, an affiliates page and gear showcase to monetize the site’s traffic and many more features!",
-      "link": "/_str2-index.html"
+      "link": "/_str2-index"
     }
   ],
   "features": [
