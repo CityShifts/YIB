@@ -1,0 +1,66 @@
+<div class="pt-7 {{class}}">
+  {{> _str2-section-heading
+    title="Write a Review"
+    subtitle="Reviews"
+  }}
+  <form class="grid grid-cols-1 md:grid-cols-2 gap-7" action="#">
+    <div class="md:col-span-1">
+      {{> _str2-form-input
+        type="text"
+        name="review-title"
+        id="review-title"
+        label="Review Title"
+      }}
+    </div>
+    <div class="md:col-span-1">
+      {{#> _str2-form-select
+        name="review-rating"
+        id="review-rating"
+        size="md"
+        label="Your Rating"
+      }}
+        <option value="-">Select Rating</option>
+        <option value="1">Really Bad</option>
+        <option value="2">Bad</option>
+        <option value="3">Not Bad</option>
+        <option value="4">Good</option>
+        <option value="5">Excelent</option>
+      {{/_str2-form-select}}
+    </div>
+    <div class="col-span-full">
+      {{> _str2-form-textarea
+        textarea-class="h-32 md:h-40"
+        name="review-comment"
+        id="review-comment"
+        label="Your Review"
+      }}
+    </div>
+    <div class="md:col-span-1">
+      {{> _str2-form-input
+        type="text"
+        name="review-name"
+        id="review-name"
+        label="Name"
+      }}
+    </div>
+    <div class="md:col-span-1">
+      {{> _str2-form-input
+        type="email"
+        name="review-email"
+        id="review-email"
+        label="Email"
+      }}
+    </div>
+    <div class="col-span-full">
+      {{#> _str2-btn
+        is-btn="true"
+        variant="primary"
+        size="md"
+        type="submit"
+        class="w-full"
+      }}
+        Post Review
+      {{/_str2-btn}}
+    </div>
+  </form>
+</div>

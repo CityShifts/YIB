@@ -1,0 +1,65 @@
+{{! Slides #2 }}
+<div class="swiper-slide group">
+  <div class="relative isolate h-full w-full overflow-hidden bg-primary">
+    <div class="container h-full">
+      <div
+        class="grid h-full grid-cols-12 place-content-center gap-y-10 md:gap-x-6 lg:gap-x-7.5"
+      >
+
+        {{! Content }}
+        <div
+          class="col-span-full md:col-span-8 md:col-start-3 lg:col-span-10 lg:col-start-2"
+        >
+          <div class="px-6 text-center lg:px-0">
+
+            {{! Meta }}
+            <div
+              class="mb-2 flex flex-wrap justify-center gap-1 text-sm text-white lg:mb-6 lg:pt-2 lg:text-base lg:text-white"
+            >
+              <div>680k views</div>
+              <div>-</div>
+              <div>19 hours ago</div>
+            </div>
+            {{! Meta / End }}
+
+            {{! Title }}
+            <h2
+              class="mb-4 text-2xl font-bold leading-none tracking-tighter text-white sm:text-2.5xl md:mb-6 md:text-3xl md:leading-none lg:mb-12 lg:text-5.5xl lg:leading-none"
+            >
+              Check out the Witch Hunter’s Amazing Edition Statue
+            </h2>
+            {{! Title / End }}
+
+            {{! Play Button }}
+            <a
+              href="https://www.youtube.com/watch?v=XE0fU9PCrWE"
+              class="glightbox mx-auto flex aspect-square w-16 items-center justify-center rounded-full bg-secondary text-white transition-colors hover:bg-white hover:text-secondary lg:w-20"
+            >
+              <svg
+                role="img"
+                class="ml-[3px] h-5 w-6 lg:h-6 lg:w-7"
+                fill="currentColor"
+              >
+                <use xlink:href="{{root}}assets/img/yt2/sprite.svg#play"></use>
+              </svg>
+            </a>
+            {{! Play Button / End }}
+          </div>
+        </div>
+        {{! Content / End }}
+
+      </div>
+    </div>
+
+    {{! Background Image Layer }}
+    <div
+      class="absolute inset-0 -z-10 bg-[url('../../../assets/img/yt2/samples/hero-slide-1.jpg')] bg-cover bg-center bg-no-repeat"
+    ></div>
+    {{! Background Image Layer / End }}
+
+    {{! Layer }}
+    <div class="absolute inset-0 -z-10 bg-gray-900/40"></div>
+    {{! Layer / End }}
+  </div>
+</div>
+{{! Slides #2 / End }}

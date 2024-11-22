@@ -1,0 +1,31 @@
+{{#if label }}
+  {{> _str2-label
+    for=name
+    label=label
+    required=required
+  }}
+{{/if}}
+<select class="w-full
+  border-base
+  px-4
+  tracking-tight
+  text-gray-900
+  transition-all
+  duration-150
+  bg-white
+  bg-caret
+  bg-[length:10px_6px]
+  bg-[position:right_24px_center]
+  focus:border-accent
+  focus:outline-0
+  focus:ring-0
+  hover:cursor-pointer
+  dark:border-gray-600
+  dark:bg-gray-800
+  dark:text-white
+  dark:placeholder:text-gray-500/80
+  dark:focus:border-accent
+  dark:bg-caret-white {{#ifequal size "md"}} h-[50px] {{else}} h-[60px] {{/ifequal}}" name="{{name}}" id="{{id}}">
+  {{> @partial-block}}
+</select>
+

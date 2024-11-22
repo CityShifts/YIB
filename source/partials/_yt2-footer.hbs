@@ -1,0 +1,68 @@
+<footer id="site-footer">
+  <div class="bg-white dark:bg-gray-900 py-[60px] leading-8">
+    <div class="container">
+
+      {{! Logo & Social Links }}
+      <div class="flex flex-wrap items-center justify-between pb-12 md:pb-16 lg:pb-20 xl:pb-20">
+
+        {{> _yt2-footer-logo }}
+
+        {{> _yt2-footer-social
+          items=yt2.footer.social
+          class="flex flex-wrap gap-4 lg:gap-5"
+        }}
+
+      </div>
+      {{! Logo & Social Links / End }}
+
+      {{! Widgets }}
+      <div class="grid grid-cols-12 gap-y-12 gap-x-7 pt-1">
+
+        <div class="col-span-full md:col-span-4 md:col-start-1">
+
+          {{> _yt2-widget-links }}
+
+        </div>
+
+        <div class="col-span-full md:col-span-4 md:col-start-5">
+
+          {{> _yt2-widget-subs-count }}
+
+        </div>
+
+        <div class="col-span-full md:col-span-4 md:col-start-9">
+
+          {{> _yt2-widget-info }}
+
+        </div>
+      </div>
+      {{! Widgets / End }}
+
+      {{! Sponsors }}
+      <div class="pt-14 md:pt-16 lg:pt-20">
+        <h5
+          class="text-center text-xs font-bold uppercase leading-none text-primary dark:text-white"
+        >
+          I've been featured by this awesome companies!
+        </h5>
+        <div
+          class="grid grid-cols-12 gap-x-5 gap-y-6 pt-16 md:gap-x-6 lg:gap-x-7.5 lg:pt-16"
+        >
+          {{#each yt2.sponsors}}
+            <div class="col-span-6 sm:col-span-4 lg:col-span-2 xl:col-span-2">
+              <a href="{{link.url}}" class="group">
+                <img
+                  class="mx-auto opacity-[.14] transition-opacity group-hover:opacity-100 dark:opacity-60"
+                  src="{{root}}{{img.sm}}"
+                  alt="{{label}}"
+                />
+              </a>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      {{! Sponsors / End }}
+
+    </div>
+  </div>
+</footer>

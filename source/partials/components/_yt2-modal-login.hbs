@@ -1,0 +1,86 @@
+{{! Login Modal }}
+{{#> _yt2-modal
+  modal-id="vv-modal-login"
+  modal-close-btn-id="vv-modal__close-btn-login"
+  title="Login"
+  desc="If you don’t have an account, you can <a class=\"text-accent hover:text-primary transition-colors\" href=\"#\">register</a> now in a few seconds!"
+}}
+
+  {{! Default Form }}
+  <form class="flex flex-col gap-y-7" action="#">
+    <div>
+      {{> _yt2-form-input
+        type="email"
+        name="user-email"
+        id="user-email"
+        placeholder="Enter Email"
+      }}
+    </div>
+    <div>
+      {{> _yt2-form-input
+        type="password"
+        name="user-password"
+        id="user-password"
+        placeholder="Enter Password"
+      }}
+    </div>
+    <div class="flex justify-between flex-wrap gap-y-4">
+      <div>
+        {{> _yt2-form-checkbox
+          name="user-rememberme"
+          id="user-rememberme"
+          label="Remember Me"
+        }}
+      </div>
+      <div>
+        <a href="#" class="font-bold text-primary dark:text-white text-sm md:text-base md:leading-tight hover:text-accent dark:hover:text-accent transition-colors">Forgot Password?</a>
+      </div>
+    </div>
+    <div class="mt-3">
+      {{#> _yt2-btn
+        is-btn="true"
+        variant="accent"
+        size="xl"
+        type="submit"
+        class="w-full"
+      }}
+        Login Now!
+      {{/_yt2-btn}}
+    </div>
+  </form>
+  {{! Default Form / End }}
+
+  {{! Social Form }}
+  <div class="pt-8">
+    <div class="text-center font-bold text-primary mb-6 text-sm md:text-base dark:text-white">or login with your social account</div>
+    <div class="flex justify-between gap-x-5">
+      <a
+        href="#"
+        class="relative flex-1 flex h-16 items-center justify-center text-xs text-white transition-colors bg-social-facebook hover:bg-social-facebook/90"
+      >
+        <svg class="w-4.5 aspect-square" fill="currentColor">
+          <use xlink:href="{{root}}assets/img/social-icons.svg#facebook"></use>
+        </svg>
+      </a>
+      <a
+        href="#"
+        class="relative flex-1 flex h-16 items-center justify-center text-xs text-white transition-colors bg-social-twitter hover:bg-social-twitter/90"
+      >
+        <svg class="w-4.5 aspect-square" fill="currentColor">
+          <use xlink:href="{{root}}assets/img/social-icons.svg#twitter"></use>
+        </svg>
+      </a>
+      <a
+        href="#"
+        class="relative flex-1 flex h-16 items-center justify-center text-xs text-white transition-colors bg-social-youtube hover:bg-social-youtube/90"
+      >
+        <svg class="w-4.5 aspect-square" fill="currentColor">
+          <use xlink:href="{{root}}assets/img/social-icons.svg#youtube"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  {{! Social Form / End }}
+
+{{/_yt2-modal}}
+{{! Login Modal / End }}

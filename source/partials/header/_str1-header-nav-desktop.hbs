@@ -1,0 +1,24 @@
+<!-- Navigation (Desktop) -->
+<ul class="hidden lg:gap-x-0 xl:gap-x-6 text-sm font-bold lg:flex">
+  {{#each items}}
+    <li
+      class="{{#if subitems}}relative [&>.sub-menu]:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:hover:opacity-100{{/if}}"
+    >
+      <a
+        class="group text-gray-900 dark:text-white relative inline-flex items-center gap-x-3 leading-10 px-3.5 xl:px-4.5 after:absolute after:top-[15px] after:left-0 after:bg-current-marker-dark after:transition-transform after:w-1.5 after:h-[9px] dark:after:bg-current-marker {{#ifpage url}} after:origin-left after:scale-x-100 {{/ifpage}} {{#unlesspage url}} after:origin-right hover:after:origin-left after:scale-x-0 hover:after:scale-x-100 {{/unlesspage}}"
+        href="{{url}}.html"
+      >
+        {{title}}
+        {{#if subitems}}
+          <svg role="img" class="h-1.5 w-1.5 fill-gray-500 group-hover:fill-accent">
+            <use xlink:href="{{root}}assets/img/str1/sprite.svg#plus"></use>
+          </svg>
+        {{/if}}
+      </a>
+      {{#if subitems}}
+        {{> _str1-header-dropdown subitems=subitems}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+<!-- Navigation (Desktop) / End -->

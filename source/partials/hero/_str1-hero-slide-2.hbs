@@ -1,0 +1,59 @@
+{{! Slides #2 }}
+<div class="swiper-slide group">
+  <div
+    class="relative isolate h-full w-full bg-gray-900"
+  >
+    <div class="container h-full">
+      <div class="grid h-full grid-cols-12 gap-y-10 md:gap-x-6 lg:gap-x-[30px] place-items-center">
+
+        {{! Content }}
+        <div
+          class="col-span-full md:col-span-8 md:col-start-3 lg:col-span-10 lg:col-start-2 xl:col-span-6 xl:col-start-4"
+        >
+          <div class="px-6 text-center">
+
+            {{! Meta }}
+            <div
+              class="mb-1 flex flex-wrap justify-center gap-1 text-accent lg:mb-2 font-bold uppercase"
+            >
+              <div>Streams Archives</div>
+            </div>
+            {{! Meta / End }}
+
+            {{! Title }}
+            <h2
+              class="mb-6 text-4xl font-bold leading-none tracking-tighter sm:text-5xl md:mb-8 md:text-6xl md:leading-none lg:text-7xl lg:mb-12 lg:leading-none text-white xl:text-[74px]"
+            >
+              <a href="_str1-single.html" class="hover:opacity-80 transition-opacity duration-300">
+                Ram Goddess Best Plays Video
+              </a>
+            </h2>
+            {{! Title / End }}
+
+            {{! Read More }}
+            {{#> _str1-btn
+              variant="primary"
+              size="md"
+            }}
+              See the video
+            {{/_str1-btn}}
+            {{! Read More / End }}
+          </div>
+        </div>
+        {{! Content / End }}
+
+      </div>
+    </div>
+
+    {{! Background Image Layer }}
+    <div
+      class="absolute inset-0 -z-10 bg-[url('../../../assets/img/str1/samples/hero-slide-2.jpg')] bg-cover bg-center bg-no-repeat ease-out transition-transform duration-[8000ms] group-[.swiper-slide-active]:scale-110"
+    ></div>
+    {{! Background Image Layer / End }}
+
+    {{! Layer }}
+    <div class="absolute inset-0 -z-10 bg-gray-900/60"></div>
+    {{! Layer / End }}
+  </div>
+</div>
+{{! Slides #2 / End }}

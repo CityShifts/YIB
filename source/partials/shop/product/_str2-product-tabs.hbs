@@ -1,0 +1,111 @@
+{{! Product Tabs }}
+{{#> _str2-grid }}
+  <div class="col-span-full md:col-start-3 md:col-end-11">
+
+    {{! Product Tabs}}
+    <div class="tabs">
+
+      {{! Navigation }}
+      <nav class="tabs__header pb-4 font-bold leading-tight tracking-tighter lg:text-lg uppercase">
+        <ul
+          class="flex flex-col flex-wrap justify-center gap-y-3 gap-x-4 sm:flex-row lg:gap-x-8 xl:gap-x-10"
+        >
+          <li class="tabs__header-item is-active group">
+            <a
+              href="#"
+              class="text-gray-900 dark:text-white transition-colors hover:text-primary group-[.is-active]:text-primary dark:group-[.is-active]:text-primary dark:hover:text-primary"
+            >Description</a>
+          </li>
+          <li class="tabs__header-item group">
+            <a
+              href="#"
+              class="text-gray-900 dark:text-white transition-colors hover:text-primary group-[.is-active]:text-primary dark:group-[.is-active]:text-primary dark:hover:text-primary"
+            >Specifications</a>
+          </li>
+          <li class="tabs__header-item group">
+            <a
+              href="#"
+              class="text-gray-900 dark:text-white transition-colors hover:text-primary group-[.is-active]:text-primary dark:group-[.is-active]:text-primary dark:hover:text-primary"
+            >Reviews</a>
+          </li>
+        </ul>
+      </nav>
+      {{! Navigation / End }}
+
+      {{! Tab Content }}
+      <div class="tabs__content vv-prose pt-6 pb-0 md:pt-12 lg:pt-16 xl:pt-20">
+
+        {{! Tab: Description }}
+        <div class="tabs__content-item">
+          <h4 class="mt-0 lg:mb-16">Top Quality Frames</h4>
+          <p class="lead">Hand-Made specially for this artistics prints, we have lots of frame options for you to choose!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+          <figure class="xl:mb-16">
+            <img
+              class="h-auto w-full"
+              src="{{root}}assets/img/str2/samples/product-content-img-1.jpg"
+              alt=""
+            />
+          </figure>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+          </p>
+        </div>
+        {{! Tab: Description / End }}
+
+        {{! Tab: Specifications }}
+        <div class="tabs__content-item">
+          <dl
+            class="grid grid-cols-8 gap-x-5 leading-normal md:gap-x-6 lg:gap-x-[30px]"
+          >
+            <dt class="col-span-full text-gray-600 dark:text-gray sm:col-span-2">
+              Dimensions
+            </dt>
+            <dd class="col-span-full font-bold text-gray-900 dark:text-white mb-6 sm:col-span-6 md:mb-10">
+              18x26 Inches</dd>
+            <dt class="col-span-full text-gray-600 dark:text-gray sm:col-span-2">
+              Frame Material
+            </dt>
+            <dd class="col-span-full font-bold text-gray-900 dark:text-white mb-6 sm:col-span-6 md:mb-10">
+              Treated Oak Wood
+            </dd>
+            <dt class="col-span-full text-gray-600 dark:text-gray sm:col-span-2">
+              Print Finish
+            </dt>
+            <dd class="col-span-full font-bold text-gray-900 dark:text-white mb-6 sm:col-span-6 md:mb-10">
+              Matte
+            </dd>
+            <dt class="col-span-full text-gray-600 dark:text-gray sm:col-span-2">
+              SKU
+            </dt>
+            <dd class="col-span-full font-bold text-gray-900 dark:text-white mb-6 sm:col-span-6 md:mb-10">
+              WHP2563
+            </dd>
+          </dl>
+        </div>
+        {{! Tab: Specifications / End }}
+
+        {{! Tab: Reviews }}
+        <div class="tabs__content-item">
+
+          {{! Reviews }}
+          <ol class="text-lg leading-8 tracking-tight text-gray-500 p-0 m-0">
+            {{#each ../reviews}}
+              {{> _str2-product-review data=this}}
+            {{/each}}
+          </ol>
+          {{! Reviews / End }}
+
+          {{! Form }}
+          {{> _str2-review-form }}
+          {{! Form / End }}
+        </div>
+        {{! Tab: Reviews / End }}
+
+      </div>
+      {{! Tab Content / End }}
+    </div>
+    {{! Product Tabs / End }}
+  </div>
+
+{{/_str2-grid }}
+{{! Product Tabs / End }}

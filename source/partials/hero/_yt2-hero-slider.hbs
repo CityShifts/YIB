@@ -1,0 +1,50 @@
+{{! Hero Slider Wrapper }}
+<div class="h-[360px] md:h-[520px] lg:h-[578px] relative z-10 mb-5 mx-auto max-w-[1030px]">
+
+  {{! Hero Slider }}
+  <div class="swiper js-vv-hero-swiper h-full w-full overflow-visible">
+
+    {{! Slider required wrapper }}
+    <div class="swiper-wrapper vv-hero-swiper-wrapper">
+
+      {{> _yt2-hero-slide-1 }}
+
+      {{> _yt2-hero-slide-2 }}
+
+      {{> _yt2-hero-slide-3 }}
+
+      {{> _yt2-hero-slide-1 }}
+
+      {{> _yt2-hero-slide-2 }}
+
+      {{> _yt2-hero-slide-3 }}
+
+    </div>
+    {{! Slider required wrapper / End }}
+
+    {{! Navigation }}
+    <div
+      class="js-vv-hero-swiper-btn-prev absolute top-1/2 left-3 z-10 hidden aspect-square w-8 items-center justify-center rounded-xl bg-white text-primary shadow-[0_10px_40px_0_rgba(0,0,0,0.2)] transition-colors hover:cursor-pointer hover:bg-accent hover:text-white dark:bg-gray-800 dark:text-white dark:hover:bg-accent dark:hover:text-white sm:flex xl:left-0 -translate-y-1/2 xl:-translate-x-1/2"
+    >
+      <svg class="h-2 w-2" fill="currentColor">
+        <use
+          xlink:href="{{root}}assets/img/yt2/sprite.svg#chevron-left"
+        ></use>
+      </svg>
+    </div>
+    <div
+      class="js-vv-hero-swiper-btn-next absolute top-1/2 right-3 z-10 hidden aspect-square w-8 items-center justify-center rounded-xl bg-white text-primary shadow-[0_10px_40px_0_rgba(0,0,0,0.2)] transition-colors hover:cursor-pointer hover:bg-accent hover:text-white dark:bg-gray-800 dark:text-white dark:hover:bg-accent dark:hover:text-white sm:flex xl:right-0 -translate-y-1/2 xl:translate-x-1/2"
+    >
+      <svg class="h-2 w-2" fill="currentColor">
+        <use
+          xlink:href="{{root}}assets/img/yt2/sprite.svg#chevron-right"
+        ></use>
+      </svg>
+    </div>
+    {{! Navigation }}
+
+  </div>
+  {{! Hero Slider / End }}
+
+</div>
+{{! Hero Slider Wrapper / End }}

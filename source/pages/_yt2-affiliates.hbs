@@ -1,0 +1,43 @@
+---
+page-title: "Affiliates"
+layout: "yt2"
+breadcrumbs: [
+  {
+    label: "Affiliates"
+  }
+]
+---
+
+<section class="pt-12 pb-20 lg:pb-52 lg:pt-24">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-14">
+
+      <div class="col-span-full lg:col-span-3">
+        {{! FAQs }}
+        <h2 class="text-primary dark:text-white text-1.5xl mb-6 md:mb-8 lg:mb-10 md:text-2xl lg:text-3xl xl:text-3.5xl font-bold xl:mb-14">FAQs</h2>
+
+        {{> _yt2-accordion data=yt2.affiliates.faq }}
+        {{! FAQs / End }}
+      </div>
+
+      <div class="col-span-full lg:col-span-9">
+        {{! Affiliates }}
+        <div class="flex flex-col gap-y-7.5">
+          {{#each yt2.affiliates.products}}
+
+            {{> _yt2-affiliate-card
+              title=title
+              subtitle=subtitle
+              desc=desc
+              img=img
+              link=link
+            }}
+
+          {{/each}}
+        </div>
+        {{! Affiliates / End }}
+      </div>
+
+    </div>
+  </div>
+</section>

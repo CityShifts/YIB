@@ -1,0 +1,64 @@
+---
+page-title: "Contact"
+layout: "yt2"
+breadcrumbs: [
+  {
+    label: "Contact"
+  }
+]
+---
+
+<section class="pt-12 pb-20 lg:pb-52 lg:pt-24">
+  <div class="container">
+
+    {{! Heading }}
+    <div class="mb-10 lg:mb-12 xl:mb-14">
+      <h2 class="font-bold text-primary dark:text-white text-2xl md:text-3xl mb-4 lg:text-4xl xl:text-5xl lg:leading-none tracking-tight xl:tracking-tight xl:mb-5">
+        Something on your <span class="text-accent">mind</span>? Let’s talk!
+      </h2>
+      <div class="lg:text-lg tracking-tighter lg:leading-8">
+        <p>Send us a message and let’s discuss about your ideas, suggestions and more!</p>
+      </div>
+    </div>
+    {{! Heading / End }}
+
+    {{! Contact Form }}
+    {{> _yt2-contact-form }}
+    {{! Contact Form / End }}
+
+    <div class="h-16 md:h-20 lg:h-24 xl:h-28"></div>
+
+    {{! Contact Info }}
+    {{> _yt2-dl-emails data=yt2.contact.info}}
+    {{! Contact Info / End}}
+
+    <div class="h-16 md:h-20 lg:h-24 xl:h-40"></div>
+
+    {{! Heading }}
+    <div class="mb-10 lg:mb-14 xl:mb-20">
+      <h2 class="font-bold text-primary dark:text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-none tracking-tight xl:tracking-tight">
+        My Social Accounts!
+      </h2>
+    </div>
+    {{! Heading / End }}
+
+    {{! Social Links }}
+    <ul class="grid grid-cols-12 gap-x-5 md:gap-x-6 gap-y-5 md:gap-y-6 lg:gap-x-7.5 lg:gap-y-7.5 vv-social-list-color lg:pt-2">
+      {{#each yt2.social}}
+        <li class="col-span-full sm:col-span-6 md:col-span-4 xl:col-span-2">
+          <a class="flex items-center justify-center text-white py-5 gap-x-2.5 transition-transform hover:-translate-y-2 hover:shadow-md" href="{{url}}">
+            <svg class="aspect-square w-4" fill="currentColor">
+              <use
+                xlink:href="{{root}}assets/img/social-icons.svg#{{icon}}"
+              ></use>
+            </svg>
+            <div class="text-center leading-tight">
+              <div class="leading-tight font-bold">{{label}}</div>
+            </div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+    {{! Social Links / End }}
+  </div>
+</section>

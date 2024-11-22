@@ -1,0 +1,110 @@
+---
+page-title: "Orders"
+layout: "yt2"
+breadcrumbs: [
+  {
+    label: "Account",
+    url: "_yt2-account"
+  },
+  {
+    label: "Orders"
+  }
+]
+---
+
+<section class="pt-12 pb-20 lg:pb-52 lg:pt-24">
+  <div class="container">
+
+    {{> _yt2-account-nav nav=yt2.account }}
+
+    {{! Orders }}
+    <div>
+
+      {{! Order Heading }}
+      <div class="flex flex-wrap justify-between items-baseline mb-8 gap-y-2 gap-x-4 border-y border-gray-500 py-7 lg:mb-14 dark:border-gray-500/40">
+        <h3 class="font-bold text-primary text-xl lg:text-[26px] leading-tight tracking-tighter dark:text-white">Order UNBX2563</h3>
+        <div class="flex font-bold text-primary dark:text-white gap-6 text-sm lg:text-base">
+          <time datetime="2022-08-17 21:30">August 17, 2022</time>
+          <div class="text-secondary">In Progress</div>
+        </div>
+      </div>
+      {{! Order Heading / End }}
+
+      {{! Order Details }}
+      <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-8 border-b border-gray-500 pb-6 md:pb-8 lg:pb-12 dark:border-gray-500/40">
+        {{! Shipping Details }}
+        <div class="col-span-full sm:col-span-6 lg:col-span-3">
+          <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Shipping Details</h5>
+          <address class="leading-7 tracking-tighter [&>p]:mb-7 [&>p:last-child]:mb-0 not-italic">
+            <p>
+              James Spiegel<br>
+              <a class="hover:text-primary" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+              555-555-5555
+            </p>
+            <p>
+              Fake Street 1234, Apt 34<br>
+              Long Island, NY 10001<br>
+              United States
+            </p>
+          </address>
+        </div>
+        {{! Shipping Details / End }}
+
+        {{! Billing Details }}
+        <div class="col-span-full sm:col-span-6 lg:col-span-3">
+          <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Billing Details</h5>
+          <address class="leading-7 tracking-tighter [&>p]:mb-7 [&>p:last-child]:mb-0 not-italic">
+            <p>
+              James Spiegel<br>
+              <a class="hover:text-primary dark:hover:text-white" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+              555-555-5555
+            </p>
+            <p>
+              Fake Street 1234, Apt 34<br>
+              Long Island, NY 10001<br>
+              United States
+            </p>
+          </address>
+        </div>
+        {{! Billing Details / End }}
+
+        {{! Your Order }}
+        <div class="col-span-full sm:col-span-6 lg:col-span-3">
+          <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Your Order</h5>
+          <ul class="leading-5 tracking-tighter not-italic flex flex-col gap-y-5">
+            {{#each yt2.shop.cart.products}}
+            <li>
+              <div>{{title}} <span class="text-accent">x {{quantity}}</span></div>
+              <div>{{price}}</div>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        {{! Your Order / End }}
+
+        {{! Total & Payments }}
+        <div class="col-span-full sm:col-span-6 lg:col-span-3">
+          <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Total &amp; Payments</h5>
+          <address class="leading-7 tracking-tighter [&>p]:mb-7 [&>p:last-child]:mb-0 not-italic">
+            <p>
+              Cart Total: $61.00<br>
+              Shipping: $5.00<br>
+              Promo Code: -$10.00<br>
+              Order Total: <span class="text-accent">$56.00</span>
+            </p>
+            <p>
+              Bank of the Republic<br>
+              Account XXXX-XXXX-1234
+            </p>
+          </address>
+        </div>
+        {{! Total & Payments / End }}
+
+      </div>
+      {{! Order Details / End }}
+
+    </div>
+    {{! Orders / End }}
+
+  </div>
+</section>

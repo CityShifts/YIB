@@ -1,0 +1,28 @@
+<li class="mb-12 lg:mb-20">
+  <div class="flex gap-x-7 md:gap-x-9">
+    <figure class="shrink-0 mt-0">
+      <img
+        src="{{root}}{{user.avatar}}"
+        alt="Comment Author Avatar"
+      />
+    </figure>
+    <div class="flex-grow">
+      <div class="mb-6">
+        <h5
+          class="mb-2 text-lg md:text-1.5xl md:mb-3 font-bold leading-none tracking-tighter text-gray-900 dark:text-white uppercase"
+        >{{title}}</h5>
+
+        {{! Rating }}
+        {{> _str2-rating rating=rating rating-size="md" }}
+        {{! Rating / End }}
+
+      </div>
+      <div class="mb-7 text-base leading-8">
+        {{comment}}
+      </div>
+      <div class="text-base leading-tight uppercase font-bold tracking-tighter text-gray-900 dark:text-white">
+        by <strong class="text-primary">{{user.name}}</strong> <time class="" datetime="2022-08-17 21:30">{{user.date}}</time>
+      </div>
+    </div>
+  </div>
+</li>

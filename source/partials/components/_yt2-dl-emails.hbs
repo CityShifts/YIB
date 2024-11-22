@@ -1,0 +1,31 @@
+<dl class="grid grid-cols-12 gap-x-5 gap-y-12 md:gap-x-6 lg:gap-x-7.5">
+  {{#each data}}
+    <div
+      class="col-span-full flex gap-x-4 sm:col-span-6 lg:col-span-4 lg:gap-x-5"
+    >
+      <div class="shrink-0">
+        <svg class="aspect-square w-10 fill-accent lg:w-12">
+          <use xlink:href="{{root}}assets/img/yt2/sprite.svg#{{icon}}"></use>
+        </svg>
+      </div>
+      <div class="flex-1">
+        <dt class="leading-tight md:text-lg">{{label}}</dt>
+        <dd
+          class="font-bold tracking-tight text-primary dark:text-white lg:text-lg xl:text-1.5xl"
+        >
+
+          {{#if email}}
+            <a
+              class="text-primary transition-colors hover:text-accent dark:text-white dark:hover:text-accent"
+              href="mailto:{{email}}"
+            >{{email}}</a>
+          {{/if}}
+
+          {{#if address}}
+            <address class="not-italic">{{{address}}}</address>
+          {{/if}}
+        </dd>
+      </div>
+    </div>
+  {{/each}}
+</dl>

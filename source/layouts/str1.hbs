@@ -1,0 +1,48 @@
+{{> _str1-head }}
+
+<body class="relative z-10 antialiased font-base text-gray-500 text-sm font-medium lg:text-base h-full bg-white dark:bg-gray-900 overflow-x-hidden dark:text-gray">
+
+  <div id="site-wrapper" class="flex flex-col h-full js-site-wrapper">
+
+    {{> _str1-header }}
+
+    {{> _str1-header-mobile-menu }}
+
+    {{#if hero-slider }}
+      {{> _str1-hero-slider }}
+    {{/if }}
+
+    <main id="main-content" class="grow lg:pt-0">
+      {{> body}}
+    </main>
+
+    {{> _str1-footer }}
+  </div>
+
+  {{! Social Links }}
+  {{> _str1-floating-social social=str1.social }}
+  {{! Social Links / End }}
+
+  {{#unless no-bg}}
+    {{! Background Image Layer }}
+    <div class="vv-body-bg absolute inset-0 max-h-[1144px] bg-[url('../../../assets/img/str1/samples/body-bg-1.jpg')] bg-no-repeat bg-top bg-cover -z-10 opacity-10 dark:opacity-100">
+      <div class="absolute inset-0 bg-black mix-blend-color z-[1]"></div>
+      <div class="absolute inset-0 dark:bg-gray-900 mix-blend-multiply z-[2]"></div>
+      <div class="absolute inset-0 dark:bg-gray-600 mix-blend-screen z-[3] opacity-40"></div>
+    </div>
+    {{! Background Image Layer / End }}
+  {{/unless}}
+
+  {{! Single Post v2 Image }}
+  {{#ifequal single-post "v2" }}
+    <div class="vv-body-bg absolute inset-0 max-h-[820px] bg-[url('../../../assets/img/str1/samples/post-img-4-1500x819.jpg')] bg-no-repeat bg-top bg-cover -z-10">
+      <div class="absolute inset-0 bg-white dark:bg-gray-900 opacity-80"></div>
+    </div>
+  {{/ifequal}}
+  {{! Single Post v2 Image / End }}
+
+  {{> _str1-login-register-modal }}
+
+  {{> _str1-scripts }}
+</body>
+</html>

@@ -1,0 +1,19 @@
+---
+page-title: "Videos"
+layout: "yt2"
+breadcrumbs: [
+  {
+    label: "Videos"
+  }
+]
+---
+
+<section class="pt-12 pb-20 lg:pb-52 lg:pt-24">
+  <div class="container">
+    {{> _yt2-videos
+      videos-layout="grid-4"
+      videos-limit="16"
+      thumb-size="md"
+    }}
+  </div>
+</section>

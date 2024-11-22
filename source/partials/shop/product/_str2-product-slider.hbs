@@ -1,0 +1,56 @@
+<div
+  class="grid grid-cols-[40px_1fr] gap-x-4 lg:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr] xl:gap-x-5"
+>
+  <div class="">
+    {{! Product Slider Nav }}
+    <div class="swiper js-vv-product-swiper-nav">
+
+      {{! Slider required wrapper }}
+      <div class="swiper-wrapper h-[220px] lg:h-[300px] xl:h-[380px]">
+        {{! Slides }}
+        {{#each gallery}}
+          <div class="swiper-slide group relative h-auto !w-full">
+            <img
+              class="aspect-square w-full cursor-pointer object-cover"
+              src="{{root}}{{this.thumb}}"
+              alt=""
+            />
+            <span
+              class="pointer-events-none absolute inset-0 block transition-all group-hover:border-4 group-hover:border-primary group-[.swiper-slide-thumb-active]:border-4 group-[.swiper-slide-thumb-active]:border-primary"
+            ></span>
+          </div>
+        {{/each}}
+        {{! Slides / End }}
+      </div>
+      {{! Slider required wrapper / End }}
+
+    </div>
+    {{! Product Slider Nav / End }}
+  </div>
+
+  <div>
+    {{! Product Slider }}
+    <div
+      class="swiper js-vv-product-swiper aspect-[25/31] h-[340px] sm:h-[420px] md:h-[420px] lg:h-[560px] xl:h-[620px]"
+    >
+
+      {{! Slider required wrapper }}
+      <div class="swiper-wrapper">
+        {{! Slides }}
+        {{#each gallery}}
+          <div class="swiper-slide">
+            <img
+              class="h-full w-full object-cover"
+              src="{{root}}{{this.full}}"
+              alt=""
+            />
+          </div>
+        {{/each}}
+        {{! Slides / End }}
+      </div>
+      {{! Slider required wrapper / End }}
+
+    </div>
+    {{! Product Slider / End }}
+  </div>
+</div>

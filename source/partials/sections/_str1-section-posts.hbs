@@ -1,0 +1,15 @@
+{{! Latest Blog Posts }}
+<div class="pb-20 md:pb-24 lg:pb-[120px]">
+  <div class="container">
+    {{> _str1-section-heading
+      title="Latest Blog Posts"
+      has-btn="true"
+      btn-size="lg"
+      btn-label="Read All Posts"
+      btn-link="_str1-blog.html"
+    }}
+
+    {{> _str1-post-grid posts=str1.blog.feed limit=3 }}
+  </div>
+</div>
+{{! Latest Blog Posts / End }}

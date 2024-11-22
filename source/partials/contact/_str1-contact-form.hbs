@@ -1,0 +1,31 @@
+<form class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-7.5" action="#">
+  <div class="col-span-full lg:col-span-4">
+    {{> _str1-form-input type="text" name="name" id="name" label="Your Name" }}
+  </div>
+  <div class="col-span-full lg:col-span-4">
+    {{> _str1-form-input type="email" name="email" id="email" label="Your Email" }}
+  </div>
+  <div class="col-span-full lg:col-span-4">
+    {{#> _str1-form-select name="subject" id="subject" label="Subject"}}
+      <option value="-">Select Subject</option>
+      <option value="general-inquiries">General Inquiries</option>
+      <option value="business-inquiries">Business Inquiries</option>
+      <option value="gaming-inquiries">Gaming Inquiries</option>
+      <option value="other">Other</option>
+    {{/_str1-form-select}}
+  </div>
+  <div class="col-span-full">
+    {{> _str1-form-textarea textarea-class="h-40 md:h-[200px]" name="comment" id="comment" label="Your Comment"}}
+  </div>
+  <div class="col-span-full grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5">
+    {{#> _str1-btn
+      is-btn="true"
+      variant="accent"
+      size="md"
+      type="submit"
+      class="col-span-full lg:col-start-10 lg:col-span-3"
+    }}
+      Send Message
+    {{/_str1-btn}}
+  </div>
+</form>

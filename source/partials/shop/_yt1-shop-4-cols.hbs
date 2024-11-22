@@ -1,0 +1,76 @@
+{{> _yt1-shop-filter }}
+
+{{! Products - 4 cols }}
+<div class="grid grid-cols-12 gap-x-6 gap-y-14 md:gap-x-6 lg:gap-x-[30px]">
+  {{#each yt1.shop.products}}
+    <div class="col-span-full sm:col-span-6 md:col-span-4 lg:col-span-3">
+      {{! Thumbnail }}
+      <figure class="group relative mb-5 overflow-hidden bg-gray-100">
+        <a href="{{url}}.html">
+          <img
+            class="aspect-[27/32] w-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-75"
+            src="{{root}}{{img.md}}"
+            alt="{{title}}"
+          />
+        </a>
+        {{! Add To Basket }}
+        <button
+          class="absolute right-0 bottom-0 inline-flex aspect-square w-[60px] scale-90 items-center justify-center bg-accent [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:transition-all [@media(hover:hover)]:duration-300 [@media(hover:hover)]:group-hover:scale-100 [@media(hover:hover)]:group-hover:opacity-100"
+        >
+          <svg role="img" class="h-6 w-6 fill-white">
+            <use
+              xlink:href="{{root}}assets/img/yt1/sprite.svg#shopping-basket"
+            ></use>
+          </svg>
+          <span
+            class="lock absolute right-[12px] top-[12px] h-[6px] w-[6px] before:absolute before:top-[2px] before:block before:h-[2px] before:w-full before:bg-white after:absolute after:top-0 after:left-[2px] after:block after:h-full after:w-[2px] after:bg-white"
+          ></span>
+        </button>
+        {{! Add To Basket / Edn }}
+      </figure>
+      {{! Thumbnail / Edn }}
+
+      {{! Product Info }}
+      <div>
+        {{! Category }}
+        <div
+          class="mb-1 text-xs font-bold uppercase leading-normal text-gray-300"
+        >
+          {{#with (lookup ../yt1.shop.categories cat_id)}}
+            {{label}}
+          {{/with}}
+        </div>
+        {{! Category / End }}
+
+        {{! Title }}
+        <h3 class="mb-[6px] font-bold leading-tight text-primary dark:text-white">
+          <a
+            class="text-primary transition-colors hover:text-accent dark:text-white dark:hover:text-accent"
+            href="{{url}}.html"
+          >{{title}}</a>
+        </h3>
+        {{! Category / End }}
+
+        {{! Rating }}
+        {{> _yt1-rating rating=rating rating-size="md" rating-class="mb-[14px]" }}
+        {{! Rating / End }}
+
+        {{! Price }}
+        <div class="flex gap-2 font-bold leading-tight text-primary dark:text-white">
+          {{#if price.prev}}
+            <ins class="no-underline">{{../yt1.shop.currency}}<span class="text-accent">{{price.current}}</span></ins>
+            <del class="text-gray-300">{{../yt1.shop.currency}}{{price.prev}}</del>
+          {{else}}
+            <ins class="no-underline">{{../yt1.shop.currency}}{{price.current}}</ins>
+          {{/if}}
+        </div>
+        {{! Price / End }}
+
+      </div>
+      {{! Product Info / End }}
+    </div>
+  {{/each}}
+</div>
+{{! Products - 4 cols / End }}
+
+{{> _yt1-pagination }}

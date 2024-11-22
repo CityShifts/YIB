@@ -1,0 +1,27 @@
+{{> _yt2-head }}
+
+<body class="antialiased tracking-tight font-base text-gray-500 text-base h-full bg-white dark:bg-gray-900 overflow-x-hidden">
+
+  <div id="site-wrapper" class="flex flex-col h-full js-site-wrapper">
+
+    {{> _yt2-header-1 }}
+
+    {{> _yt2-header-mobile-menu }}
+
+    <main id="main-content" class="grow lg:pt-0 relative">
+      {{> body}}
+
+      {{! Bottom Gradient }}
+      <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.022)] dark:to-[rgba(0,0,0,0.08)]"></div>
+      {{! Bottom Gradient / End }}
+    </main>
+
+    {{> _yt2-footer }}
+  </div>
+
+  {{> _yt2-modal-login }}
+  {{> _yt2-modal-register }}
+
+  {{> _yt2-scripts }}
+</body>
+</html>

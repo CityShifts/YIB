@@ -1,0 +1,14 @@
+{{! Cart }}
+<div class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100">
+  <a class="relative block py-4 px-1 sm:px-2" href="_yt1-cart.html">
+    <svg role="img" class="h-6 w-6 fill-white">
+      <use xlink:href="{{root}}assets/img/yt1/sprite.svg#shopping-basket"></use>
+    </svg>
+    <span class="absolute top-1 right-0 block text-3xs font-bold leading-none"
+    >4</span>
+  </a>
+
+  {{> _yt1-header-cart-dropdown subitems=yt1.shop.cart.products}}
+
+</div>
+{{! Cart / End }}

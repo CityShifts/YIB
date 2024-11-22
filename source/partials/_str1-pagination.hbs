@@ -1,0 +1,48 @@
+{{! Pagination }}
+<nav class="pt-10 md:pt-14 lg:pt-24">
+  <ul
+    class="flex flex-wrap items-center justify-center gap-x-1.5 md:gap-x-2 lg:gap-x-4"
+  >
+    <li class="flex items-center">
+      <a
+        class="inline-flex justify-center items-center border border-gray-200 dark:border-gray-600 w-8 lg:w-12.5 aspect-square text-gray-900 dark:text-white hover:bg-accent hover:border-accent dark:hover:border-accent transition-colors hover:text-gray-900 dark:hover:text-gray-900 pointer-events-none"
+        href="#"
+      >
+        <svg class="w-1.5 h-2.5 rotate-180 opacity-40" fill="currentColor">
+          <use
+            xlink:href="{{root}}assets/img/str1/sprite.svg#arrow-right-pixel-alt"
+          ></use>
+        </svg>
+      </a>
+    </li>
+    {{#each items}}
+      <li>
+        <a
+          class="inline-flex justify-center items-center w-8 lg:w-12.5 aspect-square border font-bold transition-colors {{#if active}}text-gray-900 bg-accent border-accent dark:border-accent {{else}} border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white hover:text-gray-900 hover:bg-accent dark:hover:text-gray-900 hover:border-accent dark:hover:border-accent {{/if}}"
+          href="{{link}}"
+        >{{label}}</a>
+      </li>
+    {{/each}}
+    <li class="flex items-center">
+      <a
+        class="inline-flex justify-center items-center border border-gray-200 dark:border-gray-600 w-8 lg:w-12.5 aspect-square text-gray-900 dark:text-white hover:bg-accent hover:border-accent dark:hover:border-accent transition-colors hover:text-gray-900 dark:hover:text-gray-900"
+        href="#"
+      >
+        ...
+      </a>
+    </li>
+    <li class="flex items-center">
+      <a
+        class="inline-flex justify-center items-center border border-gray-200 dark:border-gray-600 w-8 lg:w-12.5 aspect-square text-gray-900 dark:text-white hover:bg-accent hover:border-accent dark:hover:border-accent transition-colors hover:text-gray-900 dark:hover:text-gray-900"
+        href="#"
+      >
+        <svg class="w-1.5 h-2.5" fill="currentColor">
+          <use
+            xlink:href="{{root}}assets/img/str1/sprite.svg#arrow-right-pixel-alt"
+          ></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+{{! Pagination / End }}

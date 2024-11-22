@@ -1,0 +1,111 @@
+---
+page-title: "Account"
+page-subtitle: "Manage Your"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+  {{> _str2-account-nav nav=../str2.account }}
+
+  {{! Personal Info - Form }}
+  <form
+    class="grid grid-cols-12 gap-y-7 gap-x-5 md:gap-x-6 lg:gap-x-7.5"
+    action="#"
+  >
+    {{! Profile Photo }}
+    <fieldset
+      class="col-span-full lg:col-span-4 flex flex-col"
+    >
+      <h5 class="font-bold text-gray-900 dark:text-white uppercase text-sm mb-3 tracking-tighter">Profile Photo</h5>
+      <div class="flex gap-x-7.5 mb-3 items-start">
+        <figure>
+          <img
+            src="{{root}}assets/img/str2/samples/user-6-100x100.jpg"
+            alt="Marine Valentine"
+          />
+        </figure>
+        <label
+          class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center py-3 px-5 lg:py-3.5 lg:px-9 text-sm text-gray-625 ring-1 ring-inset ring-gray-625 bg-transparent hover:bg-primary hover:text-white hover:ring-0 cursor-pointer tracking-tighter"
+          for="user-profile-img"
+        >
+          Browse...
+          <input
+            class="hidden"
+            type="file"
+            name="user-profile-img"
+            id="user-profile-img"
+          />
+        </label>
+      </div>
+      <div class="text-xs uppercase">100x100px minimum resolution</div>
+    </fieldset>
+    {{! Profile Photo / End }}
+
+    {{! Form }}
+    <div class="col-span-full lg:col-span-8 grid grid-cols-1 lg:grid-cols-2 gap-y-7 gap-x-5 md:gap-x-6 lg:gap-x-7.5">
+      <div>
+        {{> _str2-form-input
+          type="email"
+          name="email"
+          id="email"
+          label="Your Email"
+        }}
+      </div>
+      <div>
+        {{> _str2-form-input
+          type="text"
+          name="username"
+          id="username"
+          label="Your Username"
+        }}
+      </div>
+      <div>
+        {{> _str2-form-input
+          type="text"
+          name="first-name"
+          id="first-name"
+          label="First Name"
+        }}
+      </div>
+      <div>
+        {{> _str2-form-input
+          type="text"
+          name="last-name"
+          id="last-name"
+          label="Last Name"
+        }}
+      </div>
+      <div>
+        {{> _str2-form-input
+          type="password"
+          name="change-password"
+          id="change-password"
+          label="Change Password"
+        }}
+      </div>
+      <div>
+        {{> _str2-form-input
+          type="password"
+          name="repeat-password"
+          id="repeat-password"
+          label="Repeat Password"
+        }}
+      </div>
+      <div class="lg:col-start-2 pt-2 flex justify-end">
+        {{#> _str2-btn
+          is-btn="true"
+          variant="primary"
+          size="md"
+          type="submit"
+        }}
+          Save all changes
+        {{/_str2-btn}}
+      </div>
+    </div>
+    {{! Form / End }}
+
+  </form>
+  {{! Personal Info - Form / End }}
+
+{{/_str2-content}}

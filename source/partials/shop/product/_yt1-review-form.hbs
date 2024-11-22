@@ -1,0 +1,32 @@
+<div class="pt-5 {{class}}">
+  <h3 class="mb-10 mt-0 text-xl md:text-2.5xl lg:text-3.5xl font-bold leading-none tracking-tighter text-primary md:mb-12 lg:mb-16">
+    Write a Review
+  </h3>
+  <form class="grid grid-cols-1 md:grid-cols-2 gap-7" action="#">
+    <div class="md:col-span-1">
+      {{> _yt1-form-input type="text" name="review-title" id="review-title" placeholder="Review Title" }}
+    </div>
+    <div class="md:col-span-1">
+      {{#> _yt1-form-select name="review-rating" id="review-rating"}}
+        <option value="-">Select Rating</option>
+        <option value="1">Really Bad</option>
+        <option value="2">Bad</option>
+        <option value="3">Not Bad</option>
+        <option value="4">Good</option>
+        <option value="5">Excelent</option>
+      {{/_yt1-form-select}}
+    </div>
+    <div class="col-span-full">
+      {{> _yt1-form-textarea textarea-class="h-44 md:h-60" name="review-comment" id="review-comment" placeholder="Your Comment"}}
+    </div>
+    <div class="md:col-span-1">
+      {{> _yt1-form-input type="text" name="review-name" id="review-name" placeholder="Name" }}
+    </div>
+    <div class="md:col-span-1">
+      {{> _yt1-form-input type="email" name="review-email" id="review-email" placeholder="Email" }}
+    </div>
+    <div class="col-span-full">
+      <input class="bg-accent font-bold text-white text-lg tracking-tight py-5 leading-normal mt-4 md:mt-8 hover:cursor-pointer hover:bg-accent/90 transition-colors block w-full" type="submit" value="Post Review" />
+    </div>
+  </form>
+</div>

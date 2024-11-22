@@ -1,0 +1,161 @@
+---
+page-title: "Shop"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "Shop"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{! Title & Filter }}
+  <div class="flex gap-x-8 justify-between items-center mb-12 md:mb-16 lg:mb-20 xl:mb-24">
+
+    {{! Categories }}
+    <nav>
+      <ul class="flex flex-wrap gap-x-4 lg:gap-x-9 text-base lg:text-lg font-bold">
+        {{#each ../str1.shop.categories}}
+          <li>
+            <a class="text-gray-900 {{#if is-active}} text-accent dark:text-accent {{else}} hover:text-accent dark:text-white dark:hover:text-accent {{/if}} transition-colors" href="#">{{label}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+    {{! Categories / End }}
+
+    {{! Layout Filter }}
+    <div class="shrink-0 flex gap-4 sm:gap-8 items-center relative">
+
+      {{! Filter Toggle }}
+      <button class="js-vv-streams-filter-toggle group peer">
+        <svg
+          role="img"
+          class="w-5 sm:w-7.5 aspect-square {{#ifpage slug}} fill-accent dark:fill-accent {{/ifpage}} {{#unlesspage slug}} fill-gray-500 group-hover:fill-gray-900 transition-colors dark:fill-gray-650 dark:group-hover:fill-white {{/unlesspage}}"
+        >
+          <use xlink:href="{{root}}assets/img/str1/sprite.svg#filter"></use>
+        </svg>
+      </button>
+      {{! Filter Toggle }}
+
+      {{! Filter Dropdown }}
+      <div class="absolute w-72 sm:w-80 opacity-0 peer-[.active]:opacity-100 transition-all invisible peer-[.active]:visible -translate-y-3 peer-[.active]:translate-y-0 flex flex-col gap-8 bg-white dark:bg-gray-700 p-6 sm:p-7.5 z-10 right-0 top-14 shadow-3xl">
+        <div>
+          {{#> _str1-form-select name="filter-by" id="filter-by" label="Filter By"}}
+            <option value="newest-items">Newest Items</option>
+            <option value="older-items">Older Items</option>
+            <option value="popular">Popular</option>
+            <option value="most-liked">Most Liked</option>
+          {{/_str1-form-select}}
+        </div>
+        <div>
+          {{#> _str1-form-select name="order-by" id="order-by" label="Order By"}}
+            <option value="descending">Descending</option>
+            <option value="ascending">Ascending</option>
+          {{/_str1-form-select}}
+        </div>
+        <div>
+          {{#> _str1-form-select name="rating" id="rating" label="Rating"}}
+            <option value="5">5 Stars</option>
+            <option value="4">4+ Stars</option>
+            <option value="3">3+ Stars</option>
+            <option value="2">2+ Stars</option>
+            <option value="1">1+ Star</option>
+          {{/_str1-form-select}}
+        </div>
+        <div class="pt-1">
+          {{#> _str1-btn
+            is-btn="true"
+            variant="accent"
+            size="md"
+            type="submit"
+            class="w-full"
+          }}
+            Apply Filters
+          {{/_str1-btn}}
+        </div>
+      </div>
+      {{! Filter Dropdown / End }}
+
+
+    </div>
+    {{! Layout Filter / End }}
+
+  </div>
+  {{! Title & Filter / End }}
+
+  {{! Products - 4 cols }}
+  <div class="grid grid-cols-12 gap-x-6 gap-y-9 md:gap-x-6 lg:gap-x-7.5">
+
+    {{#each ../str1.shop.products}}
+      <div class="col-span-full sm:col-span-6 md:col-span-4 lg:col-span-3">
+
+        {{! Thumbnail }}
+        <figure class="group relative mb-5.5 overflow-hidden bg-gray-100">
+          <img
+            class="aspect-[27/34] w-full object-cover transition-transform duration-300 group-hover:scale-110"
+            src="{{root}}{{img.md}}"
+            alt="{{title}}"
+          />
+
+          {{#if price.prev}}
+            {{! Sale }}
+            <div class="vv-sale-label absolute left-0 top-0 bg-accent font-bold uppercase text-base text-gray-900 w-24 h-[72px] pl-3 pt-2 leading-normal">Sale!</div>
+            {{! Sale / End }}
+          {{/if}}
+
+          {{! Overlay }}
+          <div class="absolute inset-0 bg-white dark:bg-gray-900 opacity-0 group-hover:opacity-90 transition-opacity"></div>
+          {{! Overlay / End }}
+
+          <div class="flex absolute justify-center left-0 right-0 top-1/2 -translate-y-1/2 scale-90 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:transition-all [@media(hover:hover)]:duration-300 [@media(hover:hover)]:group-hover:scale-100 [@media(hover:hover)]:group-hover:opacity-100">
+            {{! Add To Basket }}
+            {{#> _str1-btn variant="accent" size="md" }}
+              + Add To Cart
+            {{/_str1-btn}}
+            {{! Add To Basket / Edn }}
+          </div>
+
+        </figure>
+        {{! Thumbnail / Edn }}
+
+        {{! Product Info }}
+        <div>
+          {{! Title }}
+          <h3 class="mb-1 font-bold leading-tight text-lg text-gray-900 dark:text-white">
+            <a
+              class="text-gray-900 transition-colors hover:text-accent dark:text-white dark:hover:text-accent"
+              href="{{url}}.html"
+            >{{title}}</a>
+          </h3>
+          {{! Category / End }}
+
+          {{! Price }}
+          <div class="flex mb-2 font-medium gap-2 text-gray leading-snug dark:text-gray">
+            {{#if price.prev}}
+              <ins class="no-underline">{{../../str1.shop.currency}}{{price.current}}</ins>
+              <del class="text-sm text-gray-500">{{../../str1.shop.currency}}{{price.prev}}</del>
+            {{else}}
+              <ins class="no-underline">{{../../str1.shop.currency}}{{price.current}}</ins>
+            {{/if}}
+          </div>
+          {{! Price / End }}
+
+          {{! Rating }}
+          {{> _str1-rating rating=rating rating-size="sm" }}
+          {{! Rating / End }}
+
+        </div>
+        {{! Product Info / End }}
+
+      </div>
+    {{/each}}
+
+  </div>
+  {{! Products - 4 cols / End }}
+
+  {{> _str1-pagination items=../str1.shop.pagination }}
+
+
+{{/_str1-content}}

@@ -1,0 +1,63 @@
+{{! Gear }}
+<section class="py-14 lg:py-[88px]">
+  <div class="container">
+
+    {{> _str2-section-heading
+      title="Gear"
+      subtitle="My Streaming"
+      is-centered="true"
+      size="lg"
+    }}
+
+    <div class="grid grid-cols-12 gap-x-5 gap-y-10 md:gap-x-6 lg:gap-x-7.5">
+      {{#each str2.gear}}
+        <div class="col-span-6 sm:col-span-4 lg:col-span-3 xl:col-span-2">
+          {{! Item }}
+          <div>
+            {{! Image }}
+            <figure class="relative overflow-hidden mb-5">
+              <a class="block group" href="{{link}}">
+                <img
+                  class="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  src="{{root}}{{img}}"
+                  alt="{{title}}"
+                />
+              </a>
+            </figure>
+            {{! Image / End }}
+
+            <div>
+              {{! Icon }}
+              <div class="mb-4">
+                <svg role="img" class="aspect-square w-[50px] fill-primary">
+                  <use
+                    xlink:href="{{root}}assets/img/str2/sprite.svg#{{icon}}"
+                  ></use>
+                </svg>
+              </div>
+              {{! Icon / End }}
+
+              {{! Heading }}
+              <div class="mb-7">
+                <h4 class="uppercase font-bold tracking-tighter text-base leading-none text-gray-900 dark:text-white mb-2">{{title}}</h4>
+                <div class="uppercase font-bold tracking-tighter text-base leading-none text-primary">{{subtitle}}</div>
+              </div>
+              {{! Heading / End }}
+
+              {{#> _str2-btn
+                href=link
+                variant="outline-default"
+                size="sm"
+              }}
+                Get it here!
+              {{/_str2-btn}}
+            </div>
+
+          </div>
+          {{! Item / End }}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+{{! Gear / End }}

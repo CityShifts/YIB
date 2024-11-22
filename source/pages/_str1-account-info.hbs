@@ -1,0 +1,85 @@
+---
+page-title: "Account"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "Account",
+    link: "_str1-account"
+  },
+  {
+    label: "Personal Info"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{> _str1-account-nav nav=../str1.account }}
+
+  {{! Personal Info - Form }}
+  <form
+    class="grid grid-cols-12 gap-y-7 gap-x-5 md:gap-x-6 lg:gap-x-7.5"
+    action="#"
+  >
+    {{! Profile Photo }}
+    <fieldset
+      class="col-span-full flex flex-col"
+    >
+      <h5 class="font-bold text-gray-500 uppercase text-sm mb-3">Profile Photo</h5>
+      <div class="flex gap-x-7.5 mb-3 items-start">
+        <figure>
+          <img
+            src="{{root}}assets/img/str1/samples/user-6-100x100.jpg"
+            alt="April Valentine"
+          />
+        </figure>
+        <label
+          class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center py-4 px-4 lg:py-[18px] lg:px-10 text-sm text-gray-500/40 ring-1 ring-inset ring-gray-500/40 bg-transparent hover:bg-accent hover:text-gray-900 hover:ring-0 cursor-pointer"
+          for="user-profile-img"
+        >
+          Browse...
+          <input
+            class="hidden"
+            type="file"
+            name="user-profile-img"
+            id="user-profile-img"
+          />
+        </label>
+      </div>
+      <div class="text-gray-500 text-xs opacity-60">100x100px minimum resolution</div>
+    </fieldset>
+    {{! Profile Photo / End }}
+
+    <div class="col-span-full md:col-span-4">
+      {{> _str1-form-input type="email" name="email" id="email" label="Your Email" }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str1-form-input type="text" name="first-name" id="first-name" label="First Name" }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str1-form-input type="text" name="last-name" id="last-name" label="Last Name" }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str1-form-input type="text" name="username" id="username" label="Your Username" }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str1-form-input type="password" name="change-password" id="change-password" label="Change Password" }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str1-form-input type="password" name="repeat-password" id="repeat-password" label="Repeat Password" }}
+    </div>
+    <div class="col-span-full lg:col-start-10 lg:col-span-3 pt-2">
+      {{#> _str1-btn
+        is-btn="true"
+        variant="accent"
+        size="md"
+        type="submit"
+        class="w-full"
+      }}
+        Save all changes
+      {{/_str1-btn}}
+    </div>
+  </form>
+  {{! Personal Info - Form / End }}
+
+{{/_str1-content}}

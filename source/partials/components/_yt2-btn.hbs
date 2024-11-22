@@ -1,0 +1,108 @@
+<{{#if is-btn}}button{{else}}a{{/if}}
+  {{#unless is-btn}}
+  href="{{#if url}}{{url}}{{else}}#{{/if}}"
+  {{/unless}}
+
+  {{! Type }}
+  {{#if type}}
+  type="{{type}}"
+  {{/if}}
+  {{! Type / End }}
+
+  class="inline-flex text-center items-center font-bold leading-none transition-colors justify-center gap-x-3
+
+  {{! Size }}
+  {{#ifequal size "md"}}
+  py-4 px-4 md:py-[17px] lg:px-8 text-sm
+  {{else}}
+
+    {{#ifequal size "xl"}}
+      py-5 px-6 lg:py-6 lg:px-10 lg:text-lg lg:leading-none
+    {{else}}
+
+      {{#ifequal size "lg"}}
+        py-4.5 px-5 lg:py-5 lg:px-9 lg:leading-tight
+      {{else}}
+        py-4 md:py-[17px]
+        {{#if px }}
+          {{px}}
+        {{else}}
+        px-5 lg:px-10
+        {{/if}}
+      {{/ifequal}}
+
+    {{/ifequal}}
+
+  {{/ifequal}}
+  {{! Size / End }}
+
+  {{! Default }}
+  {{#ifequal variant "default"}}
+  text-white bg-gray-500 hover:bg-accent/90 hover:text-gray-900
+  {{/ifequal}}
+  {{! Default / End }}
+
+  {{! Accent }}
+  {{#ifequal variant "accent"}}
+  text-white bg-accent hover:bg-accent/90
+  {{/ifequal}}
+  {{! Accent / End }}
+
+  {{! Primary }}
+  {{#ifequal variant "primary"}}
+  text-white bg-primary hover:bg-primary/90
+  {{/ifequal}}
+  {{! Primary / End }}
+
+  {{! Secondary }}
+  {{#ifequal variant "secondary"}}
+  text-white bg-secondary hover:bg-secondary/90
+  {{/ifequal}}
+  {{! Secondary / End }}
+
+  {{! Outline Default }}
+  {{#ifequal variant "outline-default"}}
+  text-gray-500/40 ring-1 ring-inset ring-gray-500/40 bg-transparent hover:bg-accent hover:text-gray-900 hover:ring-0
+  {{/ifequal}}
+  {{! Outline Default / End }}
+
+  {{! Outline White }}
+  {{#ifequal variant "outline-white"}}
+  text-white bg-transparent hover:bg-white hover:text-gray-900 border-2 border-white
+  {{/ifequal}}
+  {{! Outline White / End }}
+
+  {{! Outline Primary }}
+  {{#ifequal variant "outline-primary"}}
+  text-primary bg-transparent hover:bg-primary hover:text-white border-2 border-primary
+  {{/ifequal}}
+  {{! Outline Primary / End }}
+
+  {{! Link }}
+  {{#ifequal variant "link"}}
+  text-gray-500/60 bg-transparent hover:text-gray-500
+  {{/ifequal}}
+  {{! Link / End }}
+
+  {{! Social: Facebook }}
+  {{#ifequal variant "facebook"}}
+  text-white bg-social-facebook hover:bg-social-facebook/90
+  {{/ifequal}}
+  {{! Social: Facebook / End }}
+
+  {{! Social: Twitter }}
+  {{#ifequal variant "twitter"}}
+  text-white bg-social-twitter hover:bg-social-twitter/90
+  {{/ifequal}}
+  {{! Social: Twitter / End }}
+
+  {{! Social: Twitch }}
+  {{#ifequal variant "twitch"}}
+  text-white bg-social-twitch hover:bg-social-twitch/90
+  {{/ifequal}}
+  {{! Social: Twitch / End }}
+
+    {{class}}"
+>
+  {{{@partial-block}}}
+</{{#if is-btn}}button{{else}}a{{/if}}>

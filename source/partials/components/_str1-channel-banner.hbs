@@ -1,0 +1,43 @@
+{{! Channel Banner }}
+<div
+  class="bg-[#232738] bg-[url('../../../assets/img/str1/samples/banner-bg.jpg')] bg-cover bg-no-repeat lg:bg-auto"
+>
+  <div class="relative h-32 overflow-hidden lg:h-40">
+
+    {{! Balloon }}
+    <div
+      class="absolute left-[45%] top-3.5 hidden aspect-square w-[110px] rounded-full bg-gray-900 font-bold uppercase text-white lg:flex lg:flex-col lg:items-center lg:justify-center lg:leading-none"
+    >
+      <span class="text-xs leading-none">The Best</span>
+      <span class="-mb-1 text-2xl leading-none text-accent">Retro</span>
+      <span class="text-[22px] leading-none">Games</span>
+      <span class="text-xs leading-none">Reviews</span>
+    </div>
+    {{! Balloon / End }}
+
+    {{! Info }}
+    <div
+      class="vv-channel-info-banner absolute inset-y-0 right-0 left-1/4 flex items-center bg-primary pl-10 text-white sm:left-1/2 md:left-[60%] lg:pl-20 xl:pl-24"
+    >
+      <div class="flex gap-x-4">
+        <svg class="aspect-square w-8 lg:w-14" fill="currentColor">
+          <use xlink:href="{{root}}assets/img/social-icons.svg#twitch"></use>
+        </svg>
+        <div>
+          <div
+            class="text-2xl font-bold leading-none lg:text-[42px]"
+          >NekoMaGiX</div>
+          <div class="text-sm font-bold leading-none lg:text-lg">Subscribe to my
+            channel!</div>
+        </div>
+      </div>
+    </div>
+    {{! Info / End }}
+
+    {{! Stretched Link }}
+    <a class="after:absolute after:inset-0 after:block" href="#"></a>
+    {{! Stretched Link / End }}
+
+  </div>
+</div>
+{{! Channel Banner / End }}

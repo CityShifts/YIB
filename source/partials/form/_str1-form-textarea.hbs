@@ -1,0 +1,32 @@
+{{#if label }}
+  {{> _str1-label for=name label=label required=required}}
+{{/if}}
+<textarea
+  class="
+  block
+  border-base
+  bg-white/40
+  w-full
+  px-4
+  py-2
+  tracking-tight
+  text-gray-900
+  transition-all
+  duration-150
+  placeholder:text-gray-500/60
+  focus:border-accent
+  focus:outline-0
+  focus:ring-0
+  dark:border-gray-650
+  dark:bg-gray-900/40
+  dark:text-white
+  dark:placeholder:text-gray-500/80
+  dark:focus:border-accent
+  dark:focus:bg-gray-900
+    {{textarea-class}}"
+  name="{{name}}"
+  id="{{id}}"
+  {{#if cols}}cols="{{cols}}"{{/if}}
+  {{#if rows}}rows="{{rows}}"{{/if}}
+  placeholder="{{placeholder}}"
+></textarea>

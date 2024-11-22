@@ -1,0 +1,41 @@
+---
+page-title: "Affiliates"
+page-subtitle: "Browse my"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+    {{! Affiliates }}
+    <div class="flex flex-col gap-y-7.5">
+      {{#each ../str2.affiliates.products}}
+
+        {{> _str2-affiliate-card
+          title=title
+          subtitle=subtitle
+          desc=desc
+          img=img
+          link=link
+        }}
+
+      {{/each}}
+    </div>
+    {{! Affiliates / End }}
+
+    <div class="h-12 sm:h-16 md:h-20 lg:h-24 xl:h-28"></div>
+
+    {{! FAQs }}
+    {{> _str2-section-heading
+      title="FAQS"
+      subtitle="Affiliates"
+      is-centered="true"
+    }}
+
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5">
+      <div class="col-span-full lg:col-start-3 lg:col-span-8">
+        {{> _str2-accordion data=../str2.affiliates.faq }}
+      </div>
+    </div>
+    {{! FAQs / End }}
+
+{{/_str2-content}}

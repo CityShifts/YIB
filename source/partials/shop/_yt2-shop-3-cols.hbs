@@ -1,0 +1,80 @@
+{{> _yt2-shop-filter }}
+
+{{! Products - 4 cols }}
+<div class="grid grid-cols-12 gap-x-6 gap-y-14 md:gap-x-6 lg:gap-x-[30px]">
+  {{#each (limit yt2.shop.products 9)}}
+    <div class="col-span-full sm:col-span-6 md:col-span-4 lg:col-span-4">
+      {{! Thumbnail }}
+      <figure class="group relative mb-5 overflow-hidden bg-gray-100">
+        <a href="{{url}}.html">
+          <img
+            class="aspect-[185/219] w-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-75"
+            src="{{root}}{{img.lg}}"
+            alt="{{title}}"
+          />
+        </a>
+        {{! Add To Basket }}
+        <button
+          class="absolute right-0 bottom-0 inline-flex aspect-square w-[60px] scale-90 items-center justify-center bg-accent [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:transition-all [@media(hover:hover)]:duration-300 [@media(hover:hover)]:group-hover:scale-100 [@media(hover:hover)]:group-hover:opacity-100"
+        >
+          <svg role="img" class="h-6 w-6 fill-white">
+            <use
+              xlink:href="{{root}}assets/img/yt2/sprite.svg#shopping-basket"
+            ></use>
+          </svg>
+          <span
+            class="lock absolute right-[12px] top-[12px] h-[6px] w-[6px] before:absolute before:top-[2px] before:block before:h-[2px] before:w-full before:bg-white after:absolute after:top-0 after:left-[2px] after:block after:h-full after:w-[2px] after:bg-white"
+          ></span>
+        </button>
+        {{! Add To Basket / Edn }}
+      </figure>
+      {{! Thumbnail / Edn }}
+
+      {{! Product Info }}
+      <div class="flex flex-col items-center">
+        {{! Category }}
+        <div
+          class="mb-1 text-xs font-bold uppercase leading-normal text-gray-300"
+        >
+          {{#with (lookup ../yt2.shop.categories cat_id)}}
+            {{label}}
+          {{/with}}
+        </div>
+        {{! Category / End }}
+
+        {{! Title }}
+        <h3 class="mb-4 font-bold leading-tight text-primary dark:text-white">
+          <a
+            class="text-primary dark:text-white transition-colors hover:text-accent dark:hover:text-accent"
+            href="{{url}}.html"
+          >{{title}}</a>
+        </h3>
+        {{! Category / End }}
+
+        {{! Rating & Price }}
+        <div class="flex justify-center items-center gap-3">
+          {{! Rating }}
+          {{> _yt2-rating rating=rating rating-size="md" }}
+          {{! Rating / End }}
+
+          {{! Price }}
+          <div class="flex gap-2 font-bold leading-tight text-primary dark:text-white">
+            {{#if price.prev}}
+              <ins class="no-underline">{{../yt2.shop.currency}}<span class="text-accent">{{price.current}}</span></ins>
+              <del class="text-gray-300">{{../yt2.shop.currency}}{{price.prev}}</del>
+            {{else}}
+              <ins class="no-underline">{{../yt2.shop.currency}}{{price.current}}</ins>
+            {{/if}}
+          </div>
+          {{! Price / End }}
+        </div>
+        {{! Rating & Price / End }}
+
+      </div>
+      {{! Product Info / End }}
+    </div>
+  {{/each}}
+</div>
+{{! Products - 4 cols / End }}
+
+{{> _yt2-pagination }}

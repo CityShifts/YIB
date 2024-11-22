@@ -1,0 +1,31 @@
+---
+page-title: "Blog Post v2"
+layout: "str1"
+single-post: "v2"
+no-bg: true
+---
+
+{{#> _str1-content }}
+
+  <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5">
+    <div class="col-span-full md:col-start-3 md:col-span-8">
+
+      {{! Post }}
+      {{> _str1-post-2 }}
+      {{! Post / End }}
+
+      {{! Comments }}
+      {{> _str1-post-comments
+        class="mt-16 md:mt-20 lg:mt-28 xl:mt-32"
+        data=../str1.blog.post.comments
+      }}
+      {{! Comments / End }}
+
+      {{! Comments Form }}
+      {{> _str1-post-form class="mt-16 md:mt-20 lg:mt-28 xl:mt-32" }}
+      {{! Comments Form / End }}
+
+    </div>
+  </div>
+
+{{/_str1-content}}

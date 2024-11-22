@@ -1,0 +1,124 @@
+---
+page-title: "Account"
+page-subtitle: "Manage Your"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+  {{> _str2-account-nav nav=../str2.account }}
+
+  {{! Billing Details - Form }}
+  <form
+    class="grid grid-cols-12 gap-y-7 gap-x-5 md:gap-x-6 lg:gap-x-7.5"
+    action="#"
+  >
+    <div class="col-span-full md:col-span-4">
+      {{> _str2-form-input
+        type="text"
+        name="billing-first-name"
+        id="billing-first-name"
+        label="First Name"
+        required="true"
+      }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str2-form-input
+        type="text"
+        name="billing-last-name"
+        id="billing-last-name"
+        label="Last Name"
+        required="true"
+      }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str2-form-input
+        type="email"
+        name="billing-email"
+        id="billing-email"
+        label="Email Address"
+        required="true"
+      }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{> _str2-form-input
+        type="tel"
+        name="billing-phone"
+        id="billing-phone"
+        label="Phone Number"
+      }}
+    </div>
+    <div class="col-span-full md:col-span-8">
+      {{> _str2-form-input
+        type="text"
+        name="billing-address-1"
+        id="billing-address-1"
+        label="Full Address"
+        required="true"
+        input-class="mb-3"
+      }}
+    </div>
+    <div class="col-span-full md:col-span-4">
+      {{#> _str2-form-select
+        name="billing-country"
+        id="billing-country"
+        label="Select Country"
+        required="true"
+      }}
+        <option value="0">United States</option>
+        <option value="1">Italy</option>
+        <option value="2">Spain</option>
+        <option value="3">Germany</option>
+      {{/_str2-form-select}}
+    </div>
+    <div class="col-span-full md:col-span-3">
+      {{#> _str2-form-select
+        name="billing-state"
+        id="billing-state"
+        label="Select State"
+        required="true"
+      }}
+        <option value="0">California</option>
+        <option value="1">Texas</option>
+        <option value="2">Florida</option>
+        <option value="3">Alaska</option>
+      {{/_str2-form-select}}
+    </div>
+    <div class="col-span-full md:col-span-3">
+      {{#> _str2-form-select
+        name="billing-city"
+        id="billing-city"
+        label="Select City"
+        required="true"
+      }}
+        <option value="0">New York</option>
+        <option value="1">Texas</option>
+        <option value="2">Florida</option>
+        <option value="3">Alaska</option>
+        <option value="4">California</option>
+      {{/_str2-form-select}}
+    </div>
+    <div class="col-span-full md:col-span-2">
+      {{> _str2-form-input
+        type="number"
+        name="billing-zip"
+        id="billing-zip"
+        label="ZIP Code"
+        required="true"
+      }}
+    </div>
+    <div class="col-span-full lg:col-start-10 lg:col-span-3 pt-2">
+      {{#> _str2-btn
+        is-btn="true"
+        variant="primary"
+        size="md"
+        type="submit"
+        class="w-full"
+      }}
+        Save Address
+      {{/_str2-btn}}
+    </div>
+  </form>
+  {{! Billing Details - Form / End }}
+
+{{/_str2-content}}

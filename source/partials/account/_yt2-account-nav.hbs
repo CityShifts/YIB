@@ -1,0 +1,16 @@
+{{! Nav }}
+<nav class="mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
+  <ul
+    class="flex flex-col flex-wrap sm:flex-row gap-y-4 font-bold gap-x-8"
+  >
+    {{#each nav}}
+      <li class="flex {{#ifpage url}} after:absolute after:h-0.5 md:after:bottom-0 after:bottom-0.5 after:bg-accent after:inset-x-0 relative {{/ifpage}} {{#if @last}} md:ml-auto {{/if}}">
+        <a
+          class="flex items-center py-1 font-bold transition-all hover:text-primary dark:hover:text-white hover:opacity-100 text-sm lg:text-base {{#ifpage url}} opacity-100 text-primary dark:text-white dark:lg:text-white {{/ifpage}} {{#unlesspage url}} text-gray-500/60 {{/unlesspage}}"
+          href="{{url}}.html"
+        >{{title}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</nav>
+{{! Nav / End }}

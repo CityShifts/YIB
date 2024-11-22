@@ -1,0 +1,67 @@
+---
+page-title: "Contact Me"
+page-subtitle: "Let's talk!"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+  <div class="grid grid-cols-12 gap-x-6 gap-y-14 md:gap-y-20 md:gap-x-6 lg:gap-x-7.5">
+
+    <div class="col-span-full lg:col-span-4 lg:pr-20 xl:pr-32">
+      {{! Contact Details }}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-y-8 lg:gap-y-14">
+        {{#each ../str2.contact-info}}
+          <div>
+            {{! Meta }}
+            <div>
+              <div class="leading-none text-gray-900 dark:text-white text-lg md:text-xl xl:text-2xl xl:leading-none font-bold tracking-tighter [&_span]:text-primary uppercase mb-2">
+                {{#if value}}
+                <a class="hover:text-primary transition-colors" href="{{value}}">{{{label}}}</a>
+                {{else}}
+                  {{{label}}}
+                {{/if}}
+              </div>
+              <h6 class="uppercase font-bold text-gray-600 leading-none tracking-tight">{{title}}</h6>
+            </div>
+            {{! Meta / End }}
+          </div>
+        {{/each}}
+      </div>
+      {{! Contact Details / End }}
+
+      <div class="h-8 lg:h-14"></div>
+
+      {{! Social Icons }}
+      <ul class="vv-social-list-color flex flex-wrap gap-3">
+        {{#each ../str2.social}}
+          <li>
+            <a
+              class="inline-flex h-10 w-10 items-center justify-center bg-primary text-white transition-all hover:scale-110 hover:opacity-80"
+              href="{{url}}"
+              title="{{label}}"
+            >
+              <svg class="h-4 w-4" fill="currentColor">
+                <use xlink:href="{{root}}assets/img/social-icons.svg#{{icon}}"></use>
+              </svg>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+      {{! Socia Icons / End }}
+
+    </div>
+
+    <div class="col-span-full lg:col-span-8">
+      <h2 class="text-gray-900 dark:text-white leading-none tracking-tighter font-bold uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:leading-none xl:text-5.5xl xl:leading-[0.92em] mb-6 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-12">
+        Something in your mind?<br>
+        <span class="text-primary">Send me a message!</span>
+      </h2>
+      {{! Contact Form }}
+      {{> _str2-contact-form }}
+      {{! Contact Form / End }}
+    </div>
+
+  </div>
+
+{{/_str2-content}}

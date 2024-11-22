@@ -1,0 +1,130 @@
+{{! Product Main }}
+{{#> _yt1-grid grid-class="gap-y-10 mb-16 md:mb-24 lg:mb-30 xl:mb-40"}}
+
+  {{#with ../yt1.shop.product }}
+
+    {{! Product Slider }}
+    {{> _yt1-product-slider }}
+    {{! Product Slider / End }}
+
+    {{! Product Info }}
+    <div class="col-span-full md:col-span-5">
+
+      {{! Category }}
+      {{#with (lookup ../../yt1.shop.categories cat_id)}}
+        <div class="mb-3 text-sm font-bold uppercase leading-none text-gray-300">{{label}}</div>
+      {{/with}}
+      {{! Category / End }}
+
+      {{! Title }}
+      <h2 class="mb-2 text-2xl font-bold tracking-tight text-primary md:mb-2 lg:mb-5 md:text-2xl lg:text-3.5xl dark:text-white">
+        {{title}}
+      </h2>
+      {{! Title / End }}
+
+      {{! Rating }}
+      {{> _yt1-rating rating=rating rating-size="lg" rating-class="mb-4 md:mb-6" }}
+      {{! Rating / End }}
+
+      {{! Price }}
+      <div class="mb-2 text-2xl font-bold tracking-tight text-primary md:mb-2 lg:mb-9 md:text-2xl lg:text-3.5xl dark:text-white">
+        {{../../yt1.shop.currency}}{{price}}
+      </div>
+      {{! Price / End }}
+
+      {{! Excerpt }}
+      <div class="mb-6 md:text-lg md:leading-8 tracking-tighter md:mb-8">
+        {{excerpt}}
+      </div>
+      {{! Excerpt / End }}
+
+      {{! Colors }}
+      <div class="mb-8 md:mb-12">
+        <h5 class="font-bold text-primary lg:text-lg tracking-tight mb-4 lg:mb-6 dark:text-white">Select Color</h5>
+        <div class="flex gap-x-5 lg:gap-x-6">
+
+          {{! Color: Primary }}
+          {{> _yt1-form-checkbox-check
+            id="product-color-primary"
+            name="product-color"
+            class="text-primary bg-primary ring-primary"
+            isChecked="true"
+          }}
+          {{! Color: Primary / End }}
+
+          {{! Color: Accent }}
+          {{> _yt1-form-checkbox-check
+            id="product-color-accent"
+            name="product-color"
+            class="text-accent bg-accent ring-accent"
+          }}
+          {{! Color: Accent / End }}
+
+          {{! Color: Gray }}
+          {{> _yt1-form-checkbox-check
+            id="product-color-gray"
+            name="product-color"
+            class="text-[#cbcade] bg-[#cbcade] ring-[#cbcade]"
+          }}
+          {{! Color: Gray / End }}
+
+        </div>
+      </div>
+      {{! Colors / End }}
+
+      {{! Options (Size, Quantity) }}
+      <div class="flex gap-6 mb-9 lg:mb-[70px]">
+        <div class="basis-3/5">
+          {{#> _yt1-form-select name="product-size" id="product-size" }}
+            <option value="-">Select size</option>
+            {{#each sizes }}
+              <option value="{{option}}">{{label}}</option>
+            {{/each}}
+          {{/_yt1-form-select}}
+        </div>
+        <div class="basis-2/5">
+          {{> _yt1-form-input type="number" name="product-quantity" id="product-quantity" value="1" }}
+        </div>
+      </div>
+      {{! Options (Size, Quantity) / End }}
+
+      {{! Add To Cart }}
+      <div class="flex mb-6 lg:mb-12">
+        <input
+          class="block bg-accent py-5 px-5 font-bold leading-none tracking-tight text-white transition-colors hover:cursor-pointer hover:bg-accent/90 lg:text-lg lg:leading-normal basis-full lg:basis-1/2"
+          type="submit"
+          value="Add to Cart"
+        />
+      </div>
+      {{! Add To Cart / End }}
+
+      {{! Social Share }}
+      <div class="flex gap-3">
+        <a
+          href="#"
+          class="relative flex w-10 h-10 items-center justify-center text-xs text-white transition-colors bg-social-facebook hover:bg-social-facebook/90"
+        >
+          <svg class="w-3 h-3" fill="currentColor">
+            <use xlink:href="{{root}}assets/img/social-icons.svg#facebook"></use>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="relative flex w-10 h-10 items-center justify-center text-xs text-white transition-colors bg-social-twitter hover:bg-social-twitter/90"
+        >
+          <svg class="w-3 h-3" fill="currentColor">
+            <use xlink:href="{{root}}assets/img/social-icons.svg#twitter"></use>
+          </svg>
+        </a>
+      </div>
+      {{! Social Share / End }}
+
+    </div>
+    {{! Product Info / End }}
+
+  {{/with}}
+
+{{/_yt1-grid }}
+{{! Product Main / End }}
+
+{{> _yt1-product-tabs }}

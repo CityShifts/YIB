@@ -1,0 +1,16 @@
+{{! Nav }}
+<nav class="mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20">
+  <ul
+    class="flex flex-col flex-wrap sm:flex-row gap-y-4 font-bold md:text-lg gap-x-8"
+  >
+    {{#each nav}}
+      <li>
+        <a
+          class="transition-all {{#ifpage url}} text-accent {{/ifpage}} {{#unlesspage url}} text-gray-900 hover:text-accent dark:text-white dark:hover:text-accent {{/unlesspage}}"
+          href="{{url}}.html"
+        >{{title}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</nav>
+{{! Nav / End }}

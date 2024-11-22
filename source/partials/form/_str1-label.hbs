@@ -1,0 +1,8 @@
+<label
+  class="block text-sm font-bold uppercase text-gray-500 [&:not(:empty)]:mb-2.5"
+  for="{{name}}"
+>{{label}}
+  {{#ifequal required "true"}}
+    <span class="text-accent">*</span>
+  {{/ifequal}}
+</label>

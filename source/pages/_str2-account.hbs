@@ -1,0 +1,21 @@
+---
+page-title: "Account"
+page-subtitle: "Manage Your"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+  {{> _str2-account-nav nav=../str2.account }}
+
+  {{! Dashboard Info }}
+  <div class="[&>p]:mb-6 [&>p:last-child]:mb-0 [&_strong]:text-gray-900 [&_strong]:dark:text-white bg-white shadow-3xl p-8 md:p-10 lg:p-14 xl:p-[60px] dark:bg-gray-700 [&_a]:text-primary hover:[&_a]:text-gray-900 [&_a]:dark:text-primary dark:hover:[&_a]:text-white">
+
+    <p>Hello <strong>Marine Valentine</strong> (not <strong>Marine Valentine</strong>? <a href="#">Log out</a>)</p>
+
+    <p>From your account dashboard you can view your <a href="_str2-account-order.html">recent orders</a>, manage your <a href="_str2-account-shipping.html">shipping</a> and <a href="_str2-account-billing.html">billing</a> addresses, and <a href="_str2-account-info.html">edit your password and account details</a>.</p>
+
+  </div>
+  {{! Dashboard Info / End }}
+
+{{/_str2-content}}

@@ -1,0 +1,248 @@
+{{! Checkout }}
+<form class="grid grid-cols-12 gap-x-6 md:gap-x-[30px] content-start gap-y-12" action="#">
+
+  {{! Details }}
+  <div class="col-span-full lg:col-span-8 lg:pr-[70px]">
+
+    {{! Billing Details }}
+    <div>
+      {{! Title }}
+      <div
+        class="mb-10 flex flex-col items-center justify-between gap-y-4 md:flex-row lg:mb-[72px]"
+      >
+        <h2
+          class="text-2xl font-bold text-primary md:text-3xl md:tracking-tight lg:text-3.5xl dark:text-white"
+        >Biliing Details</h2>
+        <div
+          class="inline-flex items-center gap-x-3 text-xs font-bold uppercase text-primary dark:text-white md:text-sm"
+        >
+          <span
+            class="relative inline-flex h-[18px] w-[18px] items-center justify-center rounded-full border-2 border-primary dark:border-white"
+          >
+            <svg role="img" class="h-[8px] w-[8px] fill-primary dark:fill-white">
+              <use
+                xlink:href="{{root}}assets/img/yt1/sprite.svg#chevron-right"
+              ></use>
+            </svg>
+          </span>
+          <span>
+            Returning Customer?
+            <a class="text-accent hover:underline" href="_yt1-login.html">Login</a>
+            Now
+          </span>
+        </div>
+      </div>
+      {{! Title / End }}
+
+      {{! Details Form }}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+        <div>
+          {{> _yt1-form-input type="text" name="billing-first-name" id="billing-first-name" placeholder="First Name" }}
+        </div>
+        <div>
+          {{> _yt1-form-input type="text" name="billing-last-name" id="billing-last-name" placeholder="Last Name" }}
+        </div>
+        <div>
+          {{> _yt1-form-input type="email" name="billing-email" id="billing-email" placeholder="Email" }}
+        </div>
+        <div>
+          {{> _yt1-form-input type="tel" name="billing-phone" id="billing-phone" placeholder="Phone" }}
+        </div>
+        <div class="col-span-full">
+          {{> _yt1-form-input type="text" name="billing-address" id="billing-address" placeholder="Full Address" }}
+        </div>
+        <div>
+          {{#> _yt1-form-select name="billing-country" id="billing-country"}}
+            <option value="-">Select Country</option>
+            <option value="0">United States</option>
+            <option value="1">Italy</option>
+            <option value="2">Spain</option>
+            <option value="3">Germany</option>
+          {{/_yt1-form-select}}
+        </div>
+        <div>
+          {{#> _yt1-form-select name="billing-state" id="billing-state"}}
+            <option value="-">Select State</option>
+            <option value="0">California</option>
+            <option value="1">Texas</option>
+            <option value="2">Florida</option>
+            <option value="3">Alaska</option>
+          {{/_yt1-form-select}}
+        </div>
+        <div>
+          {{#> _yt1-form-select name="billing-city" id="billing-city"}}
+            <option value="-">Select City</option>
+            <option value="0">New York</option>
+            <option value="1">Chicago</option>
+            <option value="2">San Francisco</option>
+            <option value="3">San Diego</option>
+          {{/_yt1-form-select}}
+        </div>
+        <div>
+          {{> _yt1-form-input type="number" name="billing-zip" id="billing-zip" placeholder="ZIP Code" }}
+        </div>
+        <div class="col-span-full">
+          {{> _yt1-form-textarea textarea-class="h-44 md:h-60" name="billing-comments" id="billing-comments" placeholder="Additional Comments"}}
+        </div>
+        <div class="col-span-full">
+          {{> _yt1-form-checkbox
+            name="billing-ship-to-different-address"
+            id="billing-ship-to-different-address"
+            label="Ship to a Different Address"
+          }}
+        </div>
+      </div>
+      {{! Details Form / End }}
+    </div>
+    {{! Billing Details / End }}
+
+    <div class="h-16 md:h-20 lg:h-28"></div>
+
+    {{! Shipping Details }}
+    <div>
+      <h2 class="mb-10 text-2xl font-bold text-primary md:text-3xl md:tracking-tight lg:text-3.5xl lg:mb-[72px] dark:text-white">Shipping Details</h2>
+
+      {{! Details Form }}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+        <div>
+          {{> _yt1-form-input type="text" name="shipping-first-name" id="shipping-first-name" placeholder="First Name" }}
+        </div>
+        <div>
+          {{> _yt1-form-input type="text" name="shipping-last-name" id="shipping-last-name" placeholder="Last Name" }}
+        </div>
+        <div>
+          {{> _yt1-form-input type="email" name="shipping-email" id="shipping-email" placeholder="Email" }}
+        </div>
+        <div>
+          {{> _yt1-form-input type="tel" name="shipping-phone" id="shipping-phone" placeholder="Phone" }}
+        </div>
+        <div class="col-span-full">
+          {{> _yt1-form-input type="text" name="shipping-address" id="shipping-address" placeholder="Full Address" }}
+        </div>
+        <div>
+          {{#> _yt1-form-select name="shipping-country" id="shipping-country"}}
+            <option value="-">Select Country</option>
+            <option value="0">United States</option>
+            <option value="1">Italy</option>
+            <option value="2">Spain</option>
+            <option value="3">Germany</option>
+          {{/_yt1-form-select}}
+        </div>
+        <div>
+          {{#> _yt1-form-select name="shipping-state" id="shipping-state"}}
+            <option value="-">Select State</option>
+            <option value="0">California</option>
+            <option value="1">Texas</option>
+            <option value="2">Florida</option>
+            <option value="3">Alaska</option>
+          {{/_yt1-form-select}}
+        </div>
+        <div>
+          {{#> _yt1-form-select name="shipping-city" id="shipping-city"}}
+            <option value="-">Select City</option>
+            <option value="0">New York</option>
+            <option value="1">Chicago</option>
+            <option value="2">San Francisco</option>
+            <option value="3">San Diego</option>
+          {{/_yt1-form-select}}
+        </div>
+        <div>
+          {{> _yt1-form-input type="number" name="shipping-zip" id="shipping-zip" placeholder="ZIP Code" }}
+        </div>
+        <div class="col-span-full">
+          {{> _yt1-form-textarea textarea-class="h-44 md:h-60" name="shipping-comments" id="shipping-comments" placeholder="Additional Comments"}}
+        </div>
+      </div>
+      {{! Details Form / End }}
+    </div>
+    {{! Shipping Details / End }}
+  </div>
+  {{! Details / End }}
+
+  {{! Order }}
+  <div
+    class="col-span-full bg-white shadow-3xl lg:col-span-4 lg:-mt-[200px] self-start py-5 px-5 sm:px-6 md:px-6 md:py-6 lg:py-7 lg:px-8 xl:py-9 xl:px-10 tracking-tight dark:bg-gray-800"
+  >
+    {{#with yt1.shop.cart}}
+
+      {{! Order Calculation }}
+      <div class="mb-8 lg:mb-12">
+        <h3 class="font-bold text-primary text-xl lg:text-1.5xl leading-tight mb-8 lg:mb-12 dark:text-white">Your Order</h3>
+        <div class="">
+          {{! Products }}
+          <div class="text-sm lg:text-base tracking-tighter leading-normal flex flex-col gap-y-5 mb-7">
+            {{#each products}}
+            <div class="flex flex-wrap justify-between">
+              <div>
+                {{title}} <span class="text-accent">x {{quantity}}</span>
+              </div>
+              <div class="font-bold text-primary dark:text-white">
+                {{price}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          {{! Products / End }}
+
+          {{! Cart Total }}
+          <div class="flex flex-wrap justify-between text-lg leading-tighter font-bold text-primary dark:text-white mb-7 lg:mb-8">
+            <h4>Cart Total</h4>
+            <div>{{cart-total}}</div>
+          </div>
+          {{! Cart Total / End }}
+
+          {{! Calculation }}
+          <div class="text-sm lg:text-base tracking-tighter leading-normal flex flex-col gap-y-5 mb-8">
+            {{#each calculation}}
+            <div class="flex flex-wrap justify-between">
+              <div>{{label}}</div>
+              <div class="font-bold text-primary dark:text-white">{{value}}</div>
+            </div>
+            {{/each}}
+          </div>
+          {{! Calculation / End }}
+
+          {{! Order Total }}
+          <div class="flex flex-wrap justify-between text-lg leading-tighter font-bold mb-4 lg:mb-8">
+            <div class="text-primary dark:text-white">Order Total</div>
+            <div class="text-accent">{{order-total}}</div>
+          </div>
+          {{! Order Total / End }}
+        </div>
+      </div>
+      {{! Order Calculation / End }}
+
+
+      {{! Payment Methods }}
+      <div>
+        <h3 class="font-bold text-primary text-xl lg:text-1.5xl leading-tight mb-8 lg:mb-12 dark:text-white">
+          Payment Methods
+        </h3>
+        <ul class="pt-2">
+          {{#each payment-methods}}
+          <li class="pb-6">
+            <label class="flex flex-wrap gap-x-4 hover:cursor-pointer" for="{{value}}">
+              {{> _yt1-form-radio
+                name="payment-method"
+                id=value
+                is-checked=is-checked
+                radio-class="peer"
+              }}
+              <span class="font-bold text-primary dark:text-white lg:text-lg leading-normal">{{label}}</span>
+              <span class="basis-full max-h-0 overflow-hidden peer-checked:max-h-28 duration-200 transition-[max-height] leading-7 tracking-tighter">
+                <span class="block pt-6">{{desc}}</span>
+              </span>
+            </label>
+          </li>
+          {{/each}}
+        </ul>
+        <input class="bg-accent font-bold text-white tracking-tight py-5 px-5 leading-tight mt-6 md:mt-9 hover:cursor-pointer hover:bg-accent/90 transition-colors block w-full" type="submit" value="Place Order" />
+      </div>
+      {{! Payment Methods / End }}
+
+    {{/with}}
+
+  </div>
+  {{! Order }}
+</form>
+{{! Checkout / End }}

@@ -1,0 +1,18 @@
+{{! Cart }}
+<div class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100">
+  <a class="relative flex py-4 px-2 sm:px-2 gap-x-3.5 text-gray-900 dark:text-white" href="_str1-cart.html">
+    <div class="font-bold text-sm leading-none text-right hidden lg:block">
+      <div class="text-2xs">
+        <span class="text-accent">2</span> Items
+      </div>
+      <div class="leading-tight">$48.00</div>
+    </div>
+    <svg role="img" class="h-6 w-6 fill-gray-900 dark:fill-white">
+      <use xlink:href="{{root}}assets/img/str1/sprite.svg#shopping-bag"></use>
+    </svg>
+  </a>
+
+  {{> _str1-header-cart-dropdown subitems=str1.shop.cart.products}}
+
+</div>
+{{! Cart / End }}

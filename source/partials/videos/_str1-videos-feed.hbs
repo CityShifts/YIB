@@ -1,0 +1,15 @@
+{{! Video Feed }}
+<div class="grid gap-y-7.5 grid-cols-12 sm:gap-x-7.5">
+
+  {{#each (limit videos videos-limit)}}
+
+    {{> _str1-video-card
+     videos-layout=../videos-layout
+     url=url
+     thumb-size=thumb-size
+    }}
+
+  {{/each}}
+
+</div>
+{{! Video Feed / End }}

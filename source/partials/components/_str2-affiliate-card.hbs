@@ -1,0 +1,52 @@
+{{! Affiliate Card }}
+<div class="flex flex-col sm:flex-row sm:flex-wrap bg-gray-50 dark:bg-gray-700">
+  {{! Image }}
+  <figure class="shrink-0 ml-6 mt-6 sm:ml-0 sm:mt-0">
+    <a href="{{link}}">
+      <img class="w-28 md:w-36 lg:w-40 xl:w-auto" src="{{root}}{{img}}" alt="" />
+    </a>
+  </figure>
+  {{! Image / End }}
+
+  {{! Content }}
+  <div class="flex-1 p-6 sm:p-7 md:p-8 lg:p-10 xl:p-12">
+
+    {{! Card Header }}
+    <div class="flex flex-wrap justify-between gap-6 mb-5 lg:mb-7">
+      <div>
+        {{! Title }}
+        <hgroup class="-mt-1">
+          <h3 class="uppercase text-xl lg:text-2xl lg:leading-none font-bold text-gray-900 dark:text-white leading-none tracking-tight">{{title}}</h3>
+          <p class="font-bold uppercase text-primary tracking-tight mb-2">{{subtitle}}</p>
+        </hgroup>
+        {{! Title / End }}
+
+        {{! Rating }}
+        {{> _str2-rating rating=rating rating-size="sm" }}
+        {{! Rating / End }}
+      </div>
+    </div>
+    {{! Card Header / End }}
+
+    {{! Card Content }}
+    <div class="">
+      {{desc}}
+    </div>
+    {{! Card Content / End }}
+
+  </div>
+  {{! Content / End }}
+
+  {{! Button }}
+  <div class="flex items-center justify-center basis-full md:basis-auto p-6 sm:p-7 md:p-8 lg:p-10 xl:p-12">
+    {{#> _str2-btn
+      variant="outline-default"
+      size="sm"
+    }}
+      Get Deal!
+    {{/_str2-btn}}
+  </div>
+  {{! Button / End }}
+
+</div>
+{{! Affiliate Card / End }}

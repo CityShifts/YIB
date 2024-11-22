@@ -1,0 +1,25 @@
+{{! Accordion }}
+<div class="accordion flex flex-col gap-y-4 lg:gap-y-5 xl:gap-y-6">
+
+  {{#each data}}
+    <div class="accordion__item group {{#if active}}active{{/if}}">
+      <div
+        class="accordion__item-trigger relative flex cursor-pointer flex-wrap items-center gap-2 font-bold text-primary dark:text-white lg:gap-2.5 lg:text-lg tracking-tight"
+      >
+        <span class="pr-8 xl:pr-0">{{title}}</span>
+        <span
+          class="before:bg-accent after:bg-accent absolute right-0 top-1 aspect-square w-3.5 before:absolute before:left-1/2 before:top-1/2 before:h-1 before:w-3.5 before:-translate-x-1/2 before:-translate-y-1/2 after:visible after:absolute after:left-1/2 after:top-1/2 after:h-3.5 after:w-1 after:-translate-x-1/2 after:-translate-y-1/2 group-[.active]:before:bg-accent group-[.active]:after:invisible dark:group-[.active]:before:bg-white xl:relative lg:top-2 xl:top-0"
+        ></span>
+      </div>
+      <div
+        class="accordion__item-content animate-fade hidden group-[.active]:block"
+      >
+        <div class="pt-4 lg:pt-5 xl:pt-6 tracking-tight leading-[26px]">
+          {{desc}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+</div>
+{{! Accordion / End }}

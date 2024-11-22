@@ -1,0 +1,29 @@
+<li class="block">
+  <div class="mb-4 lg:mb-8">
+    {{! Rating }}
+    {{> _str1-rating rating=rating rating-size="md" rating-class="mb-4" }}
+    {{! Rating / End }}
+
+    {{! Review Title }}
+    <h5 class="text-gray-900 dark:text-white text-xl lg:text-2xl">
+      {{title}}
+    </h5>
+    {{! Review Title / End }}
+
+    {{! by Author }}
+    <div class="text-gray-500 text-sm uppercase font-bold pt-0.5">by {{user.name}}</div>
+    {{! by Author / End }}
+  </div>
+
+  {{! Comment }}
+  <div class="mb-3 lg:mb-5">
+    {{comment}}
+  </div>
+  {{! Comment / End }}
+
+  {{! Date }}
+  <div class="text-sm font-bold uppercase text-gray-900 dark:text-white">
+    <time class="" datetime="2022-08-17 21:30">{{user.date}}</time>
+  </div>
+  {{! Date / End }}
+</li>

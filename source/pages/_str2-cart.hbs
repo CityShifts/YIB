@@ -1,0 +1,215 @@
+---
+page-title: "Shopping Cart"
+page-subtitle: "Shop"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+  {{! Shopping Cart }}
+  <div class="grid grid-cols-12 content-start gap-x-6 gap-y-20 md:gap-x-7.5">
+
+    {{! Cart }}
+    <div class="col-span-full lg:col-span-8 lg:pr-[70px]">
+      {{> _str2-section-heading
+        title="<span class=\"text-primary\">4</span> Products in the cart"
+        mb="mb-6 sm:mb-7 md:mb-8 lg:mb-10 xl:mb-12"
+      }}
+
+      {{! Products }}
+      <div class="relative overflow-x-auto mb-8 lg:mb-10">
+        <table class="w-full table-auto">
+          <thead class="text-sm font-bold uppercase tracking-tighter leading-tight text-gray-900 dark:text-white">
+            <tr>
+              <th class="py-4 pr-6 text-left">Product</th>
+              <th class="py-4 px-4">Price</th>
+              <th class="py-4 px-4">Quantity</th>
+              <th class="py-4 px-4">Subtotal</th>
+              <th class="py-4 pl-4"></th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            {{#each ../str2.shop.cart.products}}
+              <tr class="border-t-[20px] border-white dark:border-gray-800">
+                <td class="pr-4 text-left dark:bg-gray-700">
+                  <div class="flex gap-6 min-w-[260px]">
+                    <!-- Thumb -->
+                    <figure class="shrink-0">
+                      <a class="group" href="{{url}}.html">
+                        <img
+                          class="transition-opacity duration-300 group-hover:opacity-75"
+                          src="{{img.sm}}"
+                          alt="{{title}}"
+                        />
+                      </a>
+                    </figure>
+                    <!-- Thumb / End -->
+                    <!-- Product Body -->
+                    <div class="flex flex-grow flex-col gap-1 leading-tight self-center">
+                      <!-- Title -->
+                      <h4 class="mb-[2px] font-bold text-sm tracking-tighter uppercase">
+                        <a
+                          class="text-gray-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary"
+                          href="{{url}}.html"
+                        >
+                          {{title}}
+                        </a>
+                      </h4>
+                      <!-- Title / End -->
+
+                      {{! Rating }}
+                      {{> _str2-rating rating=rating rating-size="sm" }}
+                      {{! Rating / End }}
+
+                    </div>
+                    <!-- Product Body / End -->
+                  </div>
+                </td>
+                <td class="py-4 px-4 font-bold text-primary dark:text-white dark:bg-gray-700">{{single-price}}</td>
+                <td class="py-4 px-4 dark:bg-gray-700">
+                  {{> _str2-form-input
+                    type="number"
+                    name=id
+                    id=id
+                    width="w-16 lg:w-20"
+                    size="md"
+                    value=quantity
+                  }}
+                </td>
+                <td class="py-4 px-4 font-bold text-primary dark:bg-gray-700">{{price}}</td>
+                <td class="py-4 pr-4 dark:bg-gray-700">
+                  {{! Remove Button }}
+                  <button
+                    class="group inline-flex h-5 w-5 items-center justify-center"
+                  >
+                    <svg
+                      role="img"
+                      class="h-2 w-2 fill-gray-900 transition-colors group-hover:fill-primary dark:fill-white dark:group-hover:fill-primary"
+                    >
+                      <use xlink:href="{{root}}assets/img/str2/sprite.svg#close"></use>
+                    </svg>
+                  </button>
+                  {{! Remove Button / End }}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      {{! Products / End }}
+
+      {{! Cart Controls }}
+      <div class="flex flex-col lg:flex-row flex-wrap gap-2 basis-full lg:basis-auto">
+        {{#> _str2-btn
+          is-btn="true"
+          variant="accent"
+          size="md"
+          type="submit"
+          class="w-full lg:w-auto"
+        }}
+          Update Cart
+        {{/_str2-btn}}
+        {{#> _str2-btn
+          is-btn="true"
+          variant="link"
+          size="md"
+          type="reset"
+          class="w-full lg:w-auto"
+        }}
+          Empty Cart
+        {{/_str2-btn}}
+      </div>
+      {{! Cart Controls / End }}
+
+      {{! Promo Code }}
+      <div class="mt-16 lg:mt-28">
+        {{> _str2-section-heading
+          title="Coupon Code<span class=\"text-primary\">!</span>"
+          mb="mb-6 sm:mb-7 md:mb-8 lg:mb-10 xl:mb-12"
+        }}
+        <div class="flex flex-col flex-wrap md:flex-row gap-y-3">
+          <div class="basis-full text-sm font-bold uppercase tracking-tigher leading-tight text-gray-900 dark:text-white">Enter your code here</div>
+          {{> _str2-form-input
+            type="text"
+            name="cart-promo"
+            id="cart-promo"
+            width="w-full md:w-[280px]"
+          }}
+          {{#> _str2-btn
+            is-btn="true"
+            variant="primary"
+            size="md"
+            type="submit"
+          }}
+            Redeem Now!
+          {{/_str2-btn}}
+        </div>
+      </div>
+      {{! Promo Code }}
+    </div>
+    {{! Cart / End }}
+
+    {{! Order }}
+    <div
+      class="sticky top-8 col-span-full self-start bg-white py-5 px-5 tracking-tight shadow-3xl sm:px-6 md:px-6 md:py-6 lg:col-span-4 lg:py-7 lg:px-8 xl:py-9 xl:px-10 dark:bg-gray-700"
+    >
+      {{#with ../str2.shop.cart}}
+
+        {{! Order Calculation }}
+        <div>
+          <h3 class="mb-8 text-xl font-bold leading-tight tracking-tighter uppercase text-gray-900 dark:text-white lg:mb-10 lg:text-2xl before:content-['.'] before:mr-[0.2em] before:text-primary"
+          >Your Order</h3>
+          <div class="text-gray-900 dark:text-white font-bold uppercase tracking-tighter">
+            {{! Cart Total }}
+            <div
+              class="mb-3 flex flex-wrap justify-between"
+            >
+              <h4>Cart Total</h4>
+              <div>{{cart-total}}</div>
+            </div>
+            {{! Cart Total / End }}
+
+            {{! Calculation }}
+            <div
+              class="mb-5 flex flex-col gap-y-3"
+            >
+              {{#each calculation}}
+                <div class="flex flex-wrap justify-between">
+                  <div>{{label}}</div>
+                  <div class="font-bold text-primary dark:text-white">{{value}}</div>
+                </div>
+              {{/each}}
+            </div>
+            {{! Calculation / End }}
+
+            {{! Order Total }}
+            <div
+              class="mb-4 flex flex-wrap justify-between lg:mb-8 text-lg"
+            >
+              <div>Total</div>
+              <div class="text-primary">{{order-total}}</div>
+            </div>
+            {{! Order Total / End }}
+
+            {{#> _str2-btn
+              is-btn="true"
+              variant="primary"
+              size="md"
+              type="submit"
+              class="w-full lg:mt-5"
+            }}
+              Proceed to checkout
+            {{/_str2-btn}}
+          </div>
+        </div>
+        {{! Order Calculation / End }}
+
+      {{/with}}
+
+    </div>
+    {{! Order }}
+  </div>
+  {{! Shopping Cart / End }}
+
+
+{{/_str2-content}}

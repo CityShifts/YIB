@@ -1,0 +1,24 @@
+<!-- Navigation (Desktop) -->
+<ul class="hidden lg:gap-x-5 xl:gap-x-8 text-gray-900 dark:text-white lg:text-sm xl:text-base font-bold uppercase tracking-tight lg:flex min-[1260px]:gap-x-10 {{class}}">
+  {{#each items}}
+    <li
+      class="{{#if subitems}}relative pr-5 [&>.sub-menu]:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:hover:opacity-100{{/if}}"
+    >
+      <a
+        class="relative inline-flex leading-10 transition-colors after:absolute after:bottom-[7px] after:left-0 after:h-[2px] after:transition-transform after:w-full {{#ifpage url}} after:origin-left after:scale-x-100 text-primary after:bg-primary {{/ifpage}} {{#unlesspage url}} after:bg-gray-900 dark:after:bg-white after:origin-right hover:after:origin-left after:scale-x-0 hover:after:scale-x-100 hover:text-primary hover:after:bg-primary dark:hover:after:bg-primary {{/unlesspage}}"
+        href="{{url}}.html"
+      >
+        {{title}}
+        {{#if subitems}}
+          <svg role="img" class="h-2 w-2 rotate-90 fill-gray-900 dark:fill-white absolute -right-3 top-1/2 -translate-y-1/2">
+            <use xlink:href="{{root}}assets/img/str2/sprite.svg#arrow-right"></use>
+          </svg>
+        {{/if}}
+      </a>
+      {{#if subitems}}
+      {{> _str2-header-dropdown subitems=subitems}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+<!-- Navigation (Desktop) / End -->

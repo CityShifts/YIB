@@ -1,0 +1,34 @@
+{{! Social Links }}
+<div
+  class="fixed bottom-5 left-2 z-20 flex flex-col-reverse items-center lg:bottom-auto lg:top-60 lg:left-7"
+>
+
+  <button
+    class="js-vv-social-links-floating-toggle peer mt-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white transition-transform hover:scale-110 lg:mt-9 lg:hidden"
+  >
+    <span class="sr-only">Toggle Social Links</span>
+    <svg class="aspect-square w-4" fill="currentColor">
+      <use xlink:href="{{root}}assets/img/yt1/sprite.svg#share"></use>
+    </svg>
+  </button>
+
+  <ul
+    class="js-vv-social-links-floating vv-social-list-color hidden w-8 flex-col gap-y-4 peer-[.active]:flex lg:flex lg:gap-y-9"
+  >
+    {{#each social}}
+      <li>
+        <a
+          class="inline-flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform hover:scale-110"
+          href="{{url}}"
+        >
+          <svg class="aspect-square w-3.5" fill="currentColor">
+            <use
+              xlink:href="{{root}}assets/img/social-icons.svg#{{icon}}"
+            ></use>
+          </svg>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+{{! Social Links / End }}

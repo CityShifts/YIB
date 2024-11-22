@@ -1,0 +1,50 @@
+{{! Event }}
+<div class="grid grid-cols-12 gap-x-4 md:gap-x-6 lg:gap-x-7.5 py-11 first:pt-0 last:pb-0">
+  {{! Date }}
+  <div class="col-span-2 md:col-span-1 lg:col-span-1">
+    <time
+      class="flex flex-col text-center text-xs font-bold md:text-base text-white {{#ifequal status "past"}} bg-gray {{else}} bg-primary {{/ifequal}}"
+      datetime="2022-08-06 21:30"
+    >
+      <span
+        class="text-2xl lg:text-[32px] md:leading-none h-11 lg:h-[62px] flex items-center justify-center"
+      >{{date.day}}</span>
+      <span class="text-white leading-[28px] {{#ifequal status "past"}} bg-gray-500 {{else}} bg-primary-500 {{/ifequal}}">{{date.month}}</span>
+    </time>
+  </div>
+  {{! Date / End }}
+
+  {{! Info }}
+  <div class="col-span-10 md:col-span-6 lg:col-span-6">
+    <h4 class="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 lg:mb-2.5">
+      <a class="text-gray-900 dark:text-white transition-colors hover:text-accent dark:hover:text-accent" href="{{url}}">{{title}}</a>
+    </h4>
+    <div class="lg:leading-[26px]">{{excerpt}}</div>
+  </div>
+  {{! Info / End }}
+
+  {{! Meta }}
+  <div class="col-span-full md:col-span-5 md:col-start-8 lg:col-start-8 lg:col-span-5">
+    <ul class="flex flex-wrap gap-y-5 pt-7 md:pt-3 lg:pt-3">
+      {{#each details}}
+        <li class="flex flex-1 flex-col items-center gap-y-3.5 text-center">
+          <div>
+            <h5
+              class="font-bold tracking-tight text-gray-900 dark:text-white lg:text-lg lg:leading-tight"
+            >{{value}}</h5>
+            <span class="text-xs lg:text-sm">{{label}}</span>
+          </div>
+          <div class="lg:pt-1">
+            <svg role="img" class="h-5 w-5 {{#ifequal ../status "past"}} fill-gray dark:fill-gray-500 {{else}} fill-accent {{/ifequal}}">
+              <use
+                xlink:href="{{root}}assets/img/str1/sprite.svg#{{icon}}"
+              ></use>
+            </svg>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{! Meta / End }}
+</div>
+{{! Event / End }}

@@ -1,0 +1,25 @@
+{{! Shop Options }}
+<div
+  class="relative z-10 flex basis-full flex-col py-5 md:flex-row md:items-stretch gap-y-4 md:gap-x-4 md:py-0 lg:gap-x-5 xl:gap-x-6 pr-5 lg:pr-7 xl:pr-14"
+>
+  {{#each filter-options}}
+    <div class="flex-1 flex items-center">
+      {{#> _yt2-form-select name=name id=name size="md" }}
+        {{#each options }}
+          <option value={{value}}>{{label}}</option>
+        {{/each }}
+      {{/_yt2-form-select}}
+    </div>
+  {{/each}}
+
+  <div class="flex-1 flex items-center">
+    {{#> _yt2-btn
+      variant="accent"
+      class="w-full justify-center"
+      size="lg"
+    }}
+      Apply Filters
+    {{/_yt2-btn}}
+  </div>
+</div>
+{{! Shop Options / End }}

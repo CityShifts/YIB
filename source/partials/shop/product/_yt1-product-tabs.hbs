@@ -1,0 +1,113 @@
+{{! Product Tabs }}
+{{#> _yt1-grid }}
+  <div class="col-span-full md:col-start-3 md:col-end-11">
+
+    {{! Product Tabs}}
+    <div class="tabs">
+
+      {{! Navigation }}
+      <nav class="tabs__header pb-4 font-bold leading-tight lg:text-lg">
+        <ul
+          class="flex flex-col flex-wrap justify-center gap-y-3 gap-x-10 sm:flex-row lg:gap-x-20 xl:gap-x-24"
+        >
+          <li class="tabs__header-item is-active group">
+            <a
+              href="#"
+              class="text-gray-300 transition-colors hover:text-accent group-[.is-active]:text-primary dark:group-[.is-active]:text-white dark:hover:text-white"
+            >Description</a>
+          </li>
+          <li class="tabs__header-item group">
+            <a
+              href="#"
+              class="text-gray-300 transition-colors hover:text-accent group-[.is-active]:text-primary dark:group-[.is-active]:text-white dark:hover:text-white"
+            >Specifications</a>
+          </li>
+          <li class="tabs__header-item group">
+            <a
+              href="#"
+              class="text-gray-300 transition-colors hover:text-accent group-[.is-active]:text-primary dark:group-[.is-active]:text-white dark:hover:text-white"
+            >Reviews</a>
+          </li>
+        </ul>
+      </nav>
+      {{! Navigation / End }}
+
+      {{! Tab Content }}
+      <div class="tabs__content vv-prose pt-6 pb-0 md:pt-12 lg:pt-16 xl:pt-20">
+
+        {{! Tab: Description }}
+        <div class="tabs__content-item">
+          <h4 class="mt-0 lg:mb-16">Choose your Style!</h4>
+          <p class="lead">With three color combinations to choose from, you can
+            choose the one that fits your style the most. Also, if you wanna new
+            color combinations, just send us a message!</p>
+          <figure class="xl:mb-16">
+            <img
+              class="h-auto w-full"
+              src="{{root}}assets/img/yt1/samples/product-content-img-1.jpg"
+              alt=""
+            />
+          </figure>
+          <p>Fitted baseball caps — those without an adjuster — are normally sewn in
+            six sections, and may be topped with a matching fabric-covered button
+            (also called a squatchee) on the crown. Metal grommets or fabric eyelets
+            are often sewn or attached near the top of each of the six sections of
+            fabric to provide ventilation. In some cases, the rear sections of the
+            crown are made of net-like mesh material for extra ventilation. The peak
+            is typically stiffened by a sewn-in piece of paperboard or stiff
+            plastic.
+          </p>
+        </div>
+        {{! Tab: Description / End }}
+
+        {{! Tab: Specifications }}
+        <div class="tabs__content-item">
+          <dl
+            class="grid grid-cols-8 gap-x-5 leading-normal md:gap-x-6 lg:gap-x-[30px]"
+          >
+            <dt
+              class="col-span-full font-bold text-primary dark:text-white sm:col-span-2"
+            >Dimensions</dt>
+            <dd class="col-span-full mb-6 sm:col-span-6 md:mb-10">
+              7 - 7 5/8 - Circumference (cm) 55.8 - 60.6</dd>
+            <dt
+              class="col-span-full font-bold text-primary dark:text-white sm:col-span-2"
+            >Weight</dt>
+            <dd class="col-span-full mb-6 sm:col-span-6 md:mb-10">5.3 Ounces</dd>
+            <dt
+              class="col-span-full font-bold text-primary dark:text-white sm:col-span-2"
+            >Materials</dt>
+            <dd class="col-span-full mb-6 sm:col-span-6 md:mb-10">
+              Polyester and Natural Dye
+            </dd>
+          </dl>
+        </div>
+        {{! Tab: Specifications / End }}
+
+        {{! Tab: Reviews }}
+        <div class="tabs__content-item">
+
+          {{! Reviews }}
+          {{#with ../yt1.shop.product}}
+            <ol class="text-lg leading-8 tracking-tight text-gray-500 p-0 m-0">
+              {{#each reviews}}
+                {{> _yt1-product-review data=this}}
+              {{/each}}
+            </ol>
+          {{/with}}
+          {{! Reviews / End }}
+
+          {{! Form }}
+          {{> _yt1-review-form }}
+          {{! Form / End }}
+        </div>
+        {{! Tab: Reviews / End }}
+
+      </div>
+      {{! Tab Content / End }}
+    </div>
+    {{! Product Tabs / End }}
+  </div>
+
+{{/_yt1-grid }}
+{{! Product Tabs / End }}

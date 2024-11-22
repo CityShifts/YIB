@@ -1,0 +1,63 @@
+<div class="pt-5 {{class}}">
+  <h3 class="mb-10 mt-0 text-xl md:text-2.5xl lg:text-3.5xl font-bold leading-none tracking-tighter text-primary md:mb-12 lg:mb-16">
+    Write a Review
+  </h3>
+  <form class="flex flex-col gap-7" action="#">
+    <div>
+      {{> _yt2-form-input
+        type="text"
+        name="review-title"
+        id="review-title"
+        placeholder="Review Title"
+       }}
+    </div>
+    <div>
+      {{#> _yt2-form-select
+        name="review-rating"
+        id="review-rating"
+      }}
+        <option value="-">Select Rating</option>
+        <option value="1">Really Bad</option>
+        <option value="2">Bad</option>
+        <option value="3">Not Bad</option>
+        <option value="4">Good</option>
+        <option value="5">Excelent</option>
+      {{/_yt2-form-select}}
+    </div>
+    <div>
+      {{> _yt2-form-textarea
+        textarea-class="h-40"
+        name="review-comment"
+        id="review-comment"
+        placeholder="Your Comment"
+      }}
+    </div>
+    <div>
+      {{> _yt2-form-input
+        type="text"
+        name="review-name"
+        id="review-name"
+        placeholder="Name"
+      }}
+    </div>
+    <div>
+      {{> _yt2-form-input
+        type="email"
+        name="review-email"
+        id="review-email"
+        placeholder="Email"
+      }}
+    </div>
+    <div class="pt-8">
+      {{#> _yt2-btn
+        is-btn="true"
+        variant="accent"
+        size="lg"
+        type="submit"
+        class="w-full"
+      }}
+        Post Review
+      {{/_yt2-btn}}
+    </div>
+  </form>
+</div>

@@ -1,0 +1,62 @@
+<div class="
+  {{#ifequal videos-layout "grid-3"}} col-span-full sm:col-span-6 lg:col-span-4 {{/ifequal}}
+  {{#ifequal videos-layout "grid-4"}} col-span-full sm:col-span-6 lg:col-span-4 xl:col-span-3 {{/ifequal}}">
+  <figure class="mb-5">
+    <a
+      class="group relative block h-full overflow-hidden bg-gray-900 glightbox"
+      href="{{url}}"
+    >
+      <img
+        class="aspect-[270/160] w-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-75"
+        src="{{#ifequal thumb-size "lg" }} {{thumb.lg}} {{else}} {{thumb.md}} {{/ifequal}}"
+        alt="{{title}}"
+      />
+
+      {{! Overlay }}
+      <div class="absolute inset-0 bg-black/60"></div>
+      {{! Overlay / End }}
+
+      {{! Video Duration }}
+      <div class="absolute bg-primary uppercase text-white text-xs leading-none font-bold left-3.5 top-3 px-1.5 py-1">{{meta.duration}}</div>
+      {{! Video Duration / End }}
+
+      {{! Play Button }}
+      <span
+        class="absolute top-1/2 left-1/2 flex aspect-square -translate-x-2/4 -translate-y-2/4 items-center justify-center {{#ifequal thumb-size "lg" }} w-20 {{else}} w-10 {{/ifequal}}"
+      >
+        <svg role="img" class="fill-white {{#ifequal thumb-size "lg" }} ml-[3px] aspect-[18/22] w-9 {{else}} ml-[2px] aspect-[18/22] w-7 {{/ifequal}}">
+          <use xlink:href="{{root}}assets/img/yt1/sprite.svg#play"></use>
+        </svg>
+      </span>
+      {{! Play Button / End }}
+    </a>
+  </figure>
+
+  <div class="flex gap-x-3">
+
+    {{! Game Image }}
+    <div class="shrink-0">
+      <img src="{{meta.game_poster}}" alt="{{label}}" />
+    </div>
+    {{! Game Image / End }}
+
+    {{! Info }}
+    <div class="min-w-0">
+      <h3 class="mb-1 font-bold text-base leading-tight text-gray-900 dark:text-white truncate w-full
+      {{#ifequal videos-layout "grid-3"}}lg:text-lg lg:leading-6{{/ifequal}}">
+        {{title}}
+      </h3>
+      <ul class="flex flex-col gap-y-1.5 text-sm leading-none font-medium">
+        {{#with meta}}
+          <li>
+            {{date}}
+          </li>
+          <li class="text-accent">
+            {{game_label}}
+          </li>
+        {{/with}}
+      </ul>
+    </div>
+    {{! Info / End }}
+  </div>
+</div>

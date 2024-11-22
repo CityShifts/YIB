@@ -1,0 +1,74 @@
+---
+page-title: "Contact"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "Contact"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{! Contact Form }}
+  <section class="mb-20 lg:mb-36">
+    {{> _str1-section-heading title="Send me a Message!" }}
+    {{> _str1-contact-form }}
+  </section>
+  {{! Contact Form / End }}
+
+  {{! Contact Info }}
+  <section class="mb-20 lg:mb-32">
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-10">
+      {{#each ../str1.contact-info}}
+        <div class="col-span-full md:col-span-6 lg:col-span-4 flex gap-x-4">
+          {{! Icon }}
+          <div>
+            <svg class="aspect-square h-12.5 fill-accent" fill="currentColor">
+              <use xlink:href="{{root}}assets/img/str1/sprite.svg#{{icon}}"></use>
+            </svg>
+          </div>
+          {{! Icon / End }}
+
+          {{! Meta }}
+          <div>
+            <h6 class="uppercase font-bold text-gray-500 text-sm leading-none mb-1 md:mb-2">{{title}}</h6>
+            <div class="text-gray-900 dark:text-white text-lg md:text-xl xl:text-2xl font-bold tracking-tight">
+              {{#if value}}
+              <a class="hover:text-accent transition-colors" href="{{value}}">{{{label}}}</a>
+              {{else}}
+                {{{label}}}
+              {{/if}}
+            </div>
+          </div>
+          {{! Meta / End }}
+        </div>
+      {{/each}}
+    </div>
+  </section>
+  {{! Contact Info / End }}
+
+  {{! Social Links }}
+  <section>
+    <ul class="grid grid-cols-12 gap-x-5 md:gap-x-6 gap-y-5 md:gap-y-6 lg:gap-x-7.5 lg:gap-y-7.5 vv-social-list-color">
+      {{#each ../str1.social}}
+        <li class="col-span-6 sm:col-span-4 md:col-span-4 xl:col-span-2">
+          <a class="flex flex-col items-center text-white py-9 gap-y-8 transition-transform hover:-translate-y-2 hover:shadow-lg" href="{{url}}">
+            <svg class="aspect-square w-9" fill="currentColor">
+              <use
+                xlink:href="{{root}}assets/img/social-icons.svg#{{icon}}"
+              ></use>
+            </svg>
+            <div class="text-center leading-tight">
+              <div class="text-lg leading-tight font-bold">{{label}}</div>
+              <div class="font-bold uppercase text-xs">{{desc}}</div>
+            </div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+  {{! Social Links / End }}
+
+
+{{/_str1-content}}

@@ -1,0 +1,389 @@
+---
+page-title: "Checkout"
+page-subtitle: "Shop"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+  {{! Checkout }}
+  <form class="grid grid-cols-12 gap-x-6 md:gap-x-7.5 content-start gap-y-12 lg:gap-y-24 xl:gap-y-28" action="#">
+
+    {{! Details }}
+    <div class="col-span-full lg:col-start-3 lg:col-span-8">
+
+      {{! Billing Details }}
+      <div>
+        {{! Title }}
+        <div class="mb-7 lg:mb-16">
+          {{> _str2-section-heading
+            title="<span class=\"text-primary\">Billing</span> Details"
+            mb="mb-1 md:mb-2"
+            is-centered="true"
+          }}
+          <div class="text-center gap-x-3 text-sm font-bold tracking-tighter uppercase text-gray-900 dark:text-white md:text-base">
+            <span>Returning Customer? <a class="js-vv-modal__open-btn-login-register text-primary hover:underline" data-id="login-register" href="#">Login</a> Now!</span>
+          </div>
+        </div>
+        {{! Title / End }}
+
+        {{! Details Form }}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+          <div>
+            {{> _str2-form-input
+              type="text"
+              name="billing-first-name"
+              id="billing-first-name"
+              label="First Name"
+              required="true"
+            }}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="text"
+              name="billing-last-name"
+              id="billing-last-name"
+              label="Last Name"
+              required="true"
+            }}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="email"
+              name="billing-email"
+              id="billing-email"
+              label="Email Address"
+              required="true"
+            }}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="tel"
+              name="billing-phone"
+              id="billing-phone"
+              label="Phone Number"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _str2-form-input
+              type="text"
+              name="billing-address-1"
+              id="billing-address-1"
+              label="Full Address"
+              required="true"
+              input-class="mb-3"
+            }}
+            {{> _str2-form-input
+              type="text"
+              name="billing-address-2"
+              id="billing-address-2"
+            }}
+          </div>
+          <div>
+            {{#> _str2-form-select
+              name="billing-country"
+              id="billing-country"
+              label="Select Country"
+              size="md"
+              required="true"
+            }}
+              <option value="0">United States</option>
+              <option value="1">Italy</option>
+              <option value="2">Spain</option>
+              <option value="3">Germany</option>
+            {{/_str2-form-select}}
+          </div>
+          <div>
+            {{#> _str2-form-select
+              name="billing-state"
+              id="billing-state"
+              label="Select State"
+              size="md"
+              required="true"
+            }}
+              <option value="0">California</option>
+              <option value="1">Texas</option>
+              <option value="2">Florida</option>
+              <option value="3">Alaska</option>
+            {{/_str2-form-select}}
+          </div>
+          <div>
+            {{#> _str2-form-select
+              name="billing-city"
+              id="billing-city"
+              label="Select City"
+              size="md"
+              required="true"
+            }}
+              <option value="0">New York</option>
+              <option value="1">Texas</option>
+              <option value="2">Florida</option>
+              <option value="3">Alaska</option>
+              <option value="4">California</option>
+            {{/_str2-form-select}}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="number"
+              name="billing-zip"
+              id="billing-zip"
+              label="ZIP Code"
+              required="true"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _str2-form-textarea
+            textarea-class="h-40 md:h-48"
+            name="billing-comments"
+            id="billing-comments"
+            label="Additional Comments"}}
+          </div>
+          <div class="col-span-full">
+            {{#> _str2-form-checkbox
+              name="billing-ship-to-different-address"
+              id="billing-ship-to-different-address"
+            }}
+              <span class="text-sm font-bold uppercase text-gray-900 dark:text-white">
+                Ship to a Different Address
+              </span>
+            {{/_str2-form-checkbox}}
+          </div>
+        </div>
+        {{! Details Form / End }}
+      </div>
+      {{! Billing Details / End }}
+
+      <div class="h-16 md:h-20 lg:h-28"></div>
+
+      {{! Shipping Details }}
+      <div>
+        {{> _str2-section-heading
+          title="<span class=\"text-primary\">Shipping</span> Details"
+          is-centered="true"
+        }}
+
+        {{! Details Form }}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+          <div>
+            {{> _str2-form-input
+              type="text"
+              name="shipping-first-name"
+              id="shipping-first-name"
+              label="First Name"
+              required="true"
+            }}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="text"
+              name="shipping-last-name"
+              id="shipping-last-name"
+              label="Last Name"
+              required="true"
+            }}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="email"
+              name="shipping-email"
+              id="shipping-email"
+              label="Email Address"
+              required="true"
+            }}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="tel"
+              name="shipping-phone"
+              id="shipping-phone"
+              label="Phone Number"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _str2-form-input
+              type="text"
+              name="shipping-address-1"
+              id="shipping-address-1"
+              label="Full Address"
+              required="true"
+              input-class="mb-3"
+            }}
+            {{> _str2-form-input
+              type="text"
+              name="shipping-address-2"
+              id="shipping-address-2"
+            }}
+          </div>
+          <div>
+            {{#> _str2-form-select
+              name="shipping-country"
+              id="shipping-country"
+              label="Select Country"
+              size="md"
+              required="true"
+            }}
+              <option value="0">United States</option>
+              <option value="1">Italy</option>
+              <option value="2">Spain</option>
+              <option value="3">Germany</option>
+            {{/_str2-form-select}}
+          </div>
+          <div>
+            {{#> _str2-form-select
+              name="shipping-state"
+              id="shipping-state"
+              label="Select State"
+              size="md"
+              required="true"
+            }}
+              <option value="0">California</option>
+              <option value="1">Texas</option>
+              <option value="2">Florida</option>
+              <option value="3">Alaska</option>
+            {{/_str2-form-select}}
+          </div>
+          <div>
+            {{#> _str2-form-select
+              name="shipping-city"
+              id="shipping-city"
+              label="Select City"
+              size="md"
+              required="true"
+            }}
+              <option value="0">New York</option>
+              <option value="1">Texas</option>
+              <option value="2">Florida</option>
+              <option value="3">Alaska</option>
+              <option value="4">California</option>
+            {{/_str2-form-select}}
+          </div>
+          <div>
+            {{> _str2-form-input
+              type="number"
+              name="shipping-zip"
+              id="shipping-zip"
+              label="ZIP Code"
+              required="true"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _str2-form-textarea
+            textarea-class="h-40 md:h-48"
+            name="shipping-comments"
+            id="shipping-comments"
+            label="Additional Comments"}}
+          </div>
+        </div>
+        {{! Details Form / End }}
+
+      </div>
+      {{! Shipping Details / End }}
+    </div>
+    {{! Details / End }}
+
+    {{! Order }}
+    <div class="col-span-full lg:col-start-3 lg:col-span-8">
+
+      <div>
+        {{> _str2-section-heading
+          title="Your <span class=\"text-primary\">Order</span>"
+          is-centered="true"
+          mb="mb-8 md:mb-12 lg:mb-16"
+        }}
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-700 p-6 md:p-7 lg:p-8 xl:p-10">
+        <h3 class="mb-8 text-xl font-bold leading-tight tracking-tighter uppercase text-gray-900 dark:text-white lg:mb-10 lg:text-2xl before:content-['.'] before:mr-[0.2em] before:text-primary"
+          >Order Summary</h3>
+
+        {{#with ../str2.shop.cart}}
+
+          {{! Products }}
+          <div class="text-sm lg:text-base font-bold uppercase tracking-tighter leading-normal flex flex-col gap-y-3 mb-5 text-gray-900 dark:text-white">
+            {{#each products}}
+            <div class="flex flex-wrap justify-between">
+              <div>
+                {{title}} <span class="text-primary">x {{quantity}}</span>
+              </div>
+              <div>{{price}}</div>
+            </div>
+            {{/each}}
+          </div>
+          {{! Products / End }}
+
+          {{! Order Calculation }}
+          <div class="mb-8 lg:mb-12">
+            <div class="uppercase font-bold tracking-tighter text-gray-900 dark:text-white">
+              {{! Cart Total }}
+              <div class="flex flex-wrap justify-between text-lg mb-5">
+                <h4>Cart Total</h4>
+                <div class="text-primary">{{cart-total}}</div>
+              </div>
+              {{! Cart Total / End }}
+
+              {{! Calculation }}
+              <div class="flex flex-col gap-y-3 mb-5">
+                {{#each calculation}}
+                <div class="flex flex-wrap justify-between">
+                  <div class="opacity-60">{{label}}</div>
+                  <div>{{value}}</div>
+                </div>
+                {{/each}}
+              </div>
+              {{! Calculation / End }}
+
+              {{! Order Total }}
+              <div class="flex flex-wrap justify-between mb-4 lg:mb-8 text-lg">
+                <div>Total</div>
+                <div class="text-primary">{{order-total}}</div>
+              </div>
+              {{! Order Total / End }}
+            </div>
+          </div>
+          {{! Order Calculation / End }}
+
+          {{! Payment Methods }}
+          <div class="mb-8">
+            <h3 class="mb-8 text-xl font-bold leading-tight tracking-tighter uppercase text-gray-900 dark:text-white lg:mb-10 lg:text-2xl before:content-['.'] before:mr-[0.2em] before:text-primary">Payment Methods</h3>
+            <ul>
+              {{#each payment-methods}}
+                <li class="pb-6 lg:pb-9">
+                  <label class="flex flex-wrap gap-x-3 hover:cursor-pointer" for="{{value}}">
+                    {{> _str2-form-radio
+                      name="payment-method"
+                      id=value
+                      is-checked=is-checked
+                      radio-class="peer"
+                    }}
+                    <span class="font-bold text-gray-900 dark:text-white leading-tight tracking-tighter uppercase">{{label}}</span>
+                    <span class="basis-full max-h-0 overflow-hidden peer-checked:max-h-28 duration-200 transition-[max-height]">
+                      <span class="block pt-5">{{desc}}</span>
+                    </span>
+                  </label>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{! Payment Methods / End }}
+
+          {{! Place Order }}
+          {{#> _str2-btn
+            is-btn="true"
+            variant="primary"
+            size="lg"
+            type="submit"
+            class="w-full"
+          }}
+            Place Order Now!
+          {{/_str2-btn}}
+          {{! Place Order / End }}
+
+        {{/with}}
+      </div>
+
+    </div>
+    {{! Order }}
+  </form>
+  {{! Checkout / End }}
+
+{{/_str2-content}}

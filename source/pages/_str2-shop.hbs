@@ -1,0 +1,103 @@
+---
+page-title: "Merchandise"
+page-subtitle: "Check out my"
+layout: "str2"
+---
+
+{{#> _str2-content }}
+
+  {{! Title & Filter }}
+  <div class="flex gap-x-8 justify-between items-center mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+
+    {{! Categories }}
+    <nav class="w-full">
+      <ul class="flex flex-wrap justify-center gap-x-4 lg:gap-x-9 text-base lg:text-lg font-bold uppercase tracking-tight">
+        {{#each ../str2.shop.categories}}
+          <li>
+            <a class="text-gray-900 {{#if is-active}} text-primary dark:text-primary {{else}} hover:text-primary dark:text-white dark:hover:text-primary {{/if}} transition-colors" href="#">{{label}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+    {{! Categories / End }}
+
+  </div>
+  {{! Title & Filter / End }}
+
+  {{! Products - 3 cols }}
+  <div class="grid grid-cols-12 gap-x-6 gap-y-9 md:gap-x-6 lg:gap-x-7.5">
+
+    {{#each ../str2.shop.products}}
+      <div class="col-span-full sm:col-span-6 md:col-span-6 lg:col-span-4 bg-gray-50 dark:bg-gray-700">
+
+        {{! Thumbnail }}
+        <figure class="group relative overflow-hidden bg-gray-100">
+          <img
+            class="aspect-[37/47] w-full object-cover transition-transform duration-300 group-hover:scale-110"
+            src="{{root}}{{img.md}}"
+            alt="{{title}}"
+          />
+
+          {{#if price.prev}}
+            {{! Sale }}
+            <div class="vv-sale-label absolute left-0 top-0 bg-primary font-bold uppercase text-base text-white w-24 h-[72px] pl-3 pt-2 leading-normal">Sale!</div>
+            {{! Sale / End }}
+          {{/if}}
+
+          {{! Overlay }}
+          <div class="absolute inset-0 bg-white dark:bg-gray-900 opacity-0 group-hover:opacity-90 transition-opacity"></div>
+          {{! Overlay / End }}
+
+          <div class="flex absolute justify-center left-0 right-0 top-1/2 -translate-y-1/2 scale-90 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:transition-all [@media(hover:hover)]:duration-300 [@media(hover:hover)]:group-hover:scale-100 [@media(hover:hover)]:group-hover:opacity-100">
+            {{! Add To Basket }}
+            {{#> _str2-btn
+              variant="primary"
+              size="md"
+            }}
+              + Add To Cart
+            {{/_str2-btn}}
+            {{! Add To Basket / Edn }}
+          </div>
+
+        </figure>
+        {{! Thumbnail / Edn }}
+
+        {{! Product Info }}
+        <div class="flex flex-col items-center p-5 md:p-7 xl:p-9">
+          {{! Title }}
+          <h3 class="mb-1 font-bold leading-tight tracking-tighter text-lg uppercase text-center text-gray-900 dark:text-white">
+            <a
+              class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
+              href="{{url}}.html"
+            >{{title}}</a>
+          </h3>
+          {{! Category / End }}
+
+          {{! Price }}
+          <div class="flex mb-2 font-bold gap-2 text-primary leading-snug tracking-tight">
+            {{#if price.prev}}
+              <ins class="no-underline">{{../../str2.shop.currency}}{{price.current}}</ins>
+              <del class="text-sm text-gray-500">{{../../str2.shop.currency}}{{price.prev}}</del>
+            {{else}}
+              <ins class="no-underline">{{../../str2.shop.currency}}{{price.current}}</ins>
+            {{/if}}
+          </div>
+          {{! Price / End }}
+
+          {{! Rating }}
+          {{> _str2-rating rating=rating rating-size="sm" }}
+          {{! Rating / End }}
+
+        </div>
+        {{! Product Info / End }}
+
+      </div>
+    {{/each}}
+
+  </div>
+  {{! Products - 3 cols / End }}
+
+  {{> _str2-pagination items=../str2.shop.pagination }}
+
+
+{{/_str2-content}}

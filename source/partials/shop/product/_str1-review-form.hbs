@@ -1,0 +1,65 @@
+<div class="{{class}}">
+  {{! Title }}
+  {{> _str1-section-subheading title="Add Review" has-dot="true" }}
+  {{! Title / End }}
+
+  <form class="grid grid-cols-1 md:grid-cols-2 gap-7" action="#">
+    <div class="col-span-full lg:col-span-1">
+      {{#> _str1-form-select
+        name="review-rating"
+        id="review-rating"
+        label="Review Stars"
+      }}
+        <option value="-">Select Rating</option>
+        <option value="1">Really Bad</option>
+        <option value="2">Bad</option>
+        <option value="3">Not Bad</option>
+        <option value="4">Good</option>
+        <option value="5">Excelent</option>
+      {{/_str1-form-select}}
+    </div>
+    <div class="col-span-full lg:col-span-1">
+      {{> _str1-form-input
+        type="text"
+        name="review-title"
+        id="review-title"
+        label="Review Title"
+      }}
+    </div>
+    <div class="col-span-full lg:col-span-1">
+      {{> _str1-form-input
+        type="text"
+        name="review-name"
+        id="review-name"
+        label="Your Name"
+      }}
+    </div>
+    <div class="col-span-full lg:col-span-1">
+      {{> _str1-form-input
+        type="email"
+        name="review-email"
+        id="review-email"
+        label="Your Email"
+      }}
+    </div>
+    <div class="col-span-full">
+      {{> _str1-form-textarea
+        textarea-class="h-32"
+        name="review-comment"
+        id="review-comment"
+        label="Your Review"
+      }}
+    </div>
+    <div class="col-span-full md:col-start-2 md:col-span-1 xl:pl-[29%]">
+      {{#> _str1-btn
+        is-btn="true"
+        variant="accent"
+        size="md"
+        type="submit"
+        class="w-full"
+      }}
+        Post Review
+      {{/_str1-btn}}
+    </div>
+  </form>
+</div>

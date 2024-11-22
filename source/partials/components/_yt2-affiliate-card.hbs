@@ -1,0 +1,43 @@
+{{! Affiliate Card }}
+<div class="flex flex-col gap-8 sm:flex-row">
+  <figure class="shrink-0">
+    <a href="{{link}}">
+      <img class="w-28 md:w-36 lg:w-40 xl:w-auto" src="{{root}}{{img}}" alt="" />
+    </a>
+  </figure>
+
+  <div class="flex-1">
+
+    {{! Card Header }}
+    <div class="flex flex-wrap justify-between gap-6 mb-6 lg:mb-0">
+      <div class="lg:mb-5">
+        {{! Title }}
+        <hgroup class="-mt-1">
+          <h3 class="text-xl lg:text-1.5xl font-bold text-primary dark:text-white leading-none tracking-tight mb-1">{{title}}</h3>
+          <p class="font-bold uppercase text-accent text-sm mb-3">{{subtitle}}</p>
+        </hgroup>
+        {{! Title / End }}
+
+        {{! Rating }}
+        {{> _yt2-rating rating=rating rating-size="sm" }}
+        {{! Rating / End }}
+      </div>
+
+      <div class="basis-full md:basis-auto">
+        {{#> _yt2-btn variant="accent" class="w-full px-5 lg:px-10 xl:px-12 text-sm" }}
+          Get Deal!
+        {{/_yt2-btn}}
+      </div>
+    </div>
+    {{! Card Header / End }}
+
+    {{! Card Content }}
+    <div class="xl:text-lg xl:tracking-tight xl:leading-8">
+      {{desc}}
+    </div>
+    {{! Card Content / End }}
+
+  </div>
+
+</div>
+{{! Affiliate Card / End }}

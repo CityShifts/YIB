@@ -1,0 +1,44 @@
+<li class="mb-12 lg:mb-20">
+  <div>
+    <div class="flex gap-x-5 md:gap-x-7 mb-7">
+      <figure class="shrink-0">
+        <img
+          src="{{root}}{{user.avatar}}"
+          alt="Comment Author Avatar"
+        />
+      </figure>
+      <div class="flex-grow">
+        <div>
+          <h5
+            class="mb-1 text-lg md:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white"
+          >{{user.name}}</h5>
+          <div class="text-xs md:text-sm uppercase font-bold text-gray-500">{{user.date}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mb-7 leading-relaxed md:text-lg md:leading-9"
+    >
+      {{comment}}
+    </div>
+    <div class="flex gap-8">
+      <a
+        class="text-sm font-bold uppercase leading-none text-gray-900 dark:text-white dark:hover:text-accent transition-colors hover:text-accent"
+        href="#"
+      >Like ( <span class="text-accent">{{like}}</span> )</a>
+      <a
+        class="text-sm font-bold uppercase leading-none text-gray-900 dark:text-white dark:hover:text-accent transition-colors hover:text-accent"
+        href="#"
+      >Reply</a>
+    </div>
+  </div>
+
+  {{#if children}}
+    <ul class="mt-12 md:pl-10 lg:mt-20">
+      {{#each children}}
+        {{> _str1-post-comment }}
+      {{/each}}
+    </ul>
+  {{/if}}
+</li>

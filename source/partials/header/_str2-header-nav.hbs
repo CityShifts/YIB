@@ -1,0 +1,39 @@
+<nav
+  class="grid grid-cols-[100px_1fr] lg:grid-cols-[21%_1fr_21%] min-h-[64px] gap-x-6 lg:gap-x-11 py-1 lg:min-h-[90px] lg:py-4"
+>
+
+  <!-- Social Links -->
+  <ul class="flex-wrap gap-3.5 lg:gap-4 xl:gap-6 self-center hidden lg:flex">
+    {{#each str2.social}}
+      <li>
+        <a
+          class="text-gray-900 transition-colors hover:text-primary dark:text-white dark:hover:text-primary"
+          href="{{url}}"
+          title="{{label}}"
+        >
+          <svg class="w-3.5 xl:w-4 aspect-square" fill="currentColor">
+            <use
+              xlink:href="{{root}}assets/img/social-icons.svg#{{icon}}"
+            ></use>
+          </svg>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+  <!-- Social Links / End -->
+
+  <!-- Navigation & Logo -->
+  <div class="grid lg:grid-cols-[1fr_110px_1fr] xl:grid-cols-[1fr_150px_1fr] items-center">
+    {{> _str2-header-nav-desktop items=str2.header.nav-1 class="justify-self-end" }}
+
+    {{> _str2-header-logo class="lg:mx-auto" }}
+
+    {{> _str2-header-nav-desktop items=str2.header.nav-2 }}
+  </div>
+  <!-- Navigation & Logo / End -->
+
+  <!-- Header Controls -->
+  {{> _str2-header-controls }}
+  <!-- Header Controls / End -->
+
+</nav>

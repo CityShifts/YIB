@@ -1,0 +1,84 @@
+<{{#if is-btn}}button{{else}}a{{/if}}
+  {{#unless is-btn}}
+  href="{{#if url}}{{url}}{{else}}#{{/if}}"
+  {{/unless}}
+
+  {{! Type }}
+  {{#if type}}
+  type="{{type}}"
+  {{/if}}
+  {{! Type / End }}
+
+  class="inline-flex text-center font-bold leading-none transition-colors uppercase justify-center gap-x-3
+
+  {{! Size }}
+  {{#ifequal size "md"}}
+  py-4 px-4 md:py-[18px] lg:px-8 text-sm
+  {{else}}
+    py-4 md:py-[21px]
+    {{#if px }}
+      {{px}}
+    {{else}}
+     px-5 lg:px-10
+    {{/if}}
+  {{/ifequal}}
+  {{! Size / End }}
+
+  {{! Default }}
+  {{#ifequal variant "default"}}
+  text-white bg-gray-500 hover:bg-accent/90 hover:text-gray-900
+  {{/ifequal}}
+  {{! Default / End }}
+
+  {{! Accent }}
+  {{#ifequal variant "accent"}}
+  text-gray-900 bg-accent hover:bg-accent/90
+  {{/ifequal}}
+  {{! Accent / End }}
+
+  {{! Primary }}
+  {{#ifequal variant "primary"}}
+  text-white bg-primary hover:bg-primary/90
+  {{/ifequal}}
+  {{! Primary / End }}
+
+  {{! Outline Default }}
+  {{#ifequal variant "outline-default"}}
+  text-gray-500/40 ring-1 ring-inset ring-gray-500/40 bg-transparent hover:bg-accent hover:text-gray-900 hover:ring-0
+  {{/ifequal}}
+  {{! Outline Default / End }}
+
+  {{! Outline White }}
+  {{#ifequal variant "outline-white"}}
+  text-white ring-1 ring-inset ring-white bg-transparent hover:bg-white hover:text-gray-900 hover:ring-0
+  {{/ifequal}}
+  {{! Outline White / End }}
+
+  {{! Social: Facebook }}
+  {{#ifequal variant "facebook"}}
+  text-white bg-social-facebook hover:bg-social-facebook/90
+  {{/ifequal}}
+  {{! Social: Facebook / End }}
+
+  {{! Social: Twitter }}
+  {{#ifequal variant "twitter"}}
+  text-white bg-social-twitter hover:bg-social-twitter/90
+  {{/ifequal}}
+  {{! Social: Twitter / End }}
+
+  {{! Social: Twitch }}
+  {{#ifequal variant "twitch"}}
+  text-white bg-social-twitch hover:bg-social-twitch/90
+  {{/ifequal}}
+  {{! Social: Twitch / End }}
+
+  {{! Social: Patreon }}
+  {{#ifequal variant "patreon"}}
+  text-white bg-social-patreon hover:bg-social-patreon/90
+  {{/ifequal}}
+  {{! Social: Patreon / End }}
+
+    {{class}}"
+>
+  {{{@partial-block}}}
+</{{#if is-btn}}button{{else}}a{{/if}}>

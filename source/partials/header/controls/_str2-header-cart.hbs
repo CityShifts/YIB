@@ -1,0 +1,14 @@
+{{! Cart }}
+<div class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100 lg:-mr-2">
+  <a class="relative block py-4 px-1 sm:px-2" href="_str2-cart.html">
+    <svg role="img" class="h-6 w-6 fill-gray-900 dark:fill-white">
+      <use xlink:href="{{root}}assets/img/str2/sprite.svg#shopping-basket"></use>
+    </svg>
+    <span class="absolute top-1 -right-2 text-3xs font-bold leading-none w-4.5 h-4.5 rounded-full bg-primary inline-flex justify-center items-center"
+    >2</span>
+  </a>
+
+  {{> _str2-header-cart-dropdown subitems=str2.shop.cart.products}}
+
+</div>
+{{! Cart / End }}

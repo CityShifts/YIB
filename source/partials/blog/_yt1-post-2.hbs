@@ -1,0 +1,37 @@
+<article
+  class="grid-col-4 grid gap-x-4 md:grid-cols-12 md:gap-x-6 lg:gap-x-[30px]"
+>
+
+  {{! Header }}
+  {{> _yt1-post-header-2 }}
+  {{! Header / End }}
+
+  {{! Share }}
+  <div class="col-span-full mb-10 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10 md:mb-20">
+    {{> _yt1-post-share-2 }}
+  </div>
+  {{! Share / End }}
+
+  {{! Featured Image/Video }}
+  {{> _yt1-post-featured-video }}
+  {{! Featured Image/Video / End }}
+
+  {{! Content }}
+  <div class="col-span-full md:col-start-3 md:col-end-11">
+    {{> _yt1-post-content-2 }}
+  </div>
+  {{! Content / End }}
+
+  {{! Author}}
+  {{> _yt1-post-author class="col-span-full md:col-start-2 mb-20 d:col-end-12 lg:px-[100px] md:px-[66px] md:mb-28 lg:mb-40" data=yt1.blog.post.author}}
+  {{! Author / End }}
+
+  {{! Comments }}
+  {{> _yt1-post-comments class="col-span-full md:col-start-3 md:col-end-11" data=yt1.blog.post.comments}}
+  {{! Comments / End }}
+
+  {{! Form }}
+  {{> _yt1-post-form class="col-span-full md:col-start-3 md:col-end-11 mt-8 lg:mt-16" }}
+  {{! Form / End }}
+
+</article>

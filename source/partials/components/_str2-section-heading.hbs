@@ -1,0 +1,29 @@
+{{! Section Heading }}
+<div
+  class="not-prose flex flex-row {{#if mb}} {{mb}} {{else}} mb-9 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20 {{/if}} {{#if is-centered}} justify-center {{else}} justify-between items-end {{/if}}"
+>
+  <div class="flex flex-col {{#if is-centered}} items-center {{else}} {{/if}}">
+    {{#if subtitle}}
+      <div
+        class="text-base font-medium uppercase tracking-tight text-primary md:text-lg lg:text-xl xl:text-1.5xl"
+      >{{subtitle}}</div>
+    {{/if}}
+    <h2
+      class="font-bold uppercase leading-none tracking-tighter text-gray-900 {{#unless no-dot }} before:inline-block before:text-primary before:content-['.'] before:mr-[0.15em] {{/unless}} dark:text-white {{#ifequal size "lg" }} text-2.5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6.5xl xl:leading-[0.85em] {{else}} text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5.5xl {{/ifequal}}"
+    >{{{title}}}</h2>
+  </div>
+
+  {{#if is-twitter}}
+    {{#> _str2-btn
+      variant="twitter"
+      size="sm"
+      class="mb-2"
+    }}
+      <svg class="h-[14px] w-[14px]" fill="currentColor">
+        <use xlink:href="{{root}}assets/img/social-icons.svg#twitter"></use>
+      </svg>
+      Follow Me!
+    {{/_str2-btn}}
+  {{/if}}
+</div>
+{{! Section Heading / End }}

@@ -1,0 +1,38 @@
+{{#> _yt1-grid }}
+  <div
+    class="relative col-span-full -mt-20 mb-14 grid grid-cols-12 gap-x-0 bg-white shadow-3xl md:col-start-2 md:col-end-12 lg:col-start-3 lg:col-end-11 md:grid-cols-6 md:gap-x-6 xl:col-start-4 xl:col-end-10 lg:-mt-[200px] lg:mb-40 lg:gap-x-[30px] dark:bg-gray-800"
+  >
+    <div class="col-start-2 col-end-12 py-10 md:col-end-6 md:py-20">
+      <h2 class="font-bold text-2xl text-primary md:text-3.5xl mb-4 tracking-tight dark:text-white">Register</h2>
+      <div class="mb-8 md:mb-14 md:leading-normal md:text-lg tracking-tighter pr-2">
+        <p>If you already have an account,
+          <a class="text-accent hover:text-primary transition-colors" href="login.html">login</a>
+          now to access your profile!</p>
+      </div>
+
+      {{! Default Form }}
+      <form class="flex flex-col gap-y-7" action="#">
+        <div class="group is-success">
+          {{> _yt1-form-input type="email" name="user-email" id="user-email" placeholder="Enter Email" value="jspigel@yourmail.com"}}
+        </div>
+        <div class="group is-error">
+          {{> _yt1-form-input type="password" name="user-password" id="user-password" placeholder="Enter Password" value="qwerty" notification="Password need to have at least one number"}}
+        </div>
+        <div>
+          {{> _yt1-form-input type="password" name="user-password-repeat" id="user-password-repeat" placeholder="Repeat Password" }}
+        </div>
+        <div class="mt-3">
+          <input
+            class="block w-full bg-accent py-5 text-lg font-bold leading-normal tracking-tight text-white transition-colors hover:cursor-pointer hover:bg-accent/90"
+            type="submit"
+            value="Create Account!"
+          />
+        </div>
+        <div class="text-sm leading-normal">
+          <p>You’ll receive a confirmation email in your inbox with a link so you can activate your account. If you have any problems, <a class="text-accent hover:text-primary dark:hover:text-white transition-colors" href="_yt1-contact.html">contact us</a>!</p>
+        </div>
+      </form>
+      {{! Default Form / End }}
+    </div>
+  </div>
+{{/_yt1-grid }}

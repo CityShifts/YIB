@@ -1,0 +1,92 @@
+{{#> _yt1-account-main panel-title="Orders" panel-count="1"}}
+
+  {{! Orders }}
+  <div class="bg-white dark:bg-gray-800 shadow-3xl p-8 lg:p-14">
+
+    {{! Order Heading }}
+    <div class="flex flex-wrap justify-between items-baseline lg:mb-16 mb-8 gap-y-2 gap-x-4">
+      <h3 class="font-bold text-primary text-xl lg:text-[26px] leading-tight tracking-tighter dark:text-white">Order UNBX2563</h3>
+      <div class="flex font-bold text-primary dark:text-white gap-5 text-sm lg:text-base">
+        <time datetime="2022-08-17 21:30">August 17, 2022</time>
+        <div class="text-accent">In Progress</div>
+      </div>
+    </div>
+    {{! Order Heading / End }}
+
+    {{! Order Details }}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 lg:gap-x-[30px] gap-y-10 lg:gap-y-14">
+      {{! Shipping Details }}
+      <div>
+        <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Shipping Details</h5>
+        <address class="leading-7 tracking-tighter [&>p]:mb-7 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            James Spiegel<br>
+            <a class="hover:text-primary" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+            555-555-5555
+          </p>
+          <p>
+            Fake Street 1234, Apt 34<br>
+            Long Island, NY 10001<br>
+            United States
+          </p>
+        </address>
+      </div>
+      {{! Shipping Details / End }}
+
+      {{! Billing Details }}
+      <div>
+        <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Billing Details</h5>
+        <address class="leading-7 tracking-tighter [&>p]:mb-7 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            James Spiegel<br>
+            <a class="hover:text-primary dark:hover:text-white" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+            555-555-5555
+          </p>
+          <p>
+            Fake Street 1234, Apt 34<br>
+            Long Island, NY 10001<br>
+            United States
+          </p>
+        </address>
+      </div>
+      {{! Billing Details / End }}
+
+      {{! Your Order }}
+      <div>
+        <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Your Order</h5>
+        <ul class="leading-5 tracking-tighter not-italic flex flex-col gap-y-5">
+          {{#each ../yt1.shop.cart.products}}
+          <li>
+            <div>{{title}} <span class="text-accent">x {{quantity}}</span></div>
+            <div>{{price}}</div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      {{! Your Order / End }}
+
+      {{! Total & Payments }}
+      <div>
+        <h5 class="font-bold text-primary tracking-tight lg:text-lg mb-4 lg:mb-6 dark:text-white">Total &amp; Payments</h5>
+        <address class="leading-7 tracking-tighter [&>p]:mb-7 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            Cart Total: $99.00<br>
+            Shipping: $5.00<br>
+            Promo Code: -$10.00<br>
+            Order Total: <span class="text-accent">$94.00</span>
+          </p>
+          <p>
+            Bank of the Republic<br>
+            Account XXXX-XXXX-1234
+          </p>
+        </address>
+      </div>
+      {{! Total & Payments / End }}
+
+    </div>
+    {{! Order Details / End }}
+
+  </div>
+  {{! Orders / End }}
+
+{{/_yt1-account-main}}

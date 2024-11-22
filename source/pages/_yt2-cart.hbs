@@ -1,0 +1,227 @@
+---
+page-title: "Shopping Cart"
+layout: "yt2"
+breadcrumbs: [
+  {
+    label: "Shop",
+    link: "_yt2-shop-grid-3.html"
+  },
+  {
+    label: "Shopping Cart"
+  }
+]
+---
+
+<section class="pt-12 pb-20 lg:pb-52 lg:pt-24">
+  <div class="container">
+
+    {{! Shopping Cart }}
+    <div>
+
+      {{! Cart }}
+      <div>
+        {{! Products }}
+        <div class="relative overflow-x-auto mb-12 lg:mb-16">
+          <table class="w-full table-auto">
+            <thead class="text-sm font-bold uppercase leading-tight text-primary dark:text-white border-b border-gray-500">
+              <tr>
+                <th class="py-4 pr-4 text-left">Product</th>
+                <th class="py-4 px-4">Price</th>
+                <th class="py-4 px-4">Quantity</th>
+                <th class="py-4 px-4">Subtotal</th>
+                <th class="py-4 pl-4"></th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              {{#each yt2.shop.cart.products}}
+                <tr>
+                  <td class="py-4 pr-4 text-left border-b border-gray-500 lg:py-8">
+                    <div class="flex gap-3 min-w-[260px]">
+                      <!-- Thumb -->
+                      <figure class="shrink-0">
+                        <a class="group" href="{{url}}.html">
+                          <img
+                            class="transition-opacity duration-300 group-hover:opacity-75"
+                            src="{{img.sm}}"
+                            alt="{{title}}"
+                          />
+                        </a>
+                      </figure>
+                      <!-- Thumb / End -->
+                      <!-- Product Body -->
+                      <div class="flex flex-grow flex-col gap-1 leading-tight">
+                        <!-- Category -->
+                        <span
+                          class="text-xs font-bold uppercase text-gray-300"
+                        >{{category}}</span>
+                        <!-- Category / End-->
+                        <!-- Title -->
+                        <h4 class="mb-[2px] font-bold">
+                          <a
+                            class="text-primary dark:text-white transition-colors hover:text-accent dark:hover:text-accent"
+                            href="{{url}}.html"
+                          >
+                            {{title}}
+                          </a>
+                        </h4>
+                        <!-- Title / End -->
+
+                        {{! Rating }}
+                        {{> _yt2-rating rating=rating rating-size="sm" }}
+                        {{! Rating / End }}
+
+                      </div>
+                      <!-- Product Body / End -->
+                    </div>
+                  </td>
+                  <td class="py-4 px-4 font-bold text-primary border-b border-gray-500 lg:py-8 dark:text-white">{{single-price}}</td>
+                  <td class="py-4 px-4 border-b border-gray-500 lg:py-8">
+                    {{> _yt2-form-input
+                      type="number"
+                      name=id
+                      id=id
+                      width="w-20 lg:w-[120px]"
+                      size="md"
+                      value=quantity
+                    }}
+                  </td>
+                  <td class="py-4 px-4 font-bold text-primary border-b border-gray-500 lg:py-8 dark:text-white">{{price}}</td>
+                  <td class="py-4 border-b border-gray-500 lg:py-8">
+                    {{! Remove Button }}
+                    <button
+                      class="group inline-flex h-5 w-5 items-center justify-center"
+                    >
+                      <svg
+                        role="img"
+                        class="h-2 w-2 fill-primary transition-colors group-hover:fill-accent dark:fill-white dark:group-hover:fill-accent"
+                      >
+                        <use xlink:href="{{root}}assets/img/yt2/sprite.svg#close"></use>
+                      </svg>
+                    </button>
+                    {{! Remove Button / End }}
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        {{! Products / End }}
+
+        {{! Code & Submit }}
+        <div class="flex flex-wrap gap-y-6 justify-between">
+          {{! Promo Code }}
+          <div class="flex flex-col md:flex-row gap-y-3 basis-full lg:basis-auto">
+            {{> _yt2-form-input
+              type="text"
+              name="cart-promo"
+              id="cart-promo"
+              placeholder="Enter your code here..."
+              width="w-full md:w-[280px]"
+            }}
+            {{#> _yt2-btn
+              is-btn="true"
+              variant="secondary"
+              size="lg"
+              type="button"
+              class="-ml-[1px]"
+            }}
+              Redeem Code
+            {{/_yt2-btn}}
+          </div>
+          {{! Promo Code }}
+
+          {{! Cart Controls }}
+          <div class="flex flex-col lg:flex-row flex-wrap gap-2 basis-full lg:basis-auto">
+            {{#> _yt2-btn
+              is-btn="true"
+              variant="link"
+              size="lg"
+              type="reset"
+              class="w-full lg:w-auto"
+            }}
+              Empty Cart
+            {{/_yt2-btn}}
+            {{#> _yt2-btn
+              is-btn="true"
+              variant="primary"
+              size="lg"
+              type="submit"
+              class="w-full lg:w-auto"
+            }}
+              Update Cart
+            {{/_yt2-btn}}
+          </div>
+          {{! Cart Controls / End }}
+        </div>
+        {{! Code & Submit / End }}
+
+      </div>
+      {{! Cart / End }}
+
+      <div class="h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28"></div>
+
+      {{! Order }}
+      <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5">
+        <div class="col-span-full lg:col-start-8 lg:col-span-5">
+          {{#with yt2.shop.cart}}
+
+            {{! Order Calculation }}
+            <div>
+              <h3
+                class="text-2xl font-bold text-primary md:text-3xl md:tracking-tight lg:text-3.5xl dark:text-white mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16"
+              >Your Order</h3>
+              <div>
+                {{! Cart Total }}
+                <div
+                  class="mb-5 flex flex-wrap justify-between text-lg leading-tighter lg:text-base"
+                >
+                  <h4>Cart Total</h4>
+                  <div class="font-bold text-primary dark:text-white">{{cart-total}}</div>
+                </div>
+                {{! Cart Total / End }}
+
+                {{! Calculation }}
+                <div
+                  class="mb-8 flex flex-col gap-y-5 text-sm leading-normal tracking-tighter lg:text-base"
+                >
+                  {{#each calculation}}
+                    <div class="flex flex-wrap justify-between">
+                      <div>{{label}}</div>
+                      <div class="font-bold text-primary dark:text-white">{{value}}</div>
+                    </div>
+                  {{/each}}
+                </div>
+                {{! Calculation / End }}
+
+                {{! Order Total }}
+                <div
+                  class="mb-4 flex flex-wrap justify-between text-lg font-bold leading-tighter md:mb-10 lg:mb-14"
+                >
+                  <div class="text-primary dark:text-white">Total</div>
+                  <div class="text-accent">{{order-total}}</div>
+                </div>
+                {{! Order Total / End }}
+
+                {{#> _yt2-btn
+                  is-btn="true"
+                  variant="accent"
+                  size="lg"
+                  type="submit"
+                  class="w-full"
+                }}
+                  Proceed to Checkout
+                {{/_yt2-btn}}
+              </div>
+            </div>
+            {{! Order Calculation / End }}
+
+          {{/with}}
+        </div>
+
+      </div>
+      {{! Order }}
+    </div>
+    {{! Shopping Cart / End }}
+
+  </div>
+</section>

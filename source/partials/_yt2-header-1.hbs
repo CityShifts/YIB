@@ -1,0 +1,15 @@
+<div class="header-wrapper bg-white text-primary dark:bg-gray-900 dark:text-white">
+  {{! Site Header }}
+  <header id="site-header">
+    <div class="container">
+      {{> _yt2-header-nav }}
+    </div>
+  </header>
+  {{! Site Header / End }}
+
+  {{! Page Heading }}
+  {{#if breadcrumbs}}
+    {{> _yt2-page-heading }}
+  {{/if}}
+  {{! Page Heading / End }}
+</div>

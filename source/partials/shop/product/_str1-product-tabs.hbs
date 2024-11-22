@@ -1,0 +1,104 @@
+{{! Product Tabs}}
+<div class="tabs">
+
+  {{! Navigation }}
+  <nav class="tabs__header pb-4 font-bold leading-tight tracking-tight text-xl lg:text-2xl xl:text-[32px]">
+    <ul
+      class="flex flex-col flex-wrap justify-between gap-y-3 sm:flex-row"
+    >
+      <li class="tabs__header-item is-active group">
+        <a
+          href="#"
+          class="text-gray-500/40 transition-colors hover:text-gray-900 group-[.is-active]:text-gray-900 dark:group-[.is-active]:text-white dark:hover:text-white before:content-['.'] before:mr-[0.15em] group-[.is-active]:before:text-accent"
+        >Description</a>
+      </li>
+      <li class="tabs__header-item group">
+        <a
+          href="#"
+          class="text-gray-500/40 transition-colors hover:text-gray-900 group-[.is-active]:text-gray-900 dark:group-[.is-active]:text-white dark:hover:text-white before:content-['.'] before:mr-[0.15em] group-[.is-active]:before:text-accent"
+        >Specifications</a>
+      </li>
+      <li class="tabs__header-item group">
+        <a
+          href="#"
+          class="text-gray-500/40 transition-colors hover:text-gray-900 group-[.is-active]:text-gray-900 dark:group-[.is-active]:text-white dark:hover:text-white before:content-['.'] before:mr-[0.15em] group-[.is-active]:before:text-accent"
+        >Reviews (2)</a>
+      </li>
+    </ul>
+  </nav>
+  {{! Navigation / End }}
+
+  {{! Tab Content }}
+  <div class="tabs__content vv-prose pt-6 pb-0 md:pt-9 lg:pt-10 xl:pt-12">
+
+    {{! Tab: Description }}
+    <div class="tabs__content-item">
+      <h3 class="mt-0 lg:mb-16">Top Quality Frames</h3>
+      <p class="lead">Hand-Made specially for this artistics prints, we have lots of frame options for you to choose!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+      <figure class="xl:mb-16">
+        <img
+          class="h-auto w-full"
+          src="{{root}}assets/img/str1/samples/product-content-img-1.jpg"
+          alt=""
+        />
+      </figure>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    {{! Tab: Description / End }}
+
+    {{! Tab: Specifications }}
+    <div class="tabs__content-item">
+      <dl
+        class="grid grid-cols-8 gap-x-5 leading-normal md:gap-x-6 lg:gap-x-7.5"
+      >
+        <dt class="col-span-full text-gray-500 dark:text-gray sm:col-span-3">
+          Dimensions
+        </dt>
+        <dd class="col-span-full mb-4 font-bold text-gray-900 dark:text-white sm:col-span-5 md:mb-7">
+          18x26 Inches
+        </dd>
+        <dt class="col-span-full text-gray-500 dark:text-gray sm:col-span-3">
+          Frame Material
+        </dt>
+        <dd class="col-span-full mb-4 font-bold text-gray-900 dark:text-white sm:col-span-5 md:mb-7">
+          Treated Oak Wood
+        </dd>
+        <dt class="col-span-full text-gray-500 dark:text-gray sm:col-span-3">
+          Print Finish
+        </dt>
+        <dd class="col-span-full mb-4 font-bold text-gray-900 dark:text-white sm:col-span-5 md:mb-7">
+          Matte
+        </dd>
+        <dt class="col-span-full text-gray-500 dark:text-gray sm:col-span-3">
+          SKU
+        </dt>
+        <dd class="col-span-full mb-4 font-bold text-gray-900 dark:text-white sm:col-span-5 md:mb-7">
+          WHP2563
+        </dd>
+      </dl>
+    </div>
+    {{! Tab: Specifications / End }}
+
+    {{! Tab: Reviews }}
+    <div class="tabs__content-item">
+
+      {{! Reviews }}
+      <ol class="flex flex-col gap-y-12 lg:gap-y-12 pb-5 my-0">
+        {{#each reviews}}
+          {{> _str1-product-review data=this}}
+        {{/each}}
+      </ol>
+      {{! Reviews / End }}
+
+      {{! Form }}
+      {{> _str1-review-form }}
+      {{! Form / End }}
+    </div>
+    {{! Tab: Reviews / End }}
+
+  </div>
+  {{! Tab Content / End }}
+
+</div>
+{{! Product Tabs / End }}

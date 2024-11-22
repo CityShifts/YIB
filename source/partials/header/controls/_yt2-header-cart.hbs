@@ -1,0 +1,18 @@
+{{! Cart }}
+<div class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100">
+  <a class="relative flex py-4 px-1.5 sm:px-2.5 gap-x-2.5 xl:gap-x-3.5 text-gray-900 dark:text-white" href="_yt2-cart.html">
+    <div class="font-bold text-sm leading-none text-right hidden lg:block">
+      <div class="text-3xs uppercase">
+        2 Items
+      </div>
+      <div class="leading-tight">$48.00</div>
+    </div>
+    <svg role="img" class="h-6 w-6 fill-gray-900 dark:fill-white">
+      <use xlink:href="{{root}}assets/img/yt2/sprite.svg#shopping-bag"></use>
+    </svg>
+  </a>
+
+  {{> _yt2-header-cart-dropdown subitems=yt2.shop.cart.products}}
+
+</div>
+{{! Cart / End }}

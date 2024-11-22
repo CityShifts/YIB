@@ -1,0 +1,25 @@
+{{! Details }}
+<dl class="mb-8 flex flex-col gap-y-3.5 font-medium md:mb-10 lg:mb-12">
+  {{#each details}}
+    <div class="flex flex-wrap justify-between">
+      <dt class="text-gray-500 opacity-60">
+        {{#if icon}}
+          <svg
+            class="aspect-square w-5 self-center fill-gray-500/60 lg:w-6"
+            fill="currentColor"
+          >
+            <use
+              xlink:href="{{root}}assets/img/social-icons.svg#{{icon}}"
+            ></use>
+          </svg>
+        {{else}}
+          {{label}}
+        {{/if}}
+      </dt>
+      <dd
+        class="[&_a]:text-accent [&_a]:hover:text-gray-900 [&_a]:dark:hover:text-white"
+      >{{{value}}}</dd>
+    </div>
+  {{/each}}
+</dl>
+{{! Details / End }}

@@ -1,0 +1,27 @@
+---
+page-title: "Account"
+layout: "yt2"
+breadcrumbs: [
+  {
+    label: "Account"
+  }
+]
+---
+
+<section class="pt-12 pb-20 lg:pb-52 lg:pt-24">
+  <div class="container">
+
+    {{> _yt2-account-nav nav=yt2.account }}
+
+    {{! Dashboard Info }}
+    <div class="[&>p]:mb-6 [&>p:last-child]:mb-0 bg-white shadow-3xl p-8 md:p-10 lg:p-14 xl:p-[60px] dark:bg-gray-700 [&_a]:text-accent hover:[&_a]:text-accent [&_a]:dark:text-white dark:hover:[&_a]:text-accent">
+
+      <p>Hello <strong>April Valentine</strong> (not <strong>April Valentine</strong>? <a href="#">Log out</a>)</p>
+
+      <p>From your account dashboard you can view your <a href="_yt2-account-order.html">recent orders</a>, manage your <a href="_yt2-account-shipping.html">shipping</a> and <a href="_yt2-account-billing.html">billing</a> addresses, and <a href="_yt2-account-info.html">edit your password and account details</a>.</p>
+
+    </div>
+    {{! Dashboard Info / End }}
+
+  </div>
+</section>

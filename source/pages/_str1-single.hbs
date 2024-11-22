@@ -1,0 +1,43 @@
+---
+page-title: "Blog Post v1"
+layout: "str1"
+single-post: "v1"
+no-bg: true
+---
+
+
+<div class="pb-16 lg:pb-44">
+  <div class="container">
+
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 grid-rows-[180px_1fr] lg:grid-rows-[304px_1fr]">
+
+      {{! Post Image }}
+      <figure class="col-span-full row-start-1 row-span-1 xl:-mx-[75px]">
+        <img src="{{root}}assets/img/str1/samples/post-img-2-1320x660.jpg" alt="">
+      </figure>
+      {{! Post Image / End }}
+
+      <div class="col-span-full md:col-start-2 md:col-span-10 row-start-2 row-span-1 bg-white dark:bg-gray-900 grid grid-cols-10 gap-x-5 md:gap-x-6 lg:gap-x-7.5">
+
+        <div class="col-span-full lg:col-start-2 lg:col-span-8">
+          {{! Post }}
+          {{> _str1-post-1 }}
+          {{! Post / End }}
+
+          {{! Comments }}
+          {{> _str1-post-comments
+            class="mt-16 md:mt-20 lg:mt-28 xl:mt-32"
+            data=str1.blog.post.comments
+          }}
+          {{! Comments / End }}
+
+          {{! Comments Form }}
+          {{> _str1-post-form class="mt-16 md:mt-20 lg:mt-28 xl:mt-32" }}
+          {{! Comments Form / End }}
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

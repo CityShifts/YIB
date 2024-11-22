@@ -1,0 +1,50 @@
+{{! Product Slider }}
+<div class="col-span-full md:col-span-7 md:pr-7 lg:pr-[70px]">
+
+  {{! Slider main container }}
+  <div class="swiper js-vv-product-swiper aspect-[75/89] w-full">
+
+    {{! Slider required wrapper }}
+    <div class="swiper-wrapper">
+      {{! Slides }}
+      {{#each gallery}}
+        <div class="swiper-slide">
+          <img
+            class="h-full w-full object-cover"
+            src="{{root}}{{this}}"
+            alt=""
+          />
+        </div>
+      {{/each}}
+      {{! Slides / End }}
+    </div>
+    {{! Slider required wrapper / End }}
+
+    {{! Navigation }}
+    <div class="absolute right-0 bottom-0 z-10 flex">
+      <div
+        class="vv-product-swiper-btn-prev flex h-[60px] w-[50px] items-center justify-center bg-white text-primary hover:cursor-pointer hover:text-accent"
+      >
+        <svg class="h-2 w-2" fill="currentColor">
+          <use
+            xlink:href="{{root}}assets/img/yt1/sprite.svg#chevron-left"
+          ></use>
+        </svg>
+      </div>
+      <div
+        class="vv-product-swiper-btn-next flex h-[60px] w-[50px] items-center justify-center bg-white text-primary hover:cursor-pointer hover:text-accent"
+      >
+        <svg class="h-2 w-2" fill="currentColor">
+          <use
+            xlink:href="{{root}}assets/img/yt1/sprite.svg#chevron-right"
+          ></use>
+        </svg>
+      </div>
+    </div>
+    {{! Navigation / End }}
+
+  </div>
+  {{! Slider main container / End }}
+
+</div>
+{{! Product Slider / End }}

@@ -1,0 +1,67 @@
+---
+page-title: "Streams"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "Streams"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{! LiveStream }}
+  <section class="mb-20 lg:mb-32">
+
+    {{> _str1-section-heading title="LiveStream Box" }}
+
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5">
+
+      {{! Stream }}
+      <div class="col-span-full lg:col-span-9">
+        <iframe
+          class="w-full aspect-[870/480]"
+          src="https://player.twitch.tv/?channel={{../str1.twitch.user}}&parent=valkivid.dan-fisher.dev"
+          allowfullscreen>
+        </iframe>
+      </div>
+      {{! Stream / End }}
+
+      {{! Chat }}
+      <div class="col-span-full lg:col-span-3 bg-white">
+        <iframe
+          class="aspect-[300/480] w-full lg:-ml-7.5 lg:w-[calc(100%+30px)]"
+          id="chat_embed"
+          src="https://www.twitch.tv/embed/{{../str1.twitch.user}}/chat?parent=valkivid.dan-fisher.dev">
+        </iframe>
+      </div>
+      {{! Chat / End }}
+    </div>
+
+  </section>
+  {{! LiveStream / End }}
+
+
+  {{! Stream Videos }}
+  <section class="mb-20 lg:mb-32">
+
+    {{> _str1-streams-filter
+      streams-layout=../str1.channel.layout
+      categories=../str1.channel.games
+    }}
+
+    {{> _str1-videos-feed
+      videos=../str1.channel.streams
+      videos-layout="grid-3"
+      videos-limit="12"
+      thumb-size="md"
+    }}
+
+    {{> _str1-videos-preloader }}
+
+  </section>
+  {{! Stream Videos / End }}
+
+  {{> _str1-channel-banner }}
+
+{{/_str1-content}}

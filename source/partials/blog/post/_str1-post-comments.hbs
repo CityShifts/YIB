@@ -1,0 +1,12 @@
+<div class="{{class}}">
+  <h2
+    class="mb-8 text-xl font-bold text-gray-900 dark:text-white md:mb-16 md:text-2xl lg:mb-20 lg:text-3xl xl:mb-24 xl:text-4xl"
+  >
+    4 Comments
+  </h2>
+  <ol>
+    {{#each data}}
+      {{> _str1-post-comment currentComment=data}}
+    {{/each}}
+  </ol>
+</div>

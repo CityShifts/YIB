@@ -1,0 +1,42 @@
+{{! Rating }}
+<div class="flex items-center gap-x-4 relative text-sm leading-none {{rating-class}}">
+  <div class="relative inline-flex leading-none
+    {{#ifequal rating-size "sm"}} gap-1 {{/ifequal}}
+    {{#ifequal rating-size "md"}} gap-1 {{/ifequal}}
+    {{#ifequal rating-size "lg"}} gap-[5px] {{/ifequal}}
+  ">
+    {{#times 5}}
+      <svg role="img" class="
+        {{#ifequal ../rating-size "sm"}} h-2.5 w-2.5 {{/ifequal}}
+        {{#ifequal ../rating-size "md"}} h-[13px] w-[13px] {{/ifequal}}
+        {{#ifequal ../rating-size "lg"}} h-3.5 w-3.5 {{/ifequal}}
+        fill-gray-200 dark:fill-white/20
+      ">
+        <use xlink:href="{{root}}assets/img/str1/sprite.svg#star"></use>
+      </svg>
+    {{/times}}
+  </div>
+  <div class="absolute left-0 top-0 inline-flex leading-none
+    {{#ifequal rating-size "sm"}} gap-1 {{/ifequal}}
+    {{#ifequal rating-size "md"}} gap-1 {{/ifequal}}
+    {{#ifequal rating-size "lg"}} gap-[5px] {{/ifequal}}
+  ">
+    {{#times rating}}
+      <svg role="img" class="
+        {{#ifequal ../rating-size "sm"}} h-2.5 w-2.5 {{/ifequal}}
+        {{#ifequal ../rating-size "md"}} h-[13px] w-[13px] {{/ifequal}}
+        {{#ifequal ../rating-size "lg"}} h-3.5 w-3.5 {{/ifequal}}
+        fill-accent
+        ">
+        <use xlink:href="{{root}}assets/img/str1/sprite.svg#star"></use>
+      </svg>
+    {{/times}}
+  </div>
+
+  {{#if label}}
+  <div class="text-gray-500/60 uppercase font-bold text-sm leading-none mt-[1px]">
+    {{label}}
+  </div>
+  {{/if}}
+</div>
+{{! Rating / End }}

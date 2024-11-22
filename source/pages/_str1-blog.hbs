@@ -1,0 +1,17 @@
+---
+page-title: "Blog"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "Blog"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{> _str1-post-grid posts=../str1.blog.feed limit=9}}
+
+  {{> _str1-pagination items=../str1.blog.pagination }}
+
+{{/_str1-content}}

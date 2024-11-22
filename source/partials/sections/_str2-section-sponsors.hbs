@@ -1,0 +1,26 @@
+{{! Sponsors }}
+<section class="pb-14 lg:pb-[88px]">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-x-5 gap-y-6 md:gap-x-6 lg:gap-x-7.5">
+      <h5
+        class="col-span-full mb-8 text-center text-base font-bold uppercase leading-tight tracking-tighter text-gray-900 dark:text-white md:mb-12 xl:mb-10"
+      >
+        These are some of my
+        <span class="text-primary">partners</span>
+        and brands I've worked with
+      </h5>
+      {{#each str2.sponsors}}
+        <div class="col-span-4 lg:col-span-2">
+          <a href="{{link.url}}" class="group">
+            <img
+              class="mx-auto opacity-20 transition-opacity group-hover:opacity-100"
+              src="{{root}}{{img.sm}}"
+              alt="{{label}}"
+            />
+          </a>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+{{! Sponsors / End }}

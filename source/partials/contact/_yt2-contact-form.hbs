@@ -1,0 +1,46 @@
+<form class="grid grid-cols-1 md:grid-cols-3 gap-7" action="#">
+  <div class="md:col-span-full lg:col-span-1">
+    {{> _yt2-form-input
+      type="text"
+      name="post-name"
+      id="post-name"
+      placeholder="Name"
+    }}
+  </div>
+  <div class="md:col-span-full lg:col-span-1">
+    {{> _yt2-form-input
+      type="email"
+      name="post-email"
+      id="post-email"
+      placeholder="Email"
+    }}
+  </div>
+  <div class="md:col-span-full lg:col-span-1">
+    {{#> _yt2-form-select name="subject" id="subject"}}
+      <option value="-">Select Subject</option>
+      <option value="0">Affiliates Inquiry</option>
+      <option value="1">General Inquiry</option>
+      <option value="2">Partner Inquiry</option>
+      <option value="3">Other</option>
+    {{/_yt2-form-select}}
+  </div>
+  <div class="col-span-full">
+    {{> _yt2-form-textarea
+      textarea-class="h-40 md:h-52"
+      name="post-comment"
+      id="post-comment"
+      placeholder="Your Message"
+    }}
+  </div>
+  <div class="md:col-span-full lg:col-span-1">
+    {{#> _yt2-btn
+      is-btn="true"
+      variant="accent"
+      size="xl"
+      type="submit"
+      class="w-full"
+    }}
+      Send Message
+    {{/_yt2-btn}}
+  </div>
+</form>

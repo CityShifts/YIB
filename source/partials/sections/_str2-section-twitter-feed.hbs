@@ -1,0 +1,81 @@
+{{! Twitter Feed }}
+<section class="py-14 lg:py-[88px]">
+  <div class="container">
+
+    {{> _str2-section-heading
+      title="Twitter Feed"
+      subtitle="Keep Updated!"
+      size="lg"
+      is-twitter="true"
+    }}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7.5 place-items-start">
+
+      <div class="grid gap-5 md:gap-6 lg:gap-7.5">
+
+        {{#> _str2-twitter-card
+          avatar="assets/img/str2/samples/user-1-40x40.png"
+          name="NekoMaGiX"
+          nickname="@NekoMGX"
+          url="#"
+          time="26 minutes ago"
+        }}
+          Remember that this Friday at 9:00PM PCT I’ll be live streaming with <a href="#">@gamehuntress</a> playing the new story mode DLC of Witch Hunters!
+        {{/_str2-twitter-card}}
+
+        {{#> _str2-twitter-card
+          avatar="assets/img/str2/samples/user-1-40x40.png"
+          name="NekoMaGiX"
+          nickname="@NekoMGX"
+          url="#"
+          time="3 hours ago"
+        }}
+          I’m gonna be having a special stream tonight at 9pm PCT! <a href="#">bitlyx.com/sTrm</a>
+        {{/_str2-twitter-card}}
+
+      </div>
+
+      <div class="grid gap-5 md:gap-6 lg:gap-7.5">
+
+        {{#> _str2-twitter-card
+          avatar="assets/img/str2/samples/user-1-40x40.png"
+          name="NekoMaGiX"
+          nickname="@NekoMGX"
+          url="#"
+          time="14 hours ago"
+        }}
+          YEAH! Finally I got my Witch Hunters Deluxe Pack! Keep an eye out for the upcoming unboxing video!
+          <p><img src="assets/img/str2/samples/twitter-img-1.jpg" alt="" /></p>
+          <a href="#">#unboxing</a> <a href="#">#witchhunters</a> <a href="#">#deluxe</a>
+        {{/_str2-twitter-card}}
+
+      </div>
+
+      <div class="md:col-span-full lg:col-span-1 grid md:grid-cols-2 lg:grid-cols-1 gap-5 md:gap-6 lg:gap-7.5">
+
+        {{#> _str2-twitter-card
+          avatar="assets/img/str2/samples/user-1-40x40.png"
+          name="NekoMaGiX"
+          nickname="@NekoMGX"
+          url="#"
+          time="2 days ago"
+        }}
+          I’ll be having a Mochi’s Island speedrun for charity! Hope to see you all there! <a href="#">bitlyx.com/chRty</a>
+        {{/_str2-twitter-card}}
+
+        {{#> _str2-twitter-card
+          avatar="assets/img/str2/samples/user-1-40x40.png"
+          name="NekoMaGiX"
+          nickname="@NekoMGX"
+          url="#"
+          time="5 days ago"
+        }}
+          We’re a few days away from the charity livestream for <a href="#">@purplecross</a> Join us for a great cause!
+        {{/_str2-twitter-card}}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+{{! Twitter Feed / End }}

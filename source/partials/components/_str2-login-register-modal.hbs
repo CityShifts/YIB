@@ -1,0 +1,207 @@
+{{! Login/Register Modal }}
+<dialog
+  id="login-register"
+  class="js-vv-modal mx-auto w-[470px] max-w-[90%] border-none bg-transparent p-0 backdrop:bg-gray-900/90"
+>
+
+  <div class="pt-[22px]">
+    <div class="bg-white dark:bg-gray-700 shadow-3xl overflow-y-auto">
+      {{! Modal: Header }}
+      <div
+        class="relative overflow-hidden isolate flex h-28 items-center bg-primary px-6 md:px-10 lg:h-[140px]"
+      >
+        <div class="relative z-[4] text-white sm:ml-[56%]">
+          <h4 class="text-2xl leading-none font-bold mb-1 lg:text-3xl xl:text-[38px] xl:leading-[0.74em] tracking-tighter uppercase">
+            <span>Login &</span>
+            <span class="block xl:leading-none xl:text-[32px]">Register</span>
+          </h4>
+          <div class="font-bold leading-none uppercase tracking-tighter">I’m glad to see you here!</div>
+        </div>
+
+        <svg class="absolute left-0 top-0 w-full h-full -z-20" fill="none" viewBox="0 0 470 140">
+          <defs>
+            <pattern id="dotted-pattern" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="3" height="3" class="text-white/30" fill="currentColor" />
+            </pattern>
+          </defs>
+          <rect width="470" height="140" fill="url(#dotted-pattern)" />
+        </svg>
+
+        {{! Hero Image }}
+        <img
+          class="hidden sm:block absolute left-0 top-0 h-full z-[5] object-cover aspect-[251/140]"
+          src="{{root}}assets/img/str2/samples/modal-header-hero.png"
+          alt=""
+        />
+        {{! Hero Image / End }}
+      </div>
+      {{! Modal: Header / End }}
+
+      {{! Modal: Content }}
+      <div>
+        {{! Product Tabs}}
+        <div class="tabs">
+
+          {{! Navigation }}
+          <nav class="tabs__header overflow-hidden">
+            <ul class="grid grid-cols-2 gap-x-[1px] dark:bg-gray-500/20">
+              <li class="tabs__header-item is-active group">
+                <a
+                  href="#"
+                  class="flex justify-center uppercase tracking-tighter border-b bg-gray-50 dark:bg-gray-800 group-[.is-active]:bg-white border-gray-500/20 py-4 text-center font-bold text-gray-600 transition-colors hover:text-gray-900 dark:hover:text-white group-[.is-active]:text-primary dark:group-[.is-active]:border-gray-700 group-[.is-active]:border-white dark:group-[.is-active]:bg-gray-700 dark:group-[.is-active]:hover:text-primary"
+                >Login</a>
+              </li>
+              <li class="tabs__header-item group flex-1">
+                <a
+                  href="#"
+                  class="flex justify-center uppercase tracking-tighter border-b bg-gray-50 dark:bg-gray-800 group-[.is-active]:bg-white border-gray-500/20 py-4 text-center font-bold text-gray-600 transition-colors hover:text-gray-900 dark:hover:text-white group-[.is-active]:text-primary dark:group-[.is-active]:border-gray-700 group-[.is-active]:border-white dark:border-gray-500/20 dark:group-[.is-active]:bg-gray-700 dark:group-[.is-active]:hover:text-primary"
+                >Register</a>
+              </li>
+            </ul>
+          </nav>
+          {{! Navigation / End }}
+
+          {{! Tab Content }}
+          <div class="tabs__content py-6 px-6 lg:px-10 lg:py-9">
+
+            {{! Tab: Login }}
+            <div class="tabs__content-item">
+
+              {{! Login Form }}
+              <form class="flex flex-col gap-y-6 lg:gap-y-8" action="#">
+                <div>
+                  {{> _str2-form-input
+                    type="email"
+                    name="login-user-email"
+                    id="login-user-email"
+                    label="Your Email"
+                  }}
+                </div>
+                <div>
+                  {{> _str2-form-input
+                    type="password"
+                    name="login-user-password"
+                    id="login-user-password"
+                    label="Your Password"
+                  }}
+                </div>
+                <div class="flex justify-between flex-wrap gap-y-4">
+                  <div>
+                    {{#> _str2-form-checkbox
+                      name="remember-me"
+                      id="remember-me"
+                    }}
+                      <span class="text-xs font-bold uppercase text-gray-900 dark:text-white">
+                        Remember Me
+                      </span>
+                    {{/_str2-form-checkbox}}
+                  </div>
+                  <a href="#" class="text-xs font-bold uppercase text-primary dark:text-white hover:text-primary dark:hover:text-primary transition-colors">Forgot Password?</a>
+                </div>
+                <div class="mt-2">
+                  {{#> _str2-btn
+                    is-btn="true"
+                    variant="primary"
+                    size="md"
+                    type="submit"
+                    class="w-full"
+                  }}
+                    Login to your account
+                  {{/_str2-btn}}
+                </div>
+              </form>
+              {{! Login Form / End }}
+
+              {{! Social Form }}
+              <div class="pt-4.5">
+                <div class="text-center uppercase font-bold text-primary mb-6 text-xs dark:text-white">or login with your social account</div>
+                <div class="flex gap-4">
+                  {{#> _str2-btn
+                    variant="facebook"
+                    size="md"
+                    class="flex-1"
+                  }}
+                    <svg class="h-[14px] w-[14px]" fill="currentColor">
+                      <use xlink:href="{{root}}assets/img/social-icons.svg#facebook"></use>
+                    </svg>
+                    Login
+                  {{/_str2-btn}}
+                  {{#> _str2-btn
+                    variant="twitter"
+                    size="md"
+                    class="flex-1"
+                  }}
+                    <svg class="h-[14px] w-[14px]" fill="currentColor">
+                      <use xlink:href="{{root}}assets/img/social-icons.svg#twitter"></use>
+                    </svg>
+                    Login
+                  {{/_str2-btn}}
+                </div>
+              </div>
+              {{! Social Form / End }}
+            </div>
+            {{! Tab: Login / End }}
+
+            {{! Tab: Register }}
+            <div class="tabs__content-item">
+
+              {{! Register Form }}
+              <form class="flex flex-col gap-y-6 lg:gap-y-8" action="#">
+                <div class="group is-success">
+                  {{> _str2-form-input
+                    type="email"
+                    name="register-user-email"
+                    id="register-user-email"
+                    label="Your Email"
+                    value="jspigel@yourmail.com"
+                  }}
+                </div>
+                <div class="group is-error">
+                  {{> _str2-form-input
+                    type="password"
+                    name="register-user-password"
+                    id="register-user-password"
+                    label="Your Password"
+                    value="qwertyqw"
+                    notification="Password need to have at least one number"
+                  }}
+                </div>
+                <div>
+                  {{> _str2-form-input
+                    type="password"
+                    name="user-password-repeat"
+                    id="user-password-repeat"
+                    label="Repeat Password"
+                  }}
+                </div>
+                <div class="mt-2">
+                  {{#> _str2-btn
+                    is-btn="true"
+                    variant="accent"
+                    size="md"
+                    type="submit"
+                    class="w-full"
+                  }}
+                    Create your account
+                  {{/_str2-btn}}
+                </div>
+                <div class="text-sm leading-loose text-gray text-center">
+                  <p>You’ll receive a confirmation email in your inbox with a link so you can activate your account. If you have any problems, <a class="text-primary hover:text-primary dark:hover:text-white transition-colors" href="_str2-contact.html">contact us</a>!</p>
+                </div>
+              </form>
+              {{! Register Form / End }}
+
+            </div>
+            {{! Tab: Register / End }}
+
+          </div>
+          {{! Tab Content / End }}
+        </div>
+        {{! Product Tabs / End }}
+      </div>
+      {{! Modal: Content / End }}
+    </div>
+  </div>
+
+</dialog>
+{{! Login/Register Modal / End }}

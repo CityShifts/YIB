@@ -1,0 +1,42 @@
+{{! Modal }}
+<dialog
+  id="{{modal-id}}"
+  class="js-vv-modal mx-auto w-[570px] max-w-[90%] border-none bg-transparent p-0 backdrop:bg-gray-900/90"
+>
+  <div class="pt-6">
+    <div
+      class="shadow-3xl relative col-span-full grid grid-cols-12 gap-x-0 bg-white dark:bg-gray-800 md:col-start-2 md:col-end-12 md:grid-cols-6 md:gap-x-6 lg:col-start-3 lg:col-end-11 lg:gap-x-7.5 xl:col-start-4 xl:col-end-10"
+    >
+      {{! Close Button }}
+      <button
+        class="{{modal-close-btn-id}}
+          absolute right-0 top-0 inline-flex aspect-square w-11 items-center justify-center bg-accent outline-none transition-colors hover:bg-accent/90"
+      >
+        <svg class="aspect-square w-3.5 fill-white">
+          <use xlink:href="{{root}}assets/img/yt2/sprite.svg#close"></use>
+        </svg>
+      </button>
+      {{! Close Button / End }}
+      <div class="col-start-2 col-end-12 py-10 md:col-end-6 md:py-20">
+
+        <h2
+          class="mb-4 text-2xl font-bold tracking-tight text-primary dark:text-white md:text-3.5xl"
+        >
+          {{title}}
+        </h2>
+
+        {{#if desc}}
+          <div
+            class="mb-8 pr-2 tracking-tighter text-gray-500 md:mb-14 md:text-lg md:leading-normal"
+          >
+            <p>{{{desc}}}</p>
+          </div>
+        {{/if}}
+
+        {{{@partial-block}}}
+
+      </div>
+    </div>
+  </div>
+</dialog>
+{{! Modal / End }}

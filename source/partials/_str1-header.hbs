@@ -1,0 +1,15 @@
+<div class="header-wrapper text-white">
+  {{! Site Header }}
+  <header id="site-header" class="text-white">
+    <div class="max-w-[1360px] mx-auto px-5">
+      {{> _str1-header-nav }}
+    </div>
+  </header>
+  {{! Site Header / End }}
+
+  {{! Page Heading }}
+  {{#if breadcrumbs}}
+    {{> _str1-page-heading }}
+  {{/if}}
+  {{! Page Heading / End }}
+</div>

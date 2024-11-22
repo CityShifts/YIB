@@ -1,0 +1,131 @@
+{{! Post }}
+<article class="pt-10 sm:pt-12 md:pt-16 lg:pt-[90px]">
+
+  {{! Post: Header }}
+  <header class="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20">
+
+    {{! Date }}
+    <time class="block text-accent font-bold text-base lg:text-lg leading-tight mb-1 md:mb-2 xl:mb-4 pt-1" datetime="2023-03-06 20:00">March 6th, 2023</time>
+    {{! Date / End }}
+
+    {{! Title }}
+    <h1 class="text-gray-900 dark:text-white text-2xl sm:text-3xl sm:leading-none md:text-4xl md:leading-none lg:text-5xl lg:leading-none leading-none xl:text-[62px] xl:leading-none font-bold xl:px-16 mb-5 md:mb-6 lg:mb-10 xl:mb-12">
+      Witch Hunters Deluxe Pack Unboxing
+    </h1>
+    {{! Title / End }}
+
+    {{! Social Sharing }}
+    <ul class="flex justify-center gap-x-4">
+      <li>
+        {{#> _str1-btn variant="facebook" size="md" }}
+          <svg class="h-[14px] w-[14px]" fill="currentColor">
+            <use xlink:href="{{root}}assets/img/social-icons.svg#facebook"></use>
+          </svg>
+          Share!
+        {{/_str1-btn}}
+      </li>
+      <li>
+        {{#> _str1-btn variant="twitter" size="md" }}
+          <svg class="h-[14px] w-[14px]" fill="currentColor">
+            <use xlink:href="{{root}}assets/img/social-icons.svg#twitter"></use>
+          </svg>
+          Tweet!
+        {{/_str1-btn}}
+      </li>
+    </ul>
+    {{! Social Sharing / End }}
+  </header>
+  {{! Post: Header / End }}
+
+  {{! Post: Content }}
+  <div class="vv-prose">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <figure>
+      <a class="group relative block h-full overflow-hidden bg-gray-900" href="#">
+        <img
+          class="my-0 aspect-[770/460] w-full object-cover transition-transform duration-300 group-hover:scale-110 lg:my-0"
+          src="{{root}}assets/img/str1/samples/single-post-img-2-770x460.jpg"
+          alt=""
+        />
+        {{! Overlay }}
+        <div class="absolute inset-0 bg-black opacity-40 dark:opacity-60"></div>
+        {{! Overlay / End }}
+        <span
+          class="absolute top-1/2 left-1/2 flex aspect-square h-20 w-20 -translate-x-2/4 -translate-y-2/4 items-center justify-center"
+        >
+          <svg role="img" class="mr-[-3px] h-[27px] w-[22px] fill-white">
+            <use xlink:href="{{root}}assets/img/yt1/sprite.svg#play"></use>
+          </svg>
+        </span>
+      </a>
+    </figure>
+
+    <h3>Why the Deluxe Pack is Worth It</h3>
+
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+
+    <h3>Final Thougths</h3>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.</p>
+
+    <div class="grid gap-x-[30px] md:auto-cols-fr md:grid-flow-col">
+      <div>
+        <h4>Pros</h4>
+        <ul class="list-none p-0">
+          <li>
+            {{> _str1-li-marker marker-class="border-accent text-accent" }}
+            Crimson Witch PVC Figurine
+          </li>
+          <li>
+            {{> _str1-li-marker marker-class="border-accent text-accent" }}
+            6+ Hours of Bonus Content
+          </li>
+          <li>
+            {{> _str1-li-marker marker-class="border-accent text-accent" }}
+            Hand Crafted Boxset
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cons</h4>
+        <ul class="list-none p-0">
+          <li>
+            {{> _str1-li-marker marker-class="border-primary text-primary" }}
+            Hand Crafted Boxset
+          </li>
+          <li>
+            {{> _str1-li-marker marker-class="border-primary text-primary" }}
+            Only a Few New Characters
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+  {{! Post: Content / End }}
+
+  {{! Post: Footer }}
+  <footer class="border-y border-gray/20 py-6 lg:py-10">
+    <ul class="flex gap-x-4">
+      <li class="flex-1">
+        {{#> _str1-btn variant="facebook" size="md" class="w-full" }}
+          <svg class="h-[14px] w-[14px]" fill="currentColor">
+            <use xlink:href="{{root}}assets/img/social-icons.svg#facebook"></use>
+          </svg>
+          Share!
+        {{/_str1-btn}}
+      </li>
+      <li class="flex-1">
+        {{#> _str1-btn variant="twitter" size="md" class="w-full" }}
+          <svg class="h-[14px] w-[14px]" fill="currentColor">
+            <use xlink:href="{{root}}assets/img/social-icons.svg#twitter"></use>
+          </svg>
+          Tweet!
+        {{/_str1-btn}}
+      </li>
+    </ul>
+  </footer>
+  {{! Post: Footer / End }}
+</article>
+{{! Post / End }}

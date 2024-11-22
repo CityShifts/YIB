@@ -1,0 +1,19 @@
+{{! Section Heading }}
+<div class="mb-10 md:mb-12 lg:mb-16 xl:mb-20 {{#if has-btn}}flex flex-col gap-y-6 sm:flex-row sm:justify-between sm:items-center{{/if}}">
+  <h2
+    class="text-2.5xl font-bold tracking-tighter text-gray-900 before:text-accent before:content-['.'] dark:text-white sm:text-3.5xl md:text-4xl lg:text-[62px] lg:leading-none"
+  >
+    {{{title}}}
+  </h2>
+
+  {{#if has-btn}}
+    {{#> _str1-btn
+      url=btn-link
+      variant="outline-default"
+      size=btn-size
+    }}
+      {{../btn-label}}
+    {{/_str1-btn}}
+  {{/if}}
+</div>
+{{! Section Heading / End }}

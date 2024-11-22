@@ -1,0 +1,117 @@
+---
+page-title: "About"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "About"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-16">
+
+    {{! Content }}
+    <div class="col-span-full md:col-span-8 md:pr-[38px] lg:pr-[50px] xl:pr-[70px]">
+
+      {{! Stream Rules }}
+      <div class="mb-12 md:mb-16 lg:mb-20 xl:mb-24">
+        <h3 class="text-gray-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold mb-8 md:mb-12 lg:mb-14 xl:mb-16">
+          Hardware
+        </h3>
+
+        {{! Product List }}
+        <div class="flex flex-col gap-y-12">
+          {{#each ../str1.about.hardware}}
+          <div class="grid grid-cols-[70px_1fr] grid-rows-2 lg:grid-rows-1 lg:auto-rows-auto lg:grid-cols-[70px_1fr_180px] gap-x-4 lg:gap-x-6 xl:gap-x-7.5 gap-y-6">
+            {{! Icon }}
+            <div class="flex items-center justify-center">
+              <svg class="aspect-square w-11 h-12.5 fill-accent" fill="currentColor">
+                <use xlink:href="{{root}}assets/img/str1/sprite.svg#{{icon}}"></use>
+              </svg>
+            </div>
+            {{! Icon / End }}
+
+            {{! Content }}
+            <div class="lg:pt-1">
+              <h4 class="lg:leading-none text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">
+                <a class="text-gray-900 dark:text-white hover:text-accent dark:hover:text-accent transition-colors" href="{{link}}">{{title}}</a>
+              </h4>
+              <div class="font-bold text-gray-500">{{brand}}</div>
+            </div>
+            {{! Content / End }}
+
+            {{! Button }}
+            <div class="col-span-full lg:col-auto">
+              {{#> _str1-btn variant="outline-default" size="md" class="w-full" }}
+                Buy it now!
+              {{/_str1-btn}}
+            </div>
+            {{! Button / End }}
+          </div>
+          {{/each}}
+        </div>
+        {{! Product List / End }}
+      </div>
+      {{! Stream Rules / End }}
+
+      {{! FAQ }}
+      <div>
+        <h3 class="text-gray-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold mb-8 md:mb-12 lg:mb-14 xl:mb-16">
+          Frequently Asked Questions
+        </h3>
+        {{> _str1-accordion data=../str1.about.faq }}
+      </div>
+      {{! FAQ / End }}
+
+    </div>
+    {{! Content / End }}
+
+    {{! Sidebar }}
+    <div class="col-span-full md:col-span-4">
+
+      {{! The Channel }}
+      <div class="mb-12 md:mb-16 lg:mb-20 xl:mb-24">
+        <h3 class="text-gray-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold mb-8 md:mb-12 lg:mb-14 xl:mb-16">
+          The Channel
+        </h3>
+        <div class="mb-6 lg:mb-10">
+          Hi! My name is April Valentine AKA <a href="#" class="text-accent hover:text-gray-900 dark:hover:text-white">NekoMaGiX</a>. My main stream is every day at 8PM PST. I also make special morning streams all 1st‘s, 15th’s and 30th’s of every month with the lastest gaming news.
+        </div>
+        {{! Details }}
+        {{> _str1-details details=../str1.about.details }}
+        {{! Details / End }}
+        {{#> _str1-btn variant="patreon" size="md" class="w-full" }}
+          <svg class="h-[14px] w-[14px]" fill="currentColor">
+            <use xlink:href="{{root}}assets/img/social-icons.svg#patreon"></use>
+          </svg>
+          Support me via Patreon
+        {{/_str1-btn}}
+      </div>
+      {{! The Channel / End }}
+
+      {{! Stream Rules }}
+      <div>
+        <h3 class="text-gray-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold mb-8 md:mb-12 lg:mb-14 xl:mb-16">
+          Stream Rules
+        </h3>
+        <ol class="list-ol">
+          <li>Be positive! Respect and help other viewers</li>
+          <li>Be respectful of moderators</li>
+          <li>No insults or any other bad laguage</li>
+          <li>No self promotions</li>
+          <li>Discrimination will result in ban</li>
+          <li>No message or emote spamming</li>
+          <li>Have fun!</li>
+        </ol>
+      </div>
+      {{! Stream Rules / End }}
+
+    </div>
+    {{! Sidebar / End }}
+
+  </div>
+
+
+{{/_str1-content}}

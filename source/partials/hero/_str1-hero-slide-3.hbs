@@ -1,0 +1,83 @@
+{{! Slides #3 }}
+<div class="swiper-slide group">
+  <div
+    class="relative isolate h-full w-full bg-gray-900"
+  >
+    <div class="container h-full">
+      <div class="grid h-full grid-cols-12 md:gap-x-6 lg:gap-x-[30px] items-end">
+
+        {{! Content }}
+        <div
+          class="col-span-full md:col-span-6 pb-8 sm:pb-10 md:pb-12"
+        >
+          <div class="text-left">
+
+            {{! Meta }}
+            <div
+              class="mb-1 flex flex-wrap gap-1 text-accent lg:mb-2 font-bold uppercase"
+            >
+              <div>March 6th, 2023</div>
+            </div>
+            {{! Meta / End }}
+
+            {{! Title }}
+            <h2
+              class="mb-4 text-2xl font-bold leading-none tracking-tight sm:text-3xl md:mb-5 md:text-4xl md:leading-none lg:text-5xl lg:mb-7 lg:leading-none text-white xl:text-[62px]"
+            >
+              <a href="_str1-single.html" class="hover:opacity-80 transition-opacity duration-300">
+                Witch Hunters Deluxe Pack Unboxing
+              </a>
+            </h2>
+            {{! Title / End }}
+
+            {{! Buttons }}
+            <div class="flex gap-3">
+              {{! Social Icons }}
+              <ul class="flex gap-3">
+                <li class="md:flex-1">
+                  {{> _str1-btn-share-1
+                    icon="facebook"
+                    title="Facebook"
+                    class="bg-social-facebook hover:bg-social-facebook/90"
+                  }}
+                </li>
+                <li class="md:flex-1">
+                  {{> _str1-btn-share-1
+                    icon="twitter"
+                    title="Twitter"
+                    class="bg-social-twitter hover:bg-social-twitter/90"
+                  }}
+                </li>
+              </ul>
+              {{! Social Icons / End }}
+
+              {{! Read More }}
+              {{#> _str1-btn
+                variant="accent"
+                size="md"
+              }}
+                Read More...
+              {{/_str1-btn}}
+              {{! Read More / End }}
+            </div>
+            {{! Buttons / End }}
+
+          </div>
+        </div>
+        {{! Content / End }}
+
+      </div>
+    </div>
+
+    {{! Background Image Layer }}
+    <div
+      class="absolute inset-0 -z-10 bg-[url('../../../assets/img/str1/samples/hero-slide-3.jpg')] bg-cover bg-center bg-no-repeat ease-out transition-transform duration-[8000ms] group-[.swiper-slide-active]:scale-110"
+    ></div>
+    {{! Background Image Layer / End }}
+
+    {{! Layer }}
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-transparent to-black"></div>
+    {{! Layer / End }}
+  </div>
+</div>
+{{! Slides #3 / End }}

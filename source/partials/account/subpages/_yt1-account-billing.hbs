@@ -1,0 +1,56 @@
+{{#> _yt1-account-main panel-title="Billing Details"}}
+
+  {{! Billing Details Form }}
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+    <div>
+      {{> _yt1-form-input type="text" name="billing-first-name" id="billing-first-name" placeholder="First Name" }}
+    </div>
+    <div>
+      {{> _yt1-form-input type="text" name="billing-last-name" id="billing-last-name" placeholder="Last Name" }}
+    </div>
+    <div>
+      {{> _yt1-form-input type="email" name="billing-email" id="billing-email" placeholder="Email" }}
+    </div>
+    <div>
+      {{> _yt1-form-input type="tel" name="billing-phone" id="billing-phone" placeholder="Phone" }}
+    </div>
+    <div class="col-span-full">
+      {{> _yt1-form-input type="text" name="billing-address" id="billing-address" placeholder="Full Address" }}
+    </div>
+    <div>
+      {{#> _yt1-form-select name="billing-country" id="billing-country"}}
+        <option value="-">Select Country</option>
+        <option value="0">United States</option>
+        <option value="1">Italy</option>
+        <option value="2">Spain</option>
+        <option value="3">Germany</option>
+      {{/_yt1-form-select}}
+    </div>
+    <div>
+      {{#> _yt1-form-select name="billing-state" id="billing-state"}}
+        <option value="-">Select State</option>
+        <option value="0">California</option>
+        <option value="1">Texas</option>
+        <option value="2">Florida</option>
+        <option value="3">Alaska</option>
+      {{/_yt1-form-select}}
+    </div>
+    <div>
+      {{#> _yt1-form-select name="billing-city" id="billing-city"}}
+        <option value="-">Select City</option>
+        <option value="0">New York</option>
+        <option value="1">Chicago</option>
+        <option value="2">San Francisco</option>
+        <option value="3">San Diego</option>
+      {{/_yt1-form-select}}
+    </div>
+    <div>
+      {{> _yt1-form-input type="number" name="billing-zip" id="billing-zip" placeholder="ZIP Code" }}
+    </div>
+    <div class="col-span-full">
+      <input class="bg-accent font-bold text-white text-lg tracking-tight py-5 leading-normal mt-4 md:mt-8 hover:cursor-pointer hover:bg-accent/90 transition-colors block w-full" type="submit" value="Save Address" />
+    </div>
+  </div>
+  {{! Billing Details Form / End }}
+
+{{/_yt1-account-main}}

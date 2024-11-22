@@ -1,0 +1,29 @@
+---
+page-title: "Events"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "Events"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{! Next Events }}
+  <section>
+    {{> _str1-section-heading title="Next Events" }}
+    {{> _str1-event-list events=../str1.events.next limit=5}}
+  </section>
+  {{! Next Events / End }}
+
+  <div class="h-20 md:h-24 lg:h-28 xl:h-32"></div>
+
+  {{! Past Events }}
+  <section>
+    {{> _str1-section-heading title="Past Events" }}
+    {{> _str1-event-list events=../str1.events.past limit=1}}
+  </section>
+  {{! Past Events / End }}
+
+{{/_str1-content}}

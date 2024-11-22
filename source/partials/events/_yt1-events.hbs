@@ -1,0 +1,98 @@
+{{! Featured Event }}
+{{#with yt1.events.event}}
+  <div
+    class="relative -mt-20 mb-14 bg-white dark:bg-gray-800 shadow-3xl lg:-mt-[200px] lg:mb-40"
+  >
+    <figure class="relative aspect-[10/5] sm:aspect-auto">
+      <img
+        class="h-full w-full object-cover"
+        src="{{root}}assets/img/yt1/samples/event-1-1170x240.jpg"
+        alt=""
+      />
+      <span
+        class="absolute bottom-0 left-0 bg-white dark:bg-gray-800 px-7 py-3 text-xs font-bold uppercase leading-normal text-primary dark:text-white md:py-4 md:px-10 md:text-sm"
+      >
+        Featured Event!
+      </span>
+    </figure>
+
+    <div class="flex py-7 px-5 pl-0 md:px-14 md:py-16 md:pl-0">
+      {{#with date}}
+        <div class="lg:24 w-20 pt-1 text-center md:w-24 md:pt-0 lg:w-[140px]">
+          <time
+            class="flex flex-col items-center text-xs font-bold uppercase md:text-base"
+            datetime="2022-08-06 21:30"
+          >
+            <span class="text-accent">{{month}}</span>
+            <span
+              class="text-2xl tracking-tighter text-primary dark:text-white md:text-[34px] md:leading-none"
+            >{{day}}</span>
+          </time>
+        </div>
+      {{/with}}
+      <div class="flex-1">
+        <h2
+          class="mb-4 text-xl font-bold tracking-tight text-primary dark:text-white md:mb-5 md:text-[26px]"
+        >
+          <a
+            class="text-primary dark:text-white transition-colors hover:text-accent dark:hover:text-accent"
+            href="{{url}}"
+          >{{title}}</a>
+        </h2>
+        <div class="lg:text-lg lg:leading-8 lg:tracking-tight">
+          <p>{{excerpt}}</p>
+        </div>
+
+        <ul class="flex flex-wrap gap-y-5 pt-9 lg:pt-14 xl:gap-x-24">
+          {{#each details}}
+            <li
+              class="flex basis-full gap-x-4 leading-tight sm:basis-1/2 xl:basis-auto"
+            >
+              <div class="lg:pt-1">
+                <svg role="img" class="h-6 w-6 fill-primary dark:fill-white">
+                  <use
+                    xlink:href="{{root}}assets/img/yt1/sprite.svg#{{icon}}"
+                  ></use>
+                </svg>
+              </div>
+              <div>
+                <h5
+                  class="font-bold tracking-tight text-primary dark:text-white md:text-lg md:leading-tight lg:pb-[2px]"
+                >{{value}}</h5>
+                <span class="text-xs lg:text-sm">{{label}}</span>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+{{/with}}
+{{! Featured Event / End }}
+
+{{! Next Events }}
+<section class="mb-14 lg:mb-40">
+  <h3
+    class="mb-6 text-2xl font-bold leading-none tracking-tight text-primary dark:text-white lg:mb-24 lg:text-5xl"
+  >
+    Next Events
+  </h3>
+
+  {{> _yt1-event-list events=yt1.events.next}}
+
+</section>
+{{! Next Events / End }}
+
+{{! Past Events }}
+<section>
+  <h3
+    class="mb-6 text-2xl font-bold leading-none tracking-tight text-primary dark:text-white lg:mb-24 lg:text-5xl"
+  >
+    Past Events
+  </h3>
+
+  {{> _yt1-event-list events=yt1.events.past}}
+
+</section>
+{{! Past Events / End }}

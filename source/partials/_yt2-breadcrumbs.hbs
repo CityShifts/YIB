@@ -1,0 +1,18 @@
+<ol
+  class="relative mb-7 flex flex-wrap divide-x-2 divide-accent text-sm font-bold leading-none lg:pt-1"
+>
+  <li class="px-2.5 pl-0">
+    <a class="text-primary hover:text-accent" href="_yt2-index.html">Home</a>
+  </li>
+  {{#each breadcrumbs}}
+    {{#if @last}}
+      <li class="px-2.5 text-gray-500/60">{{label}}</li>
+    {{else}}
+      <li class="px-2.5">
+        <a
+          class="text-primary hover:text-accent"
+          href="{{link}}"
+        >{{label}}</a></li>
+    {{/if}}
+  {{/each}}
+</ol>

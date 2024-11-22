@@ -1,0 +1,46 @@
+{{! About Me }}
+<section class="py-14 lg:py-[88px]">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-12">
+
+      {{! Content }}
+      <div class="col-span-full md:col-span-6 relative z-[2] md:pt-6 lg:pt-8 xl:pt-10">
+        {{> _str2-section-heading
+          title="Hi! I'm Neko Magix<br>The <span class=\"text-primary\">Retro Streamer</span> from L.A."
+          subtitle="About Me"
+          size="lg"
+          no-dot="true"
+        }}
+
+        <div class="lg:max-w-sm xl:max-w-[402px] xl:-mt-4">
+          <p>My name is Marina Valentine, but lots of you may know me as NekoMaGiX! I started streaming in 2016 and never stopped since then. I mostly play retro games from the 90’s and 00’s to bring back that nostalgic feel!</p>
+
+          {{! Signature }}
+          <div class="flex justify-end pb-4 pt-8 lg:pt-12">
+            <div class="font-decorative dark:text-white text-lg lg:text-1.5xl leading-tight -rotate-6">Marina Valentine</div>
+          </div>
+          {{! Signature / End }}
+        </div>
+      </div>
+      {{! Content / End }}
+
+      {{! Image }}
+      <div class="col-span-full md:col-span-6">
+        <figure class="relative isolate z-[1]">
+          <img src="{{root}}assets/img/str2/samples/about-me.jpg" alt="" />
+
+          <svg class="hidden md:block md:absolute md:-left-16 md:top-6 md:w-[370px] lg:w-[400px] xl:-left-32 xl:top-12 xl:w-[470px] aspect-[47/50] -z-10" fill="none" viewBox="0 0 470 500">
+            <defs>
+              <pattern id="dotted-pattern" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="3" height="3" class="text-gray dark:text-[#70747b]" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="470" height="500" fill="url(#dotted-pattern)" />
+          </svg>
+        </figure>
+      </div>
+      {{! Image / End}}
+    </div>
+  </div>
+</section>
+{{! About Me / End }}

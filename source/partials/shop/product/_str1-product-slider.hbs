@@ -1,0 +1,45 @@
+<div class="sticky top-8">
+  {{! Product Slider }}
+  <div class="swiper js-vv-product-swiper mb-9 aspect-[50/63] w-full">
+
+    {{! Slider required wrapper }}
+    <div class="swiper-wrapper">
+      {{! Slides }}
+      {{#each gallery}}
+        <div class="swiper-slide">
+          <img
+            class="h-full w-full object-cover"
+            src="{{root}}{{this.full}}"
+            alt=""
+          />
+        </div>
+      {{/each}}
+      {{! Slides / End }}
+    </div>
+    {{! Slider required wrapper / End }}
+
+  </div>
+  {{! Product Slider / End }}
+
+  {{! Product Slider Nav }}
+  <div class="swiper js-vv-product-swiper-nav w-full">
+
+    {{! Slider required wrapper }}
+    <div class="swiper-wrapper">
+      {{! Slides }}
+      {{#each gallery}}
+        <div class="swiper-slide">
+          <img
+            class="aspect-square w-full cursor-pointer object-cover opacity-100 transition-opacity duration-300 hover:opacity-20"
+            src="{{root}}{{this.thumb}}"
+            alt=""
+          />
+        </div>
+      {{/each}}
+      {{! Slides / End }}
+    </div>
+    {{! Slider required wrapper / End }}
+
+  </div>
+  {{! Product Slider Nav / End }}
+</div>

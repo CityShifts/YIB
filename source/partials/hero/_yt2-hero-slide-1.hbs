@@ -1,0 +1,50 @@
+{{! Slides #1 }}
+<div class="swiper-slide group">
+  <div class="h-full w-full bg-accent relative isolate overflow-hidden">
+    <div class="container h-full">
+      {{! Content }}
+      <div class="lg:pl-12 xl:pl-16">
+        <div
+          class="px-6 pt-20 text-center md:pt-36 lg:px-0 lg:pt-20 lg:text-left"
+        >
+          <img
+            class="mt-1 mb-4 hidden opacity-0 transition-opacity duration-500 group-[.vv-slide-played]:opacity-100 group-[.swiper-slide-active:not(.vv-slide-played)]:opacity-100 lg:block"
+            src="{{root}}assets/img/yt2/youtube.svg"
+            alt="YouTube Logo"
+          />
+          <h2
+            class="mb-5 flex flex-col items-center font-bold leading-none lg:items-start lg:mb-7"
+          >
+            <span class="text-2xl leading-none tracking-tighter md:text-4xl lg:text-6xl text-white">
+              Jack Parker’s
+            </span>
+            <span class="inline-block -mt-1 text-4xl leading-none tracking-tightest text-secondary md:text-6xl lg:-mt-2 lg:text-[84px] lg:leading-none">
+              UNBX VLOGS
+            </span>
+          </h2>
+          <div
+            class="mb-8 mx-auto lg:mx-0 text-sm tracking-tighter text-white lg:mb-14 lg:text-lg lg:leading-8 max-w-[400px]"
+          >
+            Bringing you the best unboxing videos of the latest technology,
+            games, and toys!
+          </div>
+          {{> _yt2-btn-outline label="Subscribe Now!" variant="outline-white" size="md" }}
+        </div>
+      </div>
+      {{! Content / End }}
+
+      {{! Person }}
+      <div
+        class="hidden lg:absolute lg:-bottom-52 lg:-right-2 lg:block"
+      >
+        <img src="{{root}}assets/img/yt2/samples/hero-person.png" alt="" />
+      </div>
+      {{! Person / End }}
+    </div>
+
+    {{! Radial Gradient }}
+    <div class="block absolute inset-0 bg-gradient-radial-hero -z-10"></div>
+    {{! Radial Gradient / End }}
+  </div>
+</div>
+{{! Slides #1 / End }}

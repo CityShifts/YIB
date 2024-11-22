@@ -1,0 +1,28 @@
+{{! Rating }}
+<div class="relative text-sm leading-none {{rating-class}}">
+  <div class="inline-flex gap-1">
+    {{#times 5}}
+      <svg role="img" class="
+        {{#ifequal ../rating-size "sm"}} h-3 w-3 {{/ifequal}}
+        {{#ifequal ../rating-size "md"}} h-[13px] w-[13px] {{/ifequal}}
+        {{#ifequal ../rating-size "lg"}} h-4 w-4 {{/ifequal}}
+        fill-gray-200 dark:fill-white/20
+      ">
+        <use xlink:href="{{root}}assets/img/yt1/sprite.svg#star"></use>
+      </svg>
+    {{/times}}
+  </div>
+  <div class="absolute left-0 top-0 inline-flex gap-1">
+    {{#times rating}}
+      <svg role="img" class="
+        {{#ifequal ../rating-size "sm"}} h-3 w-3 {{/ifequal}}
+        {{#ifequal ../rating-size "md"}} h-[13px] w-[13px] {{/ifequal}}
+        {{#ifequal ../rating-size "lg"}} h-4 w-4 {{/ifequal}}
+        fill-accent
+        ">
+        <use xlink:href="{{root}}assets/img/yt1/sprite.svg#star"></use>
+      </svg>
+    {{/times}}
+  </div>
+</div>
+{{! Rating / End }}

@@ -1,0 +1,14 @@
+{{! Account }}
+<div
+  class="relative [&>.sub-menu]:lg:hover:visible [&>.sub-menu]:hover:animate-popper-pop-in [&>.sub-menu]:lg:hover:opacity-100"
+>
+  <a class="block py-4 px-2 xl:px-3" href="_yt1-account.html">
+    <svg role="img" class="h-6 w-6 fill-white">
+      <use xlink:href="{{root}}assets/img/yt1/sprite.svg#user"></use>
+    </svg>
+  </a>
+
+  {{> _yt1-header-account-dropdown subitems=yt1.account}}
+
+</div>
+{{! Account / End }}

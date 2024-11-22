@@ -1,0 +1,22 @@
+{{> _str2-head }}
+
+<body class="relative z-10 antialiased font-base text-gray-500 text-sm font-medium h-full bg-white dark:bg-gray-800 overflow-x-hidden dark:text-gray lg:text-base">
+
+  <div id="site-wrapper" class="flex flex-col h-full js-site-wrapper">
+
+    {{> _str2-header }}
+
+    {{> _str2-header-mobile-menu }}
+
+    <main id="main-content" class="grow lg:pt-0">
+      {{> body}}
+    </main>
+
+    {{> _str2-footer }}
+  </div>
+
+  {{> _str2-login-register-modal }}
+
+  {{> _str2-scripts }}
+</body>
+</html>

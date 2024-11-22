@@ -1,0 +1,363 @@
+---
+page-title: "Checkout"
+layout: "yt2"
+breadcrumbs: [
+  {
+    label: "Shop",
+    link: "_yt2-shop-grid-3.html"
+  },
+  {
+    label: "Checkout"
+  }
+]
+---
+
+<section class="pt-12 pb-20 lg:pb-52 lg:pt-24">
+  <div class="container">
+
+    {{! Checkout }}
+    <form class="grid grid-cols-12 gap-x-6 md:gap-x-[30px] content-start gap-y-12" action="#">
+
+      {{! Billing Details }}
+      <div class="col-span-full lg:col-span-6">
+        {{! Title }}
+        <div
+          class="mb-10 flex flex-wrap flex-col items-center justify-between gap-y-4 md:flex-row lg:mb-[72px]"
+        >
+          <h2
+            class="text-2xl font-bold text-primary md:text-3xl md:tracking-tight lg:text-3.5xl dark:text-white"
+          >Billing Details</h2>
+          <div
+            class="inline-flex items-center gap-x-3 text-xs font-bold uppercase text-primary dark:text-white md:text-sm"
+          >
+            <span
+              class="relative inline-flex h-[18px] w-[18px] items-center justify-center rounded-full border-2 border-primary dark:border-white"
+            >
+              <svg role="img" class="h-2 w-2 fill-primary dark:fill-white">
+                <use
+                  xlink:href="{{root}}assets/img/yt2/sprite.svg#chevron-right"
+                ></use>
+              </svg>
+            </span>
+            <span>
+              <span class="lg:hidden xl:inline-block">Returning Customer?</span>
+              <a class="text-accent hover:underline" href="#">Login</a>
+              Now
+            </span>
+          </div>
+        </div>
+        {{! Title / End }}
+
+        {{! Details Form }}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+          <div>
+            {{> _yt2-form-input
+              type="text"
+              name="billing-first-name"
+              id="billing-first-name"
+              placeholder="First Name"
+            }}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="text"
+              name="billing-last-name"
+              id="billing-last-name"
+              placeholder="Last Name"
+            }}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="email"
+              name="billing-email"
+              id="billing-email"
+              placeholder="Email"
+            }}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="tel"
+              name="billing-phone"
+              id="billing-phone"
+              placeholder="Phone"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _yt2-form-input
+              type="text"
+              name="billing-address"
+              id="billing-address"
+              placeholder="Full Address"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{#> _yt2-form-select
+              name="billing-country"
+              id="billing-country"
+            }}
+              <option value="-">Select Country</option>
+              <option value="0">United States</option>
+              <option value="1">Italy</option>
+              <option value="2">Spain</option>
+              <option value="3">Germany</option>
+            {{/_yt2-form-select}}
+          </div>
+          <div class="col-span-full">
+            {{#> _yt2-form-select
+              name="billing-state"
+              id="billing-state"
+            }}
+              <option value="-">Select State</option>
+              <option value="0">California</option>
+              <option value="1">Texas</option>
+              <option value="2">Florida</option>
+              <option value="3">Alaska</option>
+            {{/_yt2-form-select}}
+          </div>
+          <div>
+            {{#> _yt2-form-select
+              name="billing-city"
+              id="billing-city"
+            }}
+              <option value="-">Select City</option>
+              <option value="0">New York</option>
+              <option value="1">Chicago</option>
+              <option value="2">San Francisco</option>
+              <option value="3">San Diego</option>
+            {{/_yt2-form-select}}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="number"
+              name="billing-zip"
+              id="billing-zip"
+              placeholder="ZIP Code"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _yt2-form-textarea
+              textarea-class="h-44 md:h-60"
+              name="billing-comments"
+              id="billing-comments"
+              placeholder="Additional Comments"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _yt2-form-checkbox
+              name="billing-ship-to-different-address"
+              id="billing-ship-to-different-address"
+              label="Ship to a Different Address"
+            }}
+          </div>
+        </div>
+        {{! Details Form / End }}
+      </div>
+      {{! Billing Details / End }}
+
+      {{! Shipping Details }}
+      <div class="col-span-full lg:col-span-6">
+        <h2 class="mb-10 text-2xl font-bold text-primary md:text-3xl md:tracking-tight lg:text-3.5xl lg:mb-[72px] dark:text-white">Shipping Details</h2>
+
+        {{! Details Form }}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+          <div>
+            {{> _yt2-form-input
+              type="text"
+              name="shipping-first-name"
+              id="shipping-first-name"
+              placeholder="First Name"
+            }}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="text"
+              name="shipping-last-name"
+              id="shipping-last-name"
+              placeholder="Last Name"
+            }}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="email"
+              name="shipping-email"
+              id="shipping-email"
+              placeholder="Email"
+            }}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="tel"
+              name="shipping-phone"
+              id="shipping-phone"
+              placeholder="Phone"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _yt2-form-input
+              type="text"
+              name="shipping-address"
+              id="shipping-address"
+              placeholder="Full Address"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{#> _yt2-form-select
+              name="shipping-country"
+              id="shipping-country"
+            }}
+              <option value="-">Select Country</option>
+              <option value="0">United States</option>
+              <option value="1">Italy</option>
+              <option value="2">Spain</option>
+              <option value="3">Germany</option>
+            {{/_yt2-form-select}}
+          </div>
+          <div class="col-span-full">
+            {{#> _yt2-form-select
+              name="shipping-state"
+              id="shipping-state"
+            }}
+              <option value="-">Select State</option>
+              <option value="0">California</option>
+              <option value="1">Texas</option>
+              <option value="2">Florida</option>
+              <option value="3">Alaska</option>
+            {{/_yt2-form-select}}
+          </div>
+          <div>
+            {{#> _yt2-form-select
+              name="shipping-city"
+              id="shipping-city"
+            }}
+              <option value="-">Select City</option>
+              <option value="0">New York</option>
+              <option value="1">Chicago</option>
+              <option value="2">San Francisco</option>
+              <option value="3">San Diego</option>
+            {{/_yt2-form-select}}
+          </div>
+          <div>
+            {{> _yt2-form-input
+              type="number"
+              name="shipping-zip"
+              id="shipping-zip"
+              placeholder="ZIP Code"
+            }}
+          </div>
+          <div class="col-span-full">
+            {{> _yt2-form-textarea
+              textarea-class="h-44 md:h-60"
+              name="shipping-comments"
+              id="shipping-comments"
+              placeholder="Additional Comments"
+            }}
+          </div>
+        </div>
+        {{! Details Form / End }}
+      </div>
+      {{! Shipping Details / End }}
+
+      <div class="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16"></div>
+
+      {{! Order }}
+      <div class="col-span-full border-b border-gray-500">
+        {{#with yt2.shop.cart}}
+
+          {{! Order Calculation }}
+          <div class="mb-8 lg:mb-8">
+            <h2 class="text-2xl font-bold text-primary md:text-3xl md:tracking-tight lg:text-3.5xl dark:text-white mb-8 sm:mb-10 md:mb-12 xl:mb-14">Your Order</h2>
+            <div class="border-y border-gray-500 lg:pt-7">
+              {{! Products }}
+              <div class="text-sm lg:text-base tracking-tighter leading-normal flex flex-col gap-y-5 mb-7">
+                {{#each products}}
+                <div class="flex flex-wrap justify-between">
+                  <div>
+                    {{title}} <span class="text-accent">x {{quantity}}</span>
+                  </div>
+                  <div class="font-bold text-primary dark:text-white">
+                    {{price}}
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+              {{! Products / End }}
+
+              {{! Cart Total }}
+              <div class="flex flex-wrap justify-between text-lg leading-tighter font-bold text-primary dark:text-white mb-7 lg:mb-8">
+                <h4>Cart Total</h4>
+                <div>{{cart-total}}</div>
+              </div>
+              {{! Cart Total / End }}
+
+              {{! Calculation }}
+              <div class="text-sm lg:text-base tracking-tighter leading-normal flex flex-col gap-y-5 mb-8">
+                {{#each calculation}}
+                <div class="flex flex-wrap justify-between">
+                  <div>{{label}}</div>
+                  <div class="font-bold text-primary dark:text-white">{{value}}</div>
+                </div>
+                {{/each}}
+              </div>
+              {{! Calculation / End }}
+
+              {{! Order Total }}
+              <div class="flex flex-wrap justify-between text-lg leading-tighter font-bold mb-4 lg:mb-8">
+                <div class="text-primary dark:text-white">Order Total</div>
+                <div class="text-accent">{{order-total}}</div>
+              </div>
+              {{! Order Total / End }}
+            </div>
+          </div>
+          {{! Order Calculation / End }}
+
+
+          {{! Payment Methods }}
+          <div>
+            <h3 class="font-bold text-primary text-xl lg:text-1.5xl leading-tight mb-8 lg:mb-12 dark:text-white">
+              Payment Methods
+            </h3>
+            <ul class="pt-2 pb-4">
+              {{#each payment-methods}}
+              <li class="pb-6">
+                <label class="flex flex-wrap gap-x-4 hover:cursor-pointer" for="{{value}}">
+                  {{> _yt2-form-radio
+                    name="payment-method"
+                    id=value
+                    is-checked=is-checked
+                    radio-class="peer"
+                  }}
+                  <span class="font-bold text-primary dark:text-white lg:text-lg leading-normal">{{label}}</span>
+                  <span class="basis-full max-h-0 overflow-hidden peer-checked:max-h-28 duration-200 transition-[max-height] leading-7 tracking-tighter">
+                    <span class="block pt-6">{{desc}}</span>
+                  </span>
+                </label>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{! Payment Methods / End }}
+
+        {{/with}}
+
+      </div>
+      {{! Order }}
+
+      {{! Submit }}
+      <div class="col-span-full md:col-start-9 md:col-span-4">
+        {{#> _yt2-btn
+          is-btn="true"
+          variant="accent"
+          size="lg"
+          type="submit"
+          class="w-full"
+        }}
+          Place Order
+        {{/_yt2-btn}}
+      </div>
+      {{! Submit / End }}
+
+    </form>
+    {{! Checkout / End }}
+
+  </div>
+</section>

@@ -1,0 +1,76 @@
+---
+page-title: "Events"
+layout: "str1"
+gmap: true
+breadcrumbs: [
+  {
+    label: "Events",
+    link: "_str1-events.html"
+  },
+  {
+    label: "LiveStream from TwitchCon 2023!"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{#with ../str1.events.event }}
+  <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-16">
+
+    {{! Content }}
+    <div class="col-span-full md:col-span-8 md:pr-[38px] lg:pr-[50px] xl:pr-[70px]">
+
+      {{! Title }}
+      {{> _str1-section-subheading title=title has-dot="true" }}
+      {{! Title / End }}
+
+      {{! Thumbnail }}
+      <figure class="relative mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+        <img
+          class="w-full object-cover"
+          src="{{root}}{{img}}"
+          alt=""
+        />
+      </figure>
+      {{! Thumbnail / End }}
+
+      {{! Description }}
+      <div class="[&_p]:mb-[2em]">
+        {{{description}}}
+      </div>
+      {{! Description / End }}
+
+      {{! Buttons }}
+      <div class="pt-5 lg:pt-9 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-7.5 lg:max-w-xl">
+        {{#> _str1-btn variant="primary" size="md" class="flex-1" }}
+          Buy Tickets
+        {{/_str1-btn}}
+        {{#> _str1-btn variant="accent" size="md" class="flex-1" }}
+          Add to Google Calendar
+        {{/_str1-btn}}
+      </div>
+      {{! Buttons / End }}
+
+    </div>
+    {{! Content / End }}
+
+    {{! Sidebar }}
+    <div class="col-span-full md:col-span-4">
+
+      {{> _str1-section-subheading title="Event Details" }}
+
+      {{! Details }}
+      {{> _str1-details details=details }}
+      {{! Details / End }}
+
+      {{! Google Map }}
+      <div id="vv-venue-map" class="w-full h-56"></div>
+      {{! Google Map / End }}
+
+    </div>
+    {{! Sidebar / End }}
+  </div>
+  {{/with}}
+
+{{/_str1-content}}

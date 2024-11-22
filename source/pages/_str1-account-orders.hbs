@@ -1,0 +1,214 @@
+---
+page-title: "Account"
+layout: "str1"
+breadcrumbs: [
+  {
+    label: "Account",
+    link: "_str1-account"
+  },
+  {
+    label: "Orders"
+  }
+]
+---
+
+{{#> _str1-content }}
+
+  {{> _str1-account-nav nav=../str1.account }}
+
+  {{! Order }}
+  <div class="pt-2 mb-7 lg:mb-8 xl:mb-10">
+    {{! Order Heading }}
+    <div class="flex flex-wrap items-baseline mb-8 md:mb-9 lg:mb-12.5 gap-y-2 gap-x-6 xl:gap-x-9 border-y border-gray-500/20 py-7">
+      <h3 class="font-bold text-xl lg:text-3xl xl:text-[32px] text-gray-900 dark:text-white">
+        Order MGX256N
+      </h3>
+      <dl class="flex flex-wrap font-bold text-gray-500 gap-5 gap-x-6 xl:gap-x-9 text-sm uppercase">
+        <div class="inline-flex gap-x-0.5">
+          <dt>Date:</dt>
+          <dd class="text-gray-900 dark:text-white">
+            <time datetime="2023-01-15 21:30">Jan 15, 2023</time>
+          </dd>
+        </div>
+        <div class="inline-flex gap-x-0.5">
+          <dt>Status:</dt>
+          <dd class="text-gray-900 dark:text-white">In Progress</dd>
+        </div>
+      </dl>
+    </div>
+    {{! Order Heading / End }}
+
+    {{! Order Details }}
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-10 lg:gap-y-14">
+
+      {{! Shipping Details }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Shipping Details</h5>
+        <address class="leading-8 [&>p]:mb-8 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            James Spiegel<br>
+            <a class="hover:text-primary" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+            555-2658-2658
+          </p>
+          <p>
+            Fake Street 1234, Apt 34<br>
+            Long Island, NY 10001<br>
+            United States
+          </p>
+        </address>
+      </div>
+      {{! Shipping Details / End }}
+
+      {{! Billing Details }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Billing Details</h5>
+        <address class="leading-8 [&>p]:mb-8 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            James Spiegel<br>
+            <a class="hover:text-primary" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+            555-2658-2658
+          </p>
+          <p>
+            Fake Street 1234, Apt 34<br>
+            Long Island, NY 10001<br>
+            United States
+          </p>
+        </address>
+      </div>
+      {{! Billing Details / End }}
+
+      {{! Your Order }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Your Order</h5>
+        <ul class="leading-8 not-italic">
+          {{#each ../str1.shop.cart.products}}
+          <li>
+            <div>{{title}} <span>x{{quantity}}</span> -</div>
+            <div>{{price}}</div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      {{! Your Order / End }}
+
+      {{! Total & Payments }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Totals & Payment</h5>
+        <address class="leading-8 [&>p]:mb-8 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            Cart Subtotal: $64.00<br>
+            Shipping: $5.00<br>
+            Discount: -$10.00<br>
+            Order Total: <span class="text-accent">$59.00</span>
+          </p>
+          <p>
+            Bank of the Republic<br>
+            Account: XXXX-XXXX-1234
+          </p>
+        </address>
+      </div>
+      {{! Total & Payments / End }}
+
+    </div>
+    {{! Order Details / End }}
+  </div>
+  {{! Order / End }}
+
+  {{! Order }}
+  <div class="pt-2 border-b border-gray-500/20 pb-7 lg:pb-8 xl:pb-10">
+    {{! Order Heading }}
+    <div class="flex flex-wrap items-baseline mb-8 md:mb-9 lg:mb-12.5 gap-y-2 gap-x-6 xl:gap-x-9 border-y border-gray-500/20 py-7">
+      <h3 class="font-bold text-xl lg:text-3xl xl:text-[32px] text-gray-900 dark:text-white">
+        Order MGX134K
+      </h3>
+      <dl class="flex flex-wrap font-bold text-gray-500 gap-5 gap-x-6 xl:gap-x-9 text-sm uppercase">
+        <div class="inline-flex gap-x-0.5">
+          <dt>Date:</dt>
+          <dd class="text-gray-900 dark:text-white">
+            <time datetime="2022-12-21 21:30">Dec 21, 2022</time>
+          </dd>
+        </div>
+        <div class="inline-flex gap-x-0.5">
+          <dt>Status:</dt>
+          <dd class="text-accent">Completed</dd>
+        </div>
+      </dl>
+    </div>
+    {{! Order Heading / End }}
+
+    {{! Order Details }}
+    <div class="grid grid-cols-12 gap-x-5 md:gap-x-6 lg:gap-x-7.5 gap-y-10 lg:gap-y-14">
+
+      {{! Shipping Details }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Shipping Details</h5>
+        <address class="leading-8 [&>p]:mb-8 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            James Spiegel<br>
+            <a class="hover:text-primary" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+            555-2658-2658
+          </p>
+          <p>
+            Fake Street 1234, Apt 34<br>
+            Long Island, NY 10001<br>
+            United States
+          </p>
+        </address>
+      </div>
+      {{! Shipping Details / End }}
+
+      {{! Billing Details }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Billing Details</h5>
+        <address class="leading-8 [&>p]:mb-8 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            James Spiegel<br>
+            <a class="hover:text-primary" href="mailto:jspiegel@yourmail.com">jspiegel@yourmail.com</a><br>
+            555-2658-2658
+          </p>
+          <p>
+            Fake Street 1234, Apt 34<br>
+            Long Island, NY 10001<br>
+            United States
+          </p>
+        </address>
+      </div>
+      {{! Billing Details / End }}
+
+      {{! Your Order }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Your Order</h5>
+        <ul class="leading-8 not-italic">
+          <li>
+            <div>Neko MaGiX Black T-Shirt <span>x2</span> -</div>
+            <div>$58.00</div>
+          </li>
+        </ul>
+      </div>
+      {{! Your Order / End }}
+
+      {{! Total & Payments }}
+      <div class="col-span-full sm:col-span-6 md:col-span-3">
+        <h5 class="font-bold text-gray-900 dark:text-white mb-5 lg:mb-8">Totals & Payment</h5>
+        <address class="leading-8 [&>p]:mb-8 [&>p:last-child]:mb-0 not-italic">
+          <p>
+            Cart Subtotal: $58.00<br>
+            Shipping: $5.00<br>
+            Discount: $0.00<br>
+            Order Total: <span class="text-accent">$63.00</span>
+          </p>
+          <p>
+            Bank of the Republic<br>
+            Account: XXXX-XXXX-1234
+          </p>
+        </address>
+      </div>
+      {{! Total & Payments / End }}
+
+    </div>
+    {{! Order Details / End }}
+  </div>
+  {{! Order / End }}
+
+
+{{/_str1-content}}

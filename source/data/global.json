@@ -1,0 +1,26 @@
+{
+  "site-name": "Valkivid",
+  "site-tagline": "Content Creators Template",
+  "description": "Streamer and Youtuber HTML Template",
+  "author": "Dan Fisher",
+  "keywords": "youtube, streamer, stream, creator",
+  "gmapkey": "AIzaSyCvbFmcDPH7J_9PRlpZUPMd2Y4JBOt8hSc",
+  "themes": {
+    "yt1": {
+      "site-title": "Valkivid - Youtuber Website",
+      "fonts": "Poppins:wght@400;600;700"
+    },
+    "yt2": {
+      "site-title": "Valkivid - Youtuber Website",
+      "fonts": "Poppins:wght@400;600;700"
+    },
+    "str1": {
+      "site-title": "Valkivid - Streamer Website",
+      "fonts": "Rajdhani:wght@400;500;700"
+    },
+    "str2": {
+      "site-title": "Valkivid - Streamer Website",
+      "fonts": "Rajdhani:wght@400;500;700&family=Rock+Salt"
+    }
+  }
+}
