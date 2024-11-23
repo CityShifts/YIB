@@ -11520,5 +11520,14 @@ select {
   }
 }
 body {
-  background: #000;
+   background: #000;
+}
+@media (max-width: 768px) {
+  .snowflake {
+    font-size: 16px; /* Reduce size for mobile */
+  }
+
+  .snowfall-container {
+    transform: scale(0.8); /* Reduce scale for better fit */
+  }
 }
