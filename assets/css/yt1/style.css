@@ -11519,3 +11519,6 @@ select {
     opacity: 1;
   }
 }
+body {
+  background: #000;
+}

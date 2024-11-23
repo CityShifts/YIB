@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   /* Lightbox Player */
   :root {
@@ -147,3 +148,4 @@
     @apply border-primary dark:border-white ring-2 ring-offset-2 ring-accent ring-offset-white dark:ring-offset-primary;
   }
 }
+
